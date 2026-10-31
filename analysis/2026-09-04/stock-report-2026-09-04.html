@@ -1,0 +1,573 @@
+<title>盤前快報 9/4</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#faf8f4;
+  --surface:#ffffff;
+  --surface-2:#f2efe8;
+  --border:#ddd7c9;
+  --text:#1c1d1c;
+  --muted:#6b6a5f;
+  --accent:#2e5f8a;
+  --accent-soft:#e4edf4;
+  --pos:#1a7a4c;
+  --pos-soft:#e5f4ec;
+  --neg:#b23b2e;
+  --neg-soft:#fbeae7;
+  --warn:#9a6b12;
+  --warn-soft:#faf0dc;
+  --strong-badge:#1a7a4c;
+  --mid-badge:#9a6b12;
+  --weak-badge:#8a8677;
+  --core-tag:#2e5f8a;
+  --sec-tag:#6b6a5f;
+}
+:root:not([data-theme="light"]){
+  @media (prefers-color-scheme: dark){
+    --bg:#14161a;
+    --surface:#1b1e23;
+    --surface-2:#22262c;
+    --border:#33373f;
+    --text:#e8e6df;
+    --muted:#9a9c9f;
+    --accent:#6fa8d8;
+    --accent-soft:#1f2c38;
+    --pos:#4cbd86;
+    --pos-soft:#173226;
+    --neg:#e2695a;
+    --neg-soft:#3a1f1c;
+    --warn:#d9a94a;
+    --warn-soft:#332a15;
+    --strong-badge:#4cbd86;
+    --mid-badge:#d9a94a;
+    --weak-badge:#8d9096;
+    --core-tag:#6fa8d8;
+    --sec-tag:#9a9c9f;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#14161a;
+  --surface:#1b1e23;
+  --surface-2:#22262c;
+  --border:#33373f;
+  --text:#e8e6df;
+  --muted:#9a9c9f;
+  --accent:#6fa8d8;
+  --accent-soft:#1f2c38;
+  --pos:#4cbd86;
+  --pos-soft:#173226;
+  --neg:#e2695a;
+  --neg-soft:#3a1f1c;
+  --warn:#d9a94a;
+  --warn-soft:#332a15;
+  --strong-badge:#4cbd86;
+  --mid-badge:#d9a94a;
+  --weak-badge:#8d9096;
+  --core-tag:#6fa8d8;
+  --sec-tag:#9a9c9f;
+}
+
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:"IBM Plex Sans","Noto Sans TC",system-ui,sans-serif;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:960px;margin:0 auto;padding:2.5rem 1.25rem 5rem;}
+
+.masthead{
+  border-bottom:2px solid var(--text);
+  padding-bottom:1.25rem;
+  margin-bottom:1.75rem;
+}
+.eyebrow{
+  font-family:"IBM Plex Mono",monospace;
+  font-size:.72rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:.5rem;
+}
+h1{
+  font-family:"Source Serif 4",serif;
+  font-size:clamp(1.7rem,4vw,2.5rem);
+  font-weight:700;
+  margin:0 0 .5rem;
+  text-wrap:balance;
+}
+.timestamp{
+  font-family:"IBM Plex Mono",monospace;
+  font-size:.82rem;
+  color:var(--muted);
+}
+.notice{
+  background:var(--surface-2);
+  border-left:3px solid var(--accent);
+  padding:.85rem 1rem;
+  margin-top:1.1rem;
+  font-size:.92rem;
+  color:var(--muted);
+  border-radius:0 4px 4px 0;
+}
+
+section{margin:2.75rem 0;}
+h2{
+  font-family:"Source Serif 4",serif;
+  font-size:1.5rem;
+  font-weight:600;
+  margin:0 0 .3rem;
+  display:flex;
+  align-items:baseline;
+  gap:.55rem;
+}
+.sec-num{
+  font-family:"IBM Plex Mono",monospace;
+  font-size:.85rem;
+  color:var(--accent);
+  font-weight:600;
+}
+.sec-lede{color:var(--muted);font-size:.94rem;margin:0 0 1.2rem;max-width:64ch;}
+
+.market-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.9rem;}
+.market-list li{
+  padding:.9rem 1.1rem;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:8px;
+  font-size:.94rem;
+}
+.market-list b{font-family:"IBM Plex Mono",monospace;}
+
+.warn-banner{
+  background:var(--warn-soft);
+  border:1px solid var(--warn);
+  color:var(--text);
+  font-size:.87rem;
+  padding:.75rem 1rem;
+  border-radius:6px;
+  margin-bottom:1.2rem;
+}
+
+.card-grid{display:flex;flex-direction:column;gap:1rem;}
+.card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:1.15rem 1.3rem;
+}
+.card-top{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:.6rem;
+  margin-bottom:.55rem;
+}
+.ticker{
+  font-family:"IBM Plex Mono",monospace;
+  font-weight:700;
+  font-size:1.15rem;
+  letter-spacing:.02em;
+}
+.price{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;color:var(--muted);font-size:.92rem;}
+.chg{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;font-weight:600;font-size:.92rem;padding:.1rem .45rem;border-radius:4px;}
+.chg.pos{color:var(--pos);background:var(--pos-soft);}
+.chg.neg{color:var(--neg);background:var(--neg-soft);}
+
+.tag-row{display:flex;flex-wrap:wrap;gap:.4rem;margin-left:auto;}
+.tag{
+  font-size:.72rem;
+  font-family:"IBM Plex Mono",monospace;
+  padding:.2rem .55rem;
+  border-radius:999px;
+  border:1px solid var(--border);
+  white-space:nowrap;
+}
+.tag.core{color:var(--core-tag);border-color:var(--core-tag);}
+.tag.sec{color:var(--sec-tag);border-color:var(--sec-tag);}
+.badge{
+  font-size:.72rem;
+  font-weight:700;
+  padding:.2rem .6rem;
+  border-radius:999px;
+  font-family:"IBM Plex Mono",monospace;
+  color:#fff;
+}
+.badge.strong{background:var(--strong-badge);}
+.badge.mid{background:var(--mid-badge);}
+.badge.weak{background:var(--weak-badge);}
+
+.signals{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:.5rem .9rem;
+  margin:.7rem 0;
+  font-size:.86rem;
+}
+.sig{display:flex;gap:.4rem;align-items:flex-start;}
+.sig .mark{
+  font-family:"IBM Plex Mono",monospace;
+  font-weight:700;
+  flex:0 0 auto;
+  width:1.1rem;
+  text-align:center;
+}
+.sig.pos .mark{color:var(--pos);}
+.sig.neg .mark{color:var(--neg);}
+.sig.neu .mark{color:var(--muted);}
+.sig .lbl{color:var(--muted);font-weight:600;margin-right:.25rem;}
+
+.note{font-size:.85rem;color:var(--muted);margin-top:.4rem;}
+.risk{font-size:.85rem;margin-top:.5rem;padding-top:.5rem;border-top:1px dashed var(--border);}
+.risk b{color:var(--neg);}
+
+.exclusion{
+  background:var(--surface-2);
+  border-radius:8px;
+  padding:.85rem 1.1rem;
+  font-size:.85rem;
+  color:var(--muted);
+}
+
+table{width:100%;border-collapse:collapse;font-size:.87rem;}
+.tbl-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:8px;}
+th,td{padding:.55rem .75rem;text-align:left;border-bottom:1px solid var(--border);white-space:nowrap;}
+thead th{
+  background:var(--surface-2);
+  font-family:"IBM Plex Mono",monospace;
+  font-size:.72rem;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  color:var(--muted);
+}
+tbody tr:last-child td{border-bottom:none;}
+td.num,th.num{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;text-align:right;}
+td.pos{color:var(--pos);}
+td.neg{color:var(--neg);}
+
+.stat-row{display:flex;flex-wrap:wrap;gap:.8rem;margin-bottom:1.1rem;}
+.stat{
+  flex:1 1 150px;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:.8rem 1rem;
+}
+.stat .k{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-family:"IBM Plex Mono",monospace;}
+.stat .v{font-family:"IBM Plex Mono",monospace;font-size:1.3rem;font-weight:600;margin-top:.15rem;}
+.stat .v.pos{color:var(--pos);}
+.stat .v.neg{color:var(--neg);}
+
+.reflect{font-size:.9rem;}
+.reflect ul{padding-left:1.2rem;margin:.5rem 0;}
+.reflect li{margin-bottom:.5rem;}
+
+.watch-list{font-size:.88rem;}
+.watch-list p{margin:.3rem 0;}
+
+footer{
+  margin-top:3rem;
+  padding-top:1.2rem;
+  border-top:1px solid var(--border);
+  font-size:.78rem;
+  color:var(--muted);
+  line-height:1.7;
+}
+
+@media (max-width:520px){
+  .signals{grid-template-columns:1fr;}
+}
+</style>
+
+<div class="wrap">
+
+  <div class="masthead">
+    <div class="eyebrow">AI／晶片／機器人／記憶體 美股追蹤</div>
+    <h1>9/4 盤前快報</h1>
+    <div class="timestamp">數據時間戳：2026-09-04 美股盤前約 08:37 ET（盤前即時報價，非前一收盤）</div>
+    <div class="notice">本期為既有追蹤名單的例行更新（沿用 07-19～08-25 已通過四訊號驗證的 14 檔名單），非全新篩選；僅依 8/25–9/4 期間新事件重新過四訊號、更新信心等級。</div>
+  </div>
+
+  <section id="market">
+    <h2><span class="sec-num">01</span>市場概況</h2>
+    <ul class="market-list">
+      <li><b>SPY</b> $771.74（盤前 -0.19%），較 8/25 累計 <b style="color:var(--pos)">+0.68%</b>，距 52 週高僅 -0.98%，大盤已收復回檔失地。</li>
+      <li><b>SMH</b>（半導體大盤代理）$559.00（盤前 +1.16%），較 8/25 累計 +0.38%，近四個交易日已自低點反彈約 14%——系統性回檔隨 NVDA（8/26）與 AVGO（9/2）兩大財報落地而告一段落。</li>
+      <li>兩大不確定性均已兌現且未觸發系統性崩跌：NVDA 財報營收 $96.2B（YoY +106%）優於預期，隔日重挫後次一交易日大漲近 9%；AVGO AI 營收 $16.7B（YoY +221%）連 9 季超標，但 Q4 展望保守、債務規模再擴大。上期為此上調至 40% 的避險比例，本期回調至 35%。</li>
+      <li>AI 資本支出大趨勢持續獲驗證：NVDA 宣布以 $11.9–12.9B 收購 Hugging Face，並與人形機器人新創 Figure 簽 $6B GPU 供貨協議；AVGO 上修 FY2027/28 AI 營收目標至 $115B／$230B。</li>
+      <li><b>本期最重要反向訊號</b>：中國 CXMT 的 DRAM 全球市佔於 Q2 衝上 10%（去年同期 4%），三大廠合計市佔首度跌破 90%，MU 新聞訊號由正轉負。惟 CXMT 侵蝕的是傳統 DRAM，MU 的 HBM 產能已 take-or-pay 長約鎖定至 2026 年底，卡點論點本身尚未被證偽，但這是記憶體層第一個需要持續追蹤的競爭性利空。</li>
+      <li><b>輪動相位</b>：Phase 1（記憶體）出現「股價 vs 敘事」短期背離——MU/EWY 股價仍抗跌甚至逆勢走強，但市佔敘事首度承壓。Phase 2（光學）仍是最弱環節，AAOI 增資疑慮持續發酵，AXTI/AEHR 屬獲利了結修正、基本面敘事未變。Phase 3（POET）新聞催化降溫，目標價下修，四訊號由強降回中。</li>
+    </ul>
+  </section>
+
+  <section id="highrisk">
+    <h2><span class="sec-num">02</span>高風險高報酬層</h2>
+    <p class="sec-lede">與半導體景氣高度連動，系統性回檔時會齊跌；多為中小型股，流動性差、可能單日大幅跳空。</p>
+
+    <div class="card-grid">
+
+      <div class="card">
+        <div class="card-top">
+          <span class="ticker">AXTI</span><span class="price">$57.94</span><span class="chg neg">-16.39%</span>
+          <div class="tag-row"><span class="tag core">基礎材料層・核心卡點</span><span class="badge strong">強</span></div>
+        </div>
+        <div class="signals">
+          <div class="sig neu"><span class="mark">–</span><span><span class="lbl">量化</span>EPS QoQ+208%/Sales QoQ+165%強勁，惟SMA20-16.8%/SMA50-7.8%修正+Insider Trans仍-20.4%</span></div>
+          <div class="sig pos"><span class="mark">✓</span><span><span class="lbl">分析師</span>目標價$95.03，上檔+64%</span></div>
+          <div class="sig pos"><span class="mark">✓</span><span><span class="lbl">新聞</span>InP缺貨/Q4漲價逾10%敘事延續，Lumentum/Coherent長約鎖定</span></div>
+          <div class="sig pos"><span class="mark">✓</span><span><span class="lbl">卡點</span>InP雙寡頭，斷供即下游停擺</span></div>
+        </div>
+        <div class="note">核心卡點加分：量化中性視同同向</div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="ticker">AEHR</span><span class="price">$77.96</span><span class="chg neg">-22.81%</span>
+          <div class="tag-row"><span class="tag sec">測試設備層・次級卡點</span><span class="badge strong">強</span></div>
+        </div>
+        <div class="signals">
+          <div class="sig pos"><span class="mark">✓</span><span><span class="lbl">量化</span>Sales QoQ+33.7%/EPS QoQ+143.1%持續加速</span></div>
+          <div class="sig pos"><span class="mark">✓</span><span><span class="lbl">分析師</span>股價回落，目標價$130.40上檔擴大至+67.3%</span></div>
+          <div class="sig pos"><span class="mark">✓</span><span><span class="lbl">新聞</span>$22M追加訂單延續兌現，分析師看好漲勢仍有空間</span></div>
+          <div class="sig pos"><span class="mark">✓</span><span><span class="lbl">卡點</span>AI處理器晶圓級燒機測試次級卡點</span></div>
+        </div>
+        <div class="note">四訊號全同向</div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="ticker">AAOI</span><span class="price">$100.90</span><span class="chg neg">-10.68%</span>
+          <div class="tag-row"><span class="tag sec">光學元件層・次級卡點</span><span class="badge weak">弱</span></div>
+        </div>
+        <div class="signals">
+          <div class="sig neu"><span class="mark">–</span><span><span class="lbl">量化</span>Sales QoQ+86.4%強勁但EPS QoQ仍-74.2%</span></div>
+          <div class="sig pos"><span class="mark">✓</span><span><span class="lbl">分析師</span>目標價$170.50，上檔+69.0%</span></div>
+          <div class="sig neg"><span class="mark">✗</span><span><span class="lbl">新聞</span>$600M ATM增資疑慮未散，管理層/長租事件疊加致股價連兩期下探</span></div>
+          <div class="sig pos"><span class="mark">✓</span><span><span class="lbl">卡點</span>800G/1.6T光學元件次級卡點</span></div>
+        </div>
+        <div class="note">維持弱：新聞訊號連兩期反向，接近剔除觀察門檻</div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="ticker">LASR</span><span class="price">$41.94</span><span class="chg neg">-6.47%</span>
+          <div class="tag-row"><span class="tag sec">半導體雷射・次級卡點</span><span class="badge weak">弱</span></div>
+        </div>
+        <div class="signals">
+          <div class="sig neg"><span class="mark">✗</span><span><span class="lbl">量化</span>SMA20/50/200仍全數空頭排列（-9.5%/-29.3%/-26.8%）</span></div>
+          <div class="sig pos"><span class="mark">✓</span><span><span class="lbl">分析師</span>目標價$88.86，上檔擴大至+111.9%</span></div>
+          <div class="sig neu"><span class="mark">–</span><span><span class="lbl">新聞</span>無新增消息，8/6財報後進入觀察期</span></div>
+          <div class="sig pos"><span class="mark">✓</span><span><span class="lbl">卡點</span>$627M國防合約未受影響</span></div>
+        </div>
+        <div class="note">維持弱：技術面持續未見改善</div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="ticker">POET</span><span class="price">$7.44</span><span class="chg neg">-6.77%</span>
+          <div class="tag-row"><span class="tag sec">Phase 3矽光子・樂透部位</span><span class="badge mid">中</span></div>
+        </div>
+        <div class="signals">
+          <div class="sig pos"><span class="mark">✓</span><span><span class="lbl">量化</span>EPS QoQ+67.2%/Sales QoQ+112.3%，連兩季轉正</span></div>
+          <div class="sig pos"><span class="mark">✓</span><span><span class="lbl">分析師</span>Strong Buy，目標價下修至$13.38後仍上檔+79.8%</span></div>
+          <div class="sig neu"><span class="mark">–</span><span><span class="lbl">新聞</span>僅CIOE 2026例行展會消息，較上期CEO確認產能爬坡明顯降溫</span></div>
+          <div class="sig neu"><span class="mark">–</span><span><span class="lbl">卡點</span>仍屬早期，尚未進共識</span></div>
+        </div>
+        <div class="note">由強降為中：新聞催化降溫+分析師目標價下修</div>
+      </div>
+
+    </div>
+
+    <div class="exclusion" style="margin-top:1rem;">
+      <b>剔除紀錄</b>：本期無標的達兩個以上反向而剔除。AAOI 新聞訊號連續第二期反向，若下期再新增量化或分析師轉弱，應考慮剔除觀察名單換人。
+    </div>
+  </section>
+
+  <section id="stable">
+    <h2><span class="sec-num">03</span>穩定投資層（產業龍頭）</h2>
+    <p class="sec-lede">供應鏈核心層龍頭：市值 > $50B、獲利穩健、在其層級具壟斷或寡佔地位。</p>
+
+    <div class="card-grid">
+
+      <div class="card">
+        <div class="card-top">
+          <span class="ticker">TSM</span><span class="price">$421.80</span><span class="chg pos">+1.24%</span>
+          <div class="tag-row"><span class="tag core">代工層・核心卡點</span><span class="badge strong">強</span></div>
+        </div>
+        <div class="signals">
+          <div class="sig pos"><span class="mark">✓</span><span><span class="lbl">量化</span>淨利率50.3%/EPS QoQ+73.3%，SMA全多頭排列</span></div>
+          <div class="sig pos"><span class="mark">✓</span><span><span class="lbl">分析師</span>上檔+28.9%</span></div>
+          <div class="sig pos"><span class="mark">✓</span><span><span class="lbl">新聞</span>台灣加碼對美投資$200億，晶片股財報季前偏樂觀</span></div>
+          <div class="sig pos"><span class="mark">✓</span><span><span class="lbl">卡點</span>先進製程代工壟斷</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="ticker">ASML</span><span class="price">$1,675.36</span><span class="chg neg">-5.19%</span>
+          <div class="tag-row"><span class="tag core">設備層・核心卡點</span><span class="badge strong">強</span></div>
+        </div>
+        <div class="signals">
+          <div class="sig pos"><span class="mark">✓</span><span><span class="lbl">量化</span>淨利率30.1%/EPS QoQ+31.9%，SMA200仍+13.2%</span></div>
+          <div class="sig pos"><span class="mark">✓</span><span><span class="lbl">分析師</span>上檔+40.0%</span></div>
+          <div class="sig neu"><span class="mark">–</span><span><span class="lbl">新聞</span>「估值溢價考驗AI樂觀情緒」謹慎論 vs TSMC營收帶動工具需求正面論互抵</span></div>
+          <div class="sig pos"><span class="mark">✓</span><span><span class="lbl">卡點</span>EUV微影獨供</span></div>
+        </div>
+        <div class="note">核心卡點加分：新聞中性視同同向</div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="ticker">AVGO</span><span class="price">$358.85</span><span class="chg neg">-1.25%</span>
+          <div class="tag-row"><span class="tag sec">ASIC/網通・次級卡點</span><span class="badge weak">弱</span></div>
+        </div>
+        <div class="signals">
+          <div class="sig pos"><span class="mark">✓</span><span><span class="lbl">量化</span>EPS QoQ+214.6%創新高，由中性升為正向</span></div>
+          <div class="sig pos"><span class="mark">✓</span><span><span class="lbl">分析師</span>目標價$538.47上檔+50%，Macquarie升評Outperform點名Anthropic放量</span></div>
+          <div class="sig neg"><span class="mark">✗</span><span><span class="lbl">新聞</span>財報9連超但Q4展望保守，債務規模由$60-80B擴大至最高$100B，市場情緒由多轉空</span></div>
+          <div class="sig pos"><span class="mark">✓</span><span><span class="lbl">卡點</span>ASIC訂閱式訂單能見度提升</span></div>
+        </div>
+        <div class="note">維持弱：量化改善但債務疑慮未解且規模擴大，未達剔除門檻</div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="ticker">NVDA</span><span class="price">$231.20</span><span class="chg pos">+9.52%</span>
+          <div class="tag-row"><span class="tag sec">GPU生態系（已定價）</span><span class="badge mid">中</span></div>
+        </div>
+        <div class="signals">
+          <div class="sig pos"><span class="mark">✓</span><span><span class="lbl">量化</span>淨利率63.7%/EPS QoQ+128.2%</span></div>
+          <div class="sig pos"><span class="mark">✓</span><span><span class="lbl">分析師</span>上檔+44.6%</span></div>
+          <div class="sig pos"><span class="mark">✓</span><span><span class="lbl">新聞</span>財報後次日大漲近9%，$11.9B收購Hugging Face+Figure機器人$6B GPU合約</span></div>
+          <div class="sig neu"><span class="mark">–</span><span><span class="lbl">卡點</span>品牌層已定價，非稀缺供給環節</span></div>
+        </div>
+        <div class="note">由弱升為中：三同向一中性</div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="ticker">MU</span><span class="price">$969.77</span><span class="chg pos">+4.11%</span>
+          <div class="tag-row"><span class="tag sec">記憶體層・次級卡點</span><span class="badge weak">弱</span></div>
+        </div>
+        <div class="signals">
+          <div class="sig pos"><span class="mark">✓</span><span><span class="lbl">量化</span>EPS QoQ+1372%/SMA200+60.0%，本期抗跌最強</span></div>
+          <div class="sig pos"><span class="mark">✓</span><span><span class="lbl">分析師</span>上檔擴大至+62.4%</span></div>
+          <div class="sig neg"><span class="mark">✗</span><span><span class="lbl">新聞</span>中國CXMT DRAM市佔衝上10%，三大廠合計首度跌破90%，多篇報導以「搶市佔」框架示警</span></div>
+          <div class="sig pos"><span class="mark">✓</span><span><span class="lbl">卡點</span>HBM產能take-or-pay鎖定至2026年底，CXMT威脅在傳統DRAM層非HBM</span></div>
+        </div>
+        <div class="note">由強降為弱：記憶體層本期最重要反向訊號，非單純總經雜訊</div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="etf">
+    <h2><span class="sec-num">04</span>ETF 產業主題三層配置</h2>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>層</th><th>比例</th><th>Ticker</th><th class="num">現價</th><th class="num">8/25→9/4</th><th>理由</th></tr></thead>
+        <tbody>
+          <tr><td>核心</td><td>45%</td><td class="ticker">SMH</td><td class="num">$559.00</td><td class="num pos">+0.38%</td><td>半導體大盤型，NVDA/AVGO財報週落地後波動收斂，近四交易日已反彈約14%</td></tr>
+          <tr><td>衛星—機器人</td><td>10%</td><td class="ticker">BOTZ</td><td class="num">$36.15</td><td class="num pos">+0.89%</td><td>隨半導體回穩同步走高，NVDA-Figure機器人GPU合約為主題新催化</td></tr>
+          <tr><td>衛星—記憶體代理</td><td>10%</td><td class="ticker">EWY</td><td class="num">$180.53</td><td class="num pos">+0.88%</td><td>近一月+10%領先大盤，惟CXMT市佔新聞為潛在雜訊來源需觀察</td></tr>
+          <tr><td>避險</td><td><b>35%（本期下修）</b></td><td class="ticker">SGOV</td><td class="num">$100.46</td><td class="num neg">-0.18%</td><td>NVDA財報週與AVGO融資疑慮兩大不確定性均已落地且未觸發系統性崩跌，比例由40%回調至35%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note" style="margin-top:.8rem;">避險比例調整說明：上期為防範「NVDA財報週」與「AVGO $60-80B舉債消息」上調至40%，兩者本期均已兌現且未演變為系統性風險，故回調至35%；但AVGO債務規模擴大至最高$100B、市場情緒轉空，以及MU記憶體市佔新聞的首次反向，代表產業層面仍有未解雜訊，故未進一步下修至更低水位。</p>
+  </section>
+
+  <section id="history">
+    <h2><span class="sec-num">05</span>歷史推薦績效回顧（誠實記帳）</h2>
+
+    <h3 style="font-family:'Source Serif 4',serif;font-size:1.1rem;margin-bottom:.3rem;">5.1 最近一期（08-25 → 09-04 盤前，約 6 個交易日）</h3>
+    <p class="sec-lede">基準：SPY 同期 766.55 → 771.74，<b style="color:var(--pos)">+0.68%</b></p>
+
+    <div class="stat-row">
+      <div class="stat"><div class="k">高風險勝率</div><div class="v neg">0/5・0%</div></div>
+      <div class="stat"><div class="k">穩定勝率</div><div class="v pos">3/5・60%</div></div>
+      <div class="stat"><div class="k">ETF勝率（不計SGOV）</div><div class="v pos">2/3・67%</div></div>
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>類別</th><th>Ticker</th><th class="num">08-25價</th><th class="num">09-04盤前價</th><th class="num">報酬率</th><th class="num">超額報酬</th></tr></thead>
+        <tbody>
+          <tr><td>高風險</td><td class="ticker">AXTI</td><td class="num">69.30</td><td class="num">57.94</td><td class="num neg">-16.39%</td><td class="num neg">-17.07pp</td></tr>
+          <tr><td>高風險</td><td class="ticker">AEHR</td><td class="num">101.00</td><td class="num">77.96</td><td class="num neg">-22.81%</td><td class="num neg">-23.49pp</td></tr>
+          <tr><td>高風險</td><td class="ticker">AAOI</td><td class="num">112.97</td><td class="num">100.90</td><td class="num neg">-10.68%</td><td class="num neg">-11.36pp</td></tr>
+          <tr><td>高風險</td><td class="ticker">LASR</td><td class="num">44.84</td><td class="num">41.94</td><td class="num neg">-6.47%</td><td class="num neg">-7.15pp</td></tr>
+          <tr><td>高風險</td><td class="ticker">POET</td><td class="num">7.98</td><td class="num">7.44</td><td class="num neg">-6.77%</td><td class="num neg">-7.45pp</td></tr>
+          <tr><td>穩定</td><td class="ticker">TSM</td><td class="num">416.63</td><td class="num">421.80</td><td class="num pos">+1.24%</td><td class="num pos">+0.56pp</td></tr>
+          <tr><td>穩定</td><td class="ticker">ASML</td><td class="num">1767.00</td><td class="num">1675.36</td><td class="num neg">-5.19%</td><td class="num neg">-5.87pp</td></tr>
+          <tr><td>穩定</td><td class="ticker">AVGO</td><td class="num">363.40</td><td class="num">358.85</td><td class="num neg">-1.25%</td><td class="num neg">-1.93pp</td></tr>
+          <tr><td>穩定</td><td class="ticker">NVDA</td><td class="num">211.10</td><td class="num">231.20</td><td class="num pos">+9.52%</td><td class="num pos">+8.84pp</td></tr>
+          <tr><td>穩定</td><td class="ticker">MU</td><td class="num">931.50</td><td class="num">969.77</td><td class="num pos">+4.11%</td><td class="num pos">+3.43pp</td></tr>
+          <tr><td>ETF</td><td class="ticker">SMH</td><td class="num">556.86</td><td class="num">559.00</td><td class="num pos">+0.38%</td><td class="num neg">-0.30pp</td></tr>
+          <tr><td>ETF</td><td class="ticker">BOTZ</td><td class="num">35.83</td><td class="num">36.15</td><td class="num pos">+0.89%</td><td class="num pos">+0.21pp</td></tr>
+          <tr><td>ETF</td><td class="ticker">EWY</td><td class="num">178.95</td><td class="num">180.53</td><td class="num pos">+0.88%</td><td class="num pos">+0.21pp</td></tr>
+          <tr><td>ETF</td><td class="ticker">SGOV</td><td class="num">100.64</td><td class="num">100.46</td><td class="num neg">-0.18%</td><td class="num neg">-0.86pp</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="font-family:'Source Serif 4',serif;font-size:1.1rem;margin:1.6rem 0 .3rem;">5.2 累計自 v2 產業聚焦版首見（07-19 → 09-04 盤前，約 6.7 週）</h3>
+    <p class="sec-lede">基準：SPY 743.29 → 771.74，<b style="color:var(--pos)">+3.83%</b></p>
+
+    <div class="stat-row">
+      <div class="stat"><div class="k">高風險勝率</div><div class="v neg">1/5・20%</div></div>
+      <div class="stat"><div class="k">穩定勝率</div><div class="v pos">3/5・60%</div></div>
+      <div class="stat"><div class="k">ETF勝率（不計SGOV）</div><div class="v pos">2/3・67%</div></div>
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>類別</th><th>Ticker</th><th class="num">07-19價</th><th class="num">09-04盤前價</th><th class="num">累計報酬率</th><th class="num">超額報酬</th></tr></thead>
+        <tbody>
+          <tr><td>高風險</td><td class="ticker">AXTI</td><td class="num">45.86</td><td class="num">57.94</td><td class="num pos">+26.34%</td><td class="num pos">+22.51pp</td></tr>
+          <tr><td>高風險</td><td class="ticker">POET</td><td class="num">7.39</td><td class="num">7.44</td><td class="num pos">+0.68%</td><td class="num neg">-3.15pp</td></tr>
+          <tr><td>高風險</td><td class="ticker">AAOI</td><td class="num">102.41</td><td class="num">100.90</td><td class="num neg">-1.47%</td><td class="num neg">-5.30pp</td></tr>
+          <tr><td>高風險</td><td class="ticker">AEHR</td><td class="num">81.05</td><td class="num">77.96</td><td class="num neg">-3.81%</td><td class="num neg">-7.64pp</td></tr>
+          <tr><td>高風險</td><td class="ticker">LASR</td><td class="num">69.25</td><td class="num">41.94</td><td class="num neg">-39.44%</td><td class="num neg">-43.27pp</td></tr>
+          <tr><td>穩定</td><td class="ticker">MU</td><td class="num">848.95</td><td class="num">969.77</td><td class="num pos">+14.23%</td><td class="num pos">+10.40pp</td></tr>
+          <tr><td>穩定</td><td class="ticker">NVDA</td><td class="num">202.81</td><td class="num">231.20</td><td class="num pos">+14.00%</td><td class="num pos">+10.17pp</td></tr>
+          <tr><td>穩定</td><td class="ticker">TSM</td><td class="num">398.37</td><td class="num">421.80</td><td class="num pos">+5.88%</td><td class="num pos">+2.05pp</td></tr>
+          <tr><td>穩定</td><td class="ticker">AVGO</td><td class="num">370.83</td><td class="num">358.85</td><td class="num neg">-3.23%</td><td class="num neg">-7.06pp</td></tr>
+          <tr><td>穩定</td><td class="ticker">ASML</td><td class="num">1747.58</td><td class="num">1675.36</td><td class="num neg">-4.13%</td><td class="num neg">-7.96pp</td></tr>
+          <tr><td>ETF</td><td class="ticker">EWY</td><td class="num">162.54</td><td class="num">180.53</td><td class="num pos">+11.07%</td><td class="num pos">+7.24pp</td></tr>
+          <tr><td>ETF</td><td class="ticker">BOTZ</td><td class="num">34.40</td><td class="num">36.15</td><td class="num pos">+5.09%</td><td class="num pos">+1.26pp</td></tr>
+          <tr><td>ETF</td><td class="ticker">SMH</td><td class="num">556.53</td><td class="num">559.00</td><td class="num pos">+0.44%</td><td class="num neg">-3.39pp</td></tr>
+          <tr><td>ETF</td><td class="ticker">SGOV</td><td class="num">100.58</td><td class="num">100.46</td><td class="num neg">-0.12%</td><td class="num neg">-3.95pp</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="reflect" style="margin-top:1.3rem;">
+      <p><b>方法論反思</b></p>
+      <ul>
+        <li>高風險層累計勝率從 07-19～08-14 期間普遍 80%，崩落至本期僅剩 AXTI 一檔獨撐（+26.34%），AEHR、AAOI 已由正轉負，LASR 累計虧損擴大至 -39.44% 為全名單最深——這不只是總經雜訊，AAOI 的增資稀釋、LASR 的技術面持續破位都是個股層級證據，卡點論點本身未被證偽，但短期股價已與論點方向明確分歧。</li>
+        <li>MU 本期出現 v2 版以來記憶體層第一個實質性反向訊號（CXMT市佔衝上10%）。卡點論點聚焦HBM而CXMT威脅在傳統DRAM，兩者尚未直接衝突，但這是需要持續追蹤、不能簡單歸類為「總經雜訊」的個股級別新利空，故信心等級誠實下調為弱。</li>
+        <li>NVDA 新聞訊號由反轉正（財報大漲+Hugging Face收購+機器人合約），是自 07-19 以來首次回升；「品牌層已定價」的判斷不變，但新聞驅動的短期超額報酬（+8.84pp）不應與卡點論點強度混淆。</li>
+        <li>AVGO 連續三期維持「弱」但未達剔除門檻：基本面訊號明顯轉強（EPS QoQ+214%），但債務融資規模擴大+市場情緒轉空同步升溫，兩者互抵；若債務疑慮下期轉化為信用評等調降等實質事件，應考慮剔除。</li>
+        <li>POET 由強降回中：目標價從 $20.25 下修至 $13.38 值得留意，可能反映分析師覆蓋更新或資料時間差，下期應交叉核對多方數據源排除雜訊。</li>
+        <li>2026-07-19 之前（v1 全市場版本）的推薦為改版前不同方法論與宇宙範圍，不併入本次勝率統計，僅供歷史留存。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="watch">
+    <h2><span class="sec-num">06</span>延伸觀察</h2>
+    <div class="watch-list">
+      <p><b>Serenity 名單中美股買不到報價的標的</b>（僅供研究追蹤，不進 Top 5，沿用既有 report）：</p>
+      <p>$SIVE（斯德哥爾摩上市）— CW雷射/CPO外部光源，信心度10；$IQE（倫敦上市）— 化合物半導體磊晶，信心度9；$XFAB（巴黎上市）— 美國唯一高量產SiC代工廠；台鏈：穩懋、波若威、訊芯-KY</p>
+      <p><b>美股可交易但本期未納入候選重新篩選</b>：$FORM（FormFactor）— 晶圓測試探針卡瓶頸，隨CPO放量吃緊</p>
+    </div>
+  </section>
+
+  <footer>
+    本報告非投資建議，僅為基於公開資料（Finviz、公開新聞）的研究整理。卡點框架與覆蓋名單轉述自 Serenity (@aleabitoreddit) 公開發文之整理，未經驗證其歷史績效真實性。本報告標的集中於 AI/半導體單一產業鏈，無分散效果；高風險類多為中小型股，流動性與波動風險高，本期與累計報酬已實際證明此風險。Finviz 免費版數據可能延遲；本次數據為盤前即時報價，非收盤價，開盤後可能出現落差；歷史績效不代表未來表現。實際投資前請自行查證第一手資料（10-K/10-Q、法說會、SEC 備案）。
+  </footer>
+
+</div>

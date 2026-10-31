@@ -1,0 +1,642 @@
+<title>卡點週報 10-16</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f3f5f7; --surface:#ffffff; --surface-2:#eef1f4; --border:#dde2e8;
+  --text:#161b22; --text-muted:#5c6673; --text-faint:#86909c;
+  --accent:#1f6f6b; --accent-ink:#0f4e4a; --accent-soft:#e4f1ef;
+  --good:#1c7a4e; --good-soft:#e5f5ec; --bad:#c0392b; --bad-soft:#fbe9e7; --warn:#9a6b06; --warn-soft:#fbf1dc;
+  --core:#1f6f6b; --secondary:#54606e; --none:#9aa2ad;
+  --shadow: 0 1px 2px rgba(20,30,40,.06), 0 6px 20px -8px rgba(20,30,40,.12);
+}
+:root:not([data-theme="light"]){
+  @media (prefers-color-scheme: dark){
+    --bg:#0e1217; --surface:#161b22; --surface-2:#1c222a; --border:#2a313b;
+    --text:#e8ecf1; --text-muted:#9aa5b2; --text-faint:#6e7885;
+    --accent:#5fc2bd; --accent-ink:#bdeae6; --accent-soft:#17302e;
+    --good:#4fbf85; --good-soft:#15291f; --bad:#e2695c; --bad-soft:#2c1917; --warn:#d7a53a; --warn-soft:#2c2412;
+    --core:#5fc2bd; --secondary:#9aa5b2; --none:#6e7885;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 10px 30px -10px rgba(0,0,0,.5);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e1217; --surface:#161b22; --surface-2:#1c222a; --border:#2a313b;
+  --text:#e8ecf1; --text-muted:#9aa5b2; --text-faint:#6e7885;
+  --accent:#5fc2bd; --accent-ink:#bdeae6; --accent-soft:#17302e;
+  --good:#4fbf85; --good-soft:#15291f; --bad:#e2695c; --bad-soft:#2c1917; --warn:#d7a53a; --warn-soft:#2c2412;
+  --core:#5fc2bd; --secondary:#9aa5b2; --none:#6e7885;
+  --shadow: 0 1px 2px rgba(0,0,0,.4), 0 10px 30px -10px rgba(0,0,0,.5);
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:"IBM Plex Sans", "Noto Sans TC", system-ui, sans-serif;
+  font-size:15px; line-height:1.6;
+  padding-inline:16px; padding-block:28px 60px;
+}
+h1,h2,h3{font-family:"Libre Franklin","Noto Sans TC",sans-serif; text-wrap:balance; margin:0}
+.mono, .num, .tkr, td.num, td.tkr{font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-nums}
+.wrap{max-width:980px; margin:0 auto}
+
+/* ---- header ---- */
+.masthead{display:flex; flex-direction:column; gap:6px; padding-block:4px 20px; border-bottom:2px solid var(--accent)}
+.eyebrow{font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); font-weight:600}
+.masthead h1{font-size:clamp(24px,4vw,34px); font-weight:800; letter-spacing:-.01em}
+.masthead .meta{color:var(--text-muted); font-size:13px}
+
+/* ---- section ---- */
+section{padding-block:34px}
+section + section{border-top:1px solid var(--border)}
+.sec-num{display:inline-flex; align-items:center; justify-content:center; width:28px; height:28px; border-radius:7px; background:var(--accent-soft); color:var(--accent-ink); font-family:"IBM Plex Mono",monospace; font-size:13px; font-weight:600; margin-right:10px}
+h2{font-size:21px; font-weight:700; display:flex; align-items:center; margin-bottom:14px}
+.lede{color:var(--text-muted); max-width:66ch; margin-bottom:18px}
+
+/* ---- stat strip ---- */
+.statrow{display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-bottom:18px}
+.stat{background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:14px 16px; box-shadow:var(--shadow)}
+.stat .k{font-size:12px; color:var(--text-muted); text-transform:uppercase; letter-spacing:.05em}
+.stat .v{font-family:"IBM Plex Mono",monospace; font-size:24px; font-weight:600; margin-top:4px}
+.stat .d{font-size:13px; margin-top:2px}
+.delta-neg{color:var(--bad)} .delta-pos{color:var(--good)}
+
+.callout{background:var(--warn-soft); border:1px solid color-mix(in srgb, var(--warn) 35%, var(--border)); border-radius:10px; padding:14px 16px; font-size:14px; color:var(--text); margin-bottom:16px}
+.callout b{color:var(--warn)}
+
+.phaselist{display:flex; flex-direction:column; gap:10px}
+.phase{display:grid; grid-template-columns:90px 1fr; gap:12px; font-size:14px}
+.phase .ph{font-family:"IBM Plex Mono",monospace; font-weight:600; color:var(--accent)}
+
+/* ---- category warning ---- */
+.catwarn{font-size:13px; color:var(--text-muted); background:var(--surface-2); border-radius:8px; padding:10px 14px; margin-bottom:18px}
+
+/* ---- cards ---- */
+.cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:14px}
+.card{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:16px; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:10px}
+.card-head{display:flex; justify-content:space-between; align-items:flex-start; gap:8px}
+.card-head .nm{font-weight:700; font-size:16px}
+.card-head .tkr{font-size:13px; color:var(--text-muted)}
+.price{font-family:"IBM Plex Mono",monospace; text-align:right}
+.price .p{font-size:17px; font-weight:600}
+.price .c{font-size:12px}
+.badgerow{display:flex; gap:6px; flex-wrap:wrap}
+.badge{font-size:11.5px; font-weight:600; padding:3px 9px; border-radius:999px; border:1px solid transparent; white-space:nowrap}
+.tier-core{background:var(--accent-soft); color:var(--accent-ink); border-color:color-mix(in srgb, var(--accent) 40%, transparent)}
+.tier-secondary{background:var(--surface-2); color:var(--secondary)}
+.tier-none{background:var(--surface-2); color:var(--none)}
+.conf-strong{background:var(--good-soft); color:var(--good)}
+.conf-mid{background:var(--warn-soft); color:var(--warn)}
+.conf-weak{background:var(--surface-2); color:var(--text-faint)}
+.thesis{font-size:13.5px; color:var(--text)}
+.signals{display:grid; grid-template-columns:repeat(4,1fr); gap:6px; font-size:11.5px}
+.sig{display:flex; flex-direction:column; align-items:center; gap:3px; padding:6px 4px; border-radius:7px; background:var(--surface-2)}
+.sig .lbl{color:var(--text-muted)}
+.sig .mk{font-weight:700}
+.sig.ok .mk{color:var(--good)} .sig.neu .mk{color:var(--warn)} .sig.bad .mk{color:var(--bad)}
+.risk{font-size:12.5px; color:var(--text-muted); border-top:1px dashed var(--border); padding-top:8px}
+.risk b{color:var(--text)}
+.moat{font-size:12.5px; background:var(--surface-2); border-radius:7px; padding:6px 10px; color:var(--text)}
+.fundrow{display:flex; gap:14px; font-size:12.5px; font-family:"IBM Plex Mono",monospace; color:var(--text-muted)}
+.fundrow b{color:var(--text); font-weight:600}
+
+/* ---- etf table ---- */
+.tblwrap{overflow-x:auto; border:1px solid var(--border); border-radius:10px}
+table{width:100%; border-collapse:collapse; font-size:13.5px; min-width:560px}
+th,td{padding:9px 12px; text-align:left; border-bottom:1px solid var(--border)}
+thead th{background:var(--surface-2); font-size:11.5px; text-transform:uppercase; letter-spacing:.04em; color:var(--text-muted); font-weight:600}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:var(--surface-2)}
+
+/* ---- history ---- */
+.histgrid{display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:20px}
+.hcard{background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:12px 14px; box-shadow:var(--shadow)}
+.hcard .k{font-size:11.5px; color:var(--text-muted); text-transform:uppercase}
+.hcard .v{font-family:"IBM Plex Mono",monospace; font-size:21px; font-weight:600; margin-top:3px}
+.hcard .sub{font-size:11.5px; color:var(--text-muted); margin-top:2px}
+
+.barchart{display:flex; flex-direction:column; gap:10px; margin-bottom:22px}
+.bar-row{display:grid; grid-template-columns:70px 1fr 64px; align-items:center; gap:10px; font-size:13px}
+.bar-track{position:relative; height:16px; background:var(--surface-2); border-radius:4px; overflow:hidden}
+.bar-fill{position:absolute; top:0; bottom:0; left:0; border-radius:4px}
+.bar-fill.good{background:var(--good)} .bar-fill.bad{background:var(--bad)}
+.bar-val{font-family:"IBM Plex Mono",monospace; text-align:right; font-size:12.5px}
+
+details{margin-top:6px}
+summary{cursor:pointer; font-weight:600; color:var(--accent); font-size:13.5px; padding:8px 0}
+tr.pos td.num{color:var(--good)} tr.neg td.num{color:var(--bad)} tr.new td{color:var(--text-faint)}
+
+.extwatch{display:flex; flex-direction:column; gap:8px; font-size:13.5px}
+.extwatch .row{display:grid; grid-template-columns:70px 1fr; gap:10px}
+.extwatch .t{font-family:"IBM Plex Mono",monospace; font-weight:600; color:var(--text-muted)}
+
+footer{font-size:12px; color:var(--text-faint); max-width:72ch; padding-top:24px}
+
+@media (max-width:620px){
+  .statrow{grid-template-columns:1fr}
+  .histgrid{grid-template-columns:repeat(2,1fr)}
+  .signals{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+
+<div class="wrap">
+
+<header class="masthead">
+  <div class="eyebrow">Chokepoint Portfolio Watch · 第 14 期追蹤（首次 2026-07-19）</div>
+  <h1>AI 供應鏈卡點週報 — 2026-10-16</h1>
+  <div class="meta">數據時間戳：2026-10-16（週五收盤，約 15:59 ET，Finviz 快照）</div>
+</header>
+
+<section id="s1">
+  <h2><span class="sec-num">01</span>市場概況</h2>
+  <div class="statrow">
+    <div class="stat">
+      <div class="k">SPY</div>
+      <div class="v">$763.25</div>
+      <div class="d delta-neg">週變化 -1.97% · 月變化 +0.09% · 距52週高 -2.35%</div>
+    </div>
+    <div class="stat">
+      <div class="k">SMH（半導體大盤）</div>
+      <div class="v">$539.79</div>
+      <div class="d delta-neg">週變化 -10.53% · 月變化 -3.71% · 距52週高 -19.65%</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <b>本期單週跌幅為系列追蹤以來最大。</b> 上期（10/9）SMH 週跌幅 -4.32%；本期惡化逾一倍，且不再只是「分化」而是全面性重挫——AXTI/AEHR/AAOI/POET 單週 -22% ~ -31%，LRCX 創上市以來最長連跌紀錄（10 個交易日累計 -24%），記憶體代理 EWY 單週 -15.1%。
+  </div>
+
+  <p class="lede"><b>大趨勢驗證（方法論步驟一）：</b>本週賣壓敘事並非資本支出降溫——恰恰相反：TSMC Q3 創紀錄獲利（營收 YoY +51%、淨利率 51.5%）、ASML 連續第三季上修全年展望並稱 AI 晶片需求可能延續至 2030、Micron 獲 $35.16B 回購授權並確認股息，基本面指引全數強勁。賣壓敘事來自「AI 融資／債務疑慮」（CoreWeave 債務擔憂外溢、Hyperscaler 資本支出對自由現金流缺口再度成焦點），屬方法論步驟六定義的<b>總經/情緒面驅動</b>，而非基本面失效。LRCX 10 個交易日 -24% 的連跌，公開報導明確歸因於「財報前（10/21）去槓桿性部位調整」——教科書級的「總經雜訊製造錯殺機會」案例。</p>
+
+  <h3 style="font-size:14px; margin-bottom:8px; color:var(--text-muted); text-transform:uppercase; letter-spacing:.04em">機構輪動相位判讀</h3>
+  <div class="phaselist">
+    <div class="phase"><span class="ph">Phase 1</span><span>記憶體超級週期 — MU 基本面強勁（回購/股息/Musk 力挺定價紀律），但新增「中國 CXMT 競爭＋2029 產能過剩」疑慮敘事，新聞訊號由正轉中性。</span></div>
+    <div class="phase"><span class="ph">Phase 2</span><span>光收發模組 — FORM 出現本期唯一個股級正向催化（10/12 Teradyne $300M 策略投資）；AAOI 增資完成但遭分析師下修目標價，隨同業齊跌。</span></div>
+    <div class="phase"><span class="ph">Phase 3</span><span>外部光源/矽光子 — POET 無新催化，Q3 財報訂於 11/16，進入觀察靜默期。</span></div>
+  </div>
+</section>
+
+<section id="s2">
+  <h2><span class="sec-num">02</span>高風險高報酬 Top 5</h2>
+  <div class="catwarn">本類標的與半導體景氣高度連動，系統性回檔時會齊跌；多為中小型股，流動性差、可能單日大幅跳空。本期即為該共通風險最嚴峻的實例——五檔單週跌幅介於 22–31%。</div>
+
+  <div class="cards">
+
+    <article class="card">
+      <div class="card-head">
+        <div><div class="nm">AXTI</div><div class="tkr">AXT Inc · 市值 $3.38B</div></div>
+        <div class="price"><div class="p">$51.47</div><div class="c" style="color:var(--bad)">-11.12%</div></div>
+      </div>
+      <div class="badgerow"><span class="badge tier-core">基礎材料層 · 核心卡點</span><span class="badge conf-strong">信心：強</span></div>
+      <div class="thesis">InP 磊晶基板雙寡頭。單週隨板塊 AI 融資疑慮系統性回檔 -24.8%，但分析師同步「將 2027 營收估計調高逾一倍」，EPS QoQ +208.25%、Sales QoQ +164.77% 基本面需求敘事完全未變，目標價空間因股價回落擴大至 +84.6%（Recom 1.33）。</div>
+      <div class="signals">
+        <div class="sig ok"><span class="lbl">量化</span><span class="mk">✓</span></div>
+        <div class="sig ok"><span class="lbl">分析師</span><span class="mk">✓</span></div>
+        <div class="sig ok"><span class="lbl">新聞</span><span class="mk">✓</span></div>
+        <div class="sig ok"><span class="lbl">卡點</span><span class="mk">✓</span></div>
+      </div>
+      <div class="risk">SMA20 -30.0%／SMA50 -27.3% 技術面全面轉弱；Short Float 17.18%；<b>10/29</b> Q3 財報為下一驗證窗口。本週跌幅屬總經性，非公司特定事件。</div>
+    </article>
+
+    <article class="card">
+      <div class="card-head">
+        <div><div class="nm">AEHR</div><div class="tkr">Aehr Test Systems · 市值 $1.98B</div></div>
+        <div class="price"><div class="p">$60.60</div><div class="c" style="color:var(--bad)">-12.44%</div></div>
+      </div>
+      <div class="badgerow"><span class="badge tier-secondary">測試設備層 · 次級卡點</span><span class="badge conf-mid">信心：中（降級）</span></div>
+      <div class="thesis">矽光子測試設備商。上期（10/7）$6M 追加訂單效應本期消化完畢，僅剩股東會（10/19）與財報日公告（11/2）兩則非實質性消息，新聞訊號由正轉中性，信心由強降回中。</div>
+      <div class="signals">
+        <div class="sig ok"><span class="lbl">量化</span><span class="mk">✓</span></div>
+        <div class="sig ok"><span class="lbl">分析師</span><span class="mk">✓</span></div>
+        <div class="sig neu"><span class="lbl">新聞</span><span class="mk">–</span></div>
+        <div class="sig ok"><span class="lbl">卡點</span><span class="mk">✓</span></div>
+      </div>
+      <div class="risk">單週重挫 -28.4%；目標價空間擴大至 +115.0%（Recom 1.00 Strong Buy），但 Beta 3.29 波動極高；<b>11/2</b> 財報為下一關鍵催化。</div>
+    </article>
+
+    <article class="card">
+      <div class="card-head">
+        <div><div class="nm">FORM</div><div class="tkr">FormFactor Inc · 市值 $8.20B</div></div>
+        <div class="price"><div class="p">$105.01</div><div class="c" style="color:var(--bad)">-7.35%</div></div>
+      </div>
+      <div class="badgerow"><span class="badge tier-secondary">測試/量測層 · 次級卡點</span><span class="badge conf-strong">信心：強（升級）</span></div>
+      <div class="thesis">晶圓測試探針卡供應商。10/12 Teradyne 宣布策略投資 $300M 並深化晶圓測試生態系合作，首度出現同業資本背書的具體驗證訊號，EPS QoQ +502.47% 基本面延續強勁，四訊號由上期「中」回升為「強」。</div>
+      <div class="signals">
+        <div class="sig ok"><span class="lbl">量化</span><span class="mk">✓</span></div>
+        <div class="sig ok"><span class="lbl">分析師</span><span class="mk">✓</span></div>
+        <div class="sig ok"><span class="lbl">新聞</span><span class="mk">✓</span></div>
+        <div class="sig ok"><span class="lbl">卡點</span><span class="mk">✓</span></div>
+      </div>
+      <div class="risk">單週仍重挫 -24.8%，隨板塊系統性回檔；<b>10/28</b> Q3 財報為下一驗證窗口；目標價空間 +46.6%（Recom 1.73）。</div>
+    </article>
+
+    <article class="card">
+      <div class="card-head">
+        <div><div class="nm">AAOI</div><div class="tkr">Applied Optoelectronics · 市值 $6.42B</div></div>
+        <div class="price"><div class="p">$75.57</div><div class="c" style="color:var(--bad)">-9.75%</div></div>
+      </div>
+      <div class="badgerow"><span class="badge tier-secondary">光收發模組層 · 次級卡點（Phase 2）</span><span class="badge conf-mid">信心：中</span></div>
+      <div class="thesis">800G/1.6T 需求仍強（Lumentum 示警光學件售罄至 2029），$600M 增資已完成移除稀釋疑慮，惟 B. Riley 將目標價下修至 $92（原 $109）且隨 AAOI/LITE/COHR 同業齊跌，EPS QoQ 仍為 -74.24%，信心與上期持平。</div>
+      <div class="signals">
+        <div class="sig neu"><span class="lbl">量化</span><span class="mk">–</span></div>
+        <div class="sig neu"><span class="lbl">分析師</span><span class="mk">–</span></div>
+        <div class="sig neu"><span class="lbl">新聞</span><span class="mk">–</span></div>
+        <div class="sig ok"><span class="lbl">卡點</span><span class="mk">✓</span></div>
+      </div>
+      <div class="risk">單週 -31.1%（週內單日一度重挫 23.6%）；Short Float 17.22%；<b>11/5</b> Q3 財報為下一驗證窗口。</div>
+    </article>
+
+    <article class="card">
+      <div class="card-head">
+        <div><div class="nm">POET</div><div class="tkr">POET Technologies · 市值 $939.71M</div></div>
+        <div class="price"><div class="p">$5.43</div><div class="c" style="color:var(--bad)">-9.65%</div></div>
+      </div>
+      <div class="badgerow"><span class="badge tier-secondary">CPO光學整合層 · 次級卡點（Phase 3）</span><span class="badge conf-mid">信心：中</span></div>
+      <div class="thesis">矽光子/CPO 整合平台。Q3 財報日已訂於 11/16，本期無新訂單催化，Sales QoQ +112.29%、EPS QoQ +67.23% 基本面延續轉強，惟卡點與新聞訊號均維持中性，信心與上期持平。</div>
+      <div class="signals">
+        <div class="sig ok"><span class="lbl">量化</span><span class="mk">✓</span></div>
+        <div class="sig ok"><span class="lbl">分析師</span><span class="mk">✓</span></div>
+        <div class="sig neu"><span class="lbl">新聞</span><span class="mk">–</span></div>
+        <div class="sig neu"><span class="lbl">卡點</span><span class="mk">–</span></div>
+      </div>
+      <div class="risk">單週 -22.1%；Short Float 26.84%；SMA20/50/200 三線全負；11/16 財報前缺乏具體驗證事件。</div>
+    </article>
+
+  </div>
+  <p class="lede" style="margin-top:14px"><b>本期無標的剔除。</b> FORM 因 Teradyne 資本背書由中升級為強；AEHR 催化效應消化降回中；AAOI、POET 信心持平——一升一降，名單維持不變。</p>
+</section>
+
+<section id="s3">
+  <h2><span class="sec-num">03</span>穩定投資 Top 5（產業龍頭）</h2>
+  <p class="lede">供應鏈核心層的壟斷或寡佔龍頭，護城河以卡點語言描述：製程壟斷、設備寡佔、生態系鎖定。</p>
+
+  <div class="cards">
+
+    <article class="card">
+      <div class="card-head">
+        <div><div class="nm">TSM</div><div class="tkr">台積電 · 市值 $2,139.99B</div></div>
+        <div class="price"><div class="p">$412.61</div><div class="c" style="color:var(--bad)">-2.28%</div></div>
+      </div>
+      <div class="badgerow"><span class="badge tier-core">代工層 · 核心卡點</span><span class="badge conf-strong">信心：強</span></div>
+      <div class="moat">護城河：先進製程代工壟斷，&lt;3nm 全球產能集中度最高</div>
+      <div class="fundrow"><span>淨利率 <b>51.52%</b></span><span>EPS QoQ <b>+57.72%</b></span><span>目標價空間 <b>+34.5%</b></span></div>
+      <div class="thesis">Q3 創紀錄獲利，營收 YoY +51%、淨利率 51.1%；Barclays 上修目標價至 $670 並重申超配；日本核准台積電第二熊本廠生產 3nm 製程；$20 億美元美國本土矽中介層供應協議持續擴大。</div>
+      <div class="signals">
+        <div class="sig ok"><span class="lbl">量化</span><span class="mk">✓</span></div>
+        <div class="sig ok"><span class="lbl">分析師</span><span class="mk">✓</span></div>
+        <div class="sig ok"><span class="lbl">新聞</span><span class="mk">✓</span></div>
+        <div class="sig ok"><span class="lbl">卡點</span><span class="mk">✓</span></div>
+      </div>
+      <div class="risk">單週隨板塊回檔 -9.0%；創紀錄獲利後股價仍下跌，顯示本輪賣壓屬總經性；中美貿易/關稅雜訊仍是短期波動來源。</div>
+    </article>
+
+    <article class="card">
+      <div class="card-head">
+        <div><div class="nm">ASML</div><div class="tkr">ASML Holding · 市值 $632.67B</div></div>
+        <div class="price"><div class="p">$1,641.52</div><div class="c" style="color:var(--bad)">-0.96%</div></div>
+      </div>
+      <div class="badgerow"><span class="badge tier-core">設備層 · 核心卡點</span><span class="badge conf-strong">信心：強</span></div>
+      <div class="moat">護城河：EUV 微影設備獨供，先進製程唯一供應商</div>
+      <div class="fundrow"><span>淨利率 <b>34.10%</b></span><span>EPS QoQ <b>+132.33%</b></span><span>目標價空間 <b>+45.2%</b></span></div>
+      <div class="thesis">連續第三季上修全年銷售展望；CEO 稱 AI 晶片需求可能延續至 2030、定價權持續強化（晶圓廠已同意支付更高價格）；10/14 單日股價因季度營收小幅不及預期下跌，但展望上修與定價權敘事主導新聞論調。</div>
+      <div class="signals">
+        <div class="sig ok"><span class="lbl">量化</span><span class="mk">✓</span></div>
+        <div class="sig ok"><span class="lbl">分析師</span><span class="mk">✓</span></div>
+        <div class="sig ok"><span class="lbl">新聞</span><span class="mk">✓</span></div>
+        <div class="sig ok"><span class="lbl">卡點</span><span class="mk">✓</span></div>
+      </div>
+      <div class="risk">單週跌 7.8%；距 52 週高 -17.9%；設備需求仍仰賴晶圓廠資本支出週期持續性。</div>
+    </article>
+
+    <article class="card">
+      <div class="card-head">
+        <div><div class="nm">LRCX</div><div class="tkr">Lam Research · 市值 $330.30B</div></div>
+        <div class="price"><div class="p">$263.94</div><div class="c" style="color:var(--bad)">-4.87%</div></div>
+      </div>
+      <div class="badgerow"><span class="badge tier-secondary">設備層 · 次級卡點</span><span class="badge conf-strong">信心：強</span></div>
+      <div class="moat">護城河：蝕刻/沉積設備寡佔（與 AMAT/KLAC 三強鼎立）</div>
+      <div class="fundrow"><span>淨利率 <b>31.27%</b></span><span>EPS QoQ <b>+34.60%</b></span><span>目標價空間 <b>+46.4%</b></span></div>
+      <div class="thesis">10 個交易日累計重挫 24%，創上市以來最長連跌紀錄，公開報導明確歸因於 10/21 財報前去槓桿性部位調整，而非基本面轉弱；22 位分析師中 21 位維持買進，平均目標價隱含 +31% 上檔；NVIDIA NanoVDB 技術整合 SEMulator3D，深化 AI 晶圓廠模擬護城河。</div>
+      <div class="signals">
+        <div class="sig ok"><span class="lbl">量化</span><span class="mk">✓</span></div>
+        <div class="sig ok"><span class="lbl">分析師</span><span class="mk">✓</span></div>
+        <div class="sig ok"><span class="lbl">新聞</span><span class="mk">✓</span></div>
+        <div class="sig ok"><span class="lbl">卡點</span><span class="mk">✓</span></div>
+      </div>
+      <div class="risk">單週 -17.2%（10 個交易日 -24%）；<b>10/21</b> 財報（財測營收 $81 億/EPS $2.15）為關鍵驗證窗口，若不如預期可能進一步承壓。</div>
+    </article>
+
+    <article class="card">
+      <div class="card-head">
+        <div><div class="nm">NVDA</div><div class="tkr">NVIDIA · 市值 $5,160.53B</div></div>
+        <div class="price"><div class="p">$214.13</div><div class="c" style="color:var(--bad)">-1.43%</div></div>
+      </div>
+      <div class="badgerow"><span class="badge tier-none">GPU生態系層 · 已定價</span><span class="badge conf-mid">信心：中</span></div>
+      <div class="moat">護城河：GPU 生態系鎖定（CUDA），品牌層已定價</div>
+      <div class="fundrow"><span>淨利率 <b>63.66%</b></span><span>EPS QoQ <b>+128.21%</b></span><span>目標價空間 <b>+56.2%</b></span></div>
+      <div class="thesis">Mercedes-Benz／Volvo／Adobe 等合作延伸 + RTX Spark 發布，惟本週賣壓主因是「AI 融資疑慮」（CoreWeave 債務雜訊外溢），黃仁勳公開稱「幾乎每天都有新晶片訂單」試圖緩解疑慮，新聞訊號維持中性。</div>
+      <div class="signals">
+        <div class="sig ok"><span class="lbl">量化</span><span class="mk">✓</span></div>
+        <div class="sig ok"><span class="lbl">分析師</span><span class="mk">✓</span></div>
+        <div class="sig neu"><span class="lbl">新聞</span><span class="mk">–</span></div>
+        <div class="sig neu"><span class="lbl">卡點</span><span class="mk">–</span></div>
+      </div>
+      <div class="risk">品牌層卡點屬性已被市場充分定價，資訊差有限；股價距 52 週高 -12.0%，抗跌程度優於板塊平均但未能脫鉤。</div>
+    </article>
+
+    <article class="card">
+      <div class="card-head">
+        <div><div class="nm">MU</div><div class="tkr">Micron Technology · 市值 $994.34B</div></div>
+        <div class="price"><div class="p">$878.84</div><div class="c" style="color:var(--bad)">-5.63%</div></div>
+      </div>
+      <div class="badgerow"><span class="badge tier-secondary">記憶體層 · 次級卡點</span><span class="badge conf-mid">信心：中（降級）</span></div>
+      <div class="moat">護城河：HBM 三寡頭（與 Samsung/SK Hynix）</div>
+      <div class="fundrow"><span>淨利率 <b>63.80%</b></span><span>EPS YoY TTM <b>+884.73%</b></span><span>目標價空間 <b>+83.6%</b></span></div>
+      <div class="thesis">Musk 公開力挺 Micron 定價紀律，公司確認 $35.16B 回購授權與股息發放；惟本期新增「中國 CXMT 市佔擴張＋2029 產能過剩」疑慮敘事成為賣壓理由之一（部分分析稱其為「paper tiger」但疑慮未完全消解），新聞訊號由正轉中性，信心由強降為中。</div>
+      <div class="signals">
+        <div class="sig ok"><span class="lbl">量化</span><span class="mk">✓</span></div>
+        <div class="sig ok"><span class="lbl">分析師</span><span class="mk">✓</span></div>
+        <div class="sig neu"><span class="lbl">新聞</span><span class="mk">–</span></div>
+        <div class="sig ok"><span class="lbl">卡點</span><span class="mk">✓</span></div>
+      </div>
+      <div class="risk">單週 -14.6%；目標價空間 +83.6%（Recom 1.30）仍大，但短期敘事轉折值得下期持續觀察淨效應。</div>
+    </article>
+
+  </div>
+  <p class="lede" style="margin-top:14px"><b>本期無標的剔除。</b> 五檔一降（MU 強→中）其餘持平，龍頭組本期同樣全數下跌，但跌幅（-6.6%~-17.2%）普遍小於高風險組（-22%~-31%），印證「供應鏈核心層龍頭」配置的抗跌韌性。</p>
+</section>
+
+<section id="s4">
+  <h2><span class="sec-num">04</span>ETF 產業主題三層配置</h2>
+  <p class="lede">單一產業組合無分散效果，避險層是唯一緩衝。<b>本期避險比例由 40% 大幅上調至 45%</b>：半導體單週 -10.53% 為系列追蹤以來最深回檔，疊加 LRCX 史上最長連跌紀錄與「AI 融資／債務疑慮」全面發酵，三重訊號促使本期大幅上調避險比例。</p>
+
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>層</th><th>Ticker</th><th>比例</th><th>價格</th><th>費用率</th><th>理由</th></tr></thead>
+      <tbody>
+        <tr><td>核心</td><td class="tkr">SMH</td><td>35%（下修）</td><td class="num">$539.79</td><td class="num">0.35%</td><td>半導體大盤型，單週 -10.53% 為系列最深回檔，AI 融資債務疑慮引發估值重新定價</td></tr>
+        <tr><td>主題衛星</td><td class="tkr">BOTZ</td><td>10%</td><td class="num">$33.02</td><td class="num">0.68%</td><td>機器人主題，隨大盤同步走弱，單週 -6.9%</td></tr>
+        <tr><td>主題衛星</td><td class="tkr">EWY</td><td>10%</td><td class="num">$150.44</td><td class="num">0.59%</td><td>記憶體代理（Samsung/SK Hynix），單週 -15.1%，隨記憶體股深度回檔同步修正</td></tr>
+        <tr><td>避險</td><td class="tkr">SGOV</td><td>45%（大幅上調）</td><td class="num">$100.59</td><td class="num">0.09%</td><td>零久期現金層，半導體史上最深回檔之一＋LRCX 最長連跌紀錄＋AI 融資疑慮三重理由</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="s5">
+  <h2><span class="sec-num">05</span>歷史推薦績效回顧</h2>
+  <p class="lede">誠實記帳：本次統計涵蓋 2026-07-19 至 2026-10-09 共 <b>12 期</b>已納入追蹤超過一週的 v2 產業聚焦版紀錄（168 筆）；本期（10-16）新增推薦剛納入追蹤，報酬尚為 0，不計入本次統計。2026-07-19 當天同時存在 v1（改版前全市場版，僅供對照）與 v2（產業聚焦版，現行追蹤邏輯）兩批紀錄。</p>
+
+  <div class="callout">
+    <b>本期最重要的誠實記帳發現：本輪系統性回檔規模遠超過去任何一期，累計勝率與報酬雙雙轉為全系列新低。</b> v2 整體勝率由上期 40.3% 再度重挫至 <b>10.1%</b>（17/168），平均超額報酬由 -2.57% 擴大至 <b>-14.99%</b>。這不是方法論失效——本期個股新聞逐一檢視，TSM 創紀錄獲利、ASML 連續三季上修展望、Micron 回購與股息確認、FORM 獲 Teradyne 資本背書，基本面訊號普遍仍正向——而是「系統性回檔齊跌、無分散效果」的風險警語以史上最嚴峻的規模兌現。
+  </div>
+
+  <div class="histgrid">
+    <div class="hcard"><div class="k">v2 整體勝率</div><div class="v" style="color:var(--bad)">10.1%</div><div class="sub">17/168，上期 40.3%</div></div>
+    <div class="hcard"><div class="k">v2 平均超額報酬</div><div class="v" style="color:var(--bad)">-14.99%</div><div class="sub">上期 -2.57%</div></div>
+    <div class="hcard"><div class="k">v2 平均報酬</div><div class="v" style="color:var(--bad)">-14.94%</div><div class="sub">上期 -0.33%</div></div>
+    <div class="hcard"><div class="k">v1 對照勝率</div><div class="v">40.0%</div><div class="sub">6/15，全市場分散版，僅供歷史對照</div></div>
+  </div>
+
+  <h3 style="font-size:14px; margin-bottom:10px; color:var(--text-muted); text-transform:uppercase; letter-spacing:.04em">分類別勝率（v2，n=168，12 期）</h3>
+  <div class="barchart">
+    <div class="bar-row"><span>高風險</span><div class="bar-track"><div class="bar-fill bad" style="width:3.3%"></div></div><span class="bar-val">3.3%</span></div>
+    <div class="bar-row"><span>穩定</span><div class="bar-track"><div class="bar-fill bad" style="width:11.7%"></div></div><span class="bar-val">11.7%</span></div>
+    <div class="bar-row"><span>ETF</span><div class="bar-track"><div class="bar-fill bad" style="width:16.7%"></div></div><span class="bar-val">16.7%</span></div>
+  </div>
+  <p class="lede" style="font-size:13px">
+    <b>高風險</b>（n=60）勝率 3.3%，平均報酬 -29.29%／超額 -29.34%。最佳：AXTI 07-19 批次 +12.23%（超額 +9.55%）；最差：AEHR 08-14 批次 -54.80%（超額 -53.11%）。<br>
+    <b>穩定</b>（n=60）勝率 11.7%，平均報酬 -6.80%／超額 -6.86%。最佳：NVDA 07-31 批次 +9.79%（超額 +6.88%）；最差：LRCX 10-05 批次 -23.35%（超額 -22.56%，財報前去槓桿性拋售所致）。<br>
+    <b>ETF</b>（n=48）勝率 16.7%，平均報酬 -7.17%／超額 -7.23%。最佳：SMH 07-31 批次 +0.17%（超額 -2.74%，已是批次中相對最佳而非正報酬）；最差：EWY 10-05 批次 -21.33%（超額 -20.55%）。
+  </p>
+
+  <p class="lede" style="font-size:13px"><b>剔除換股驗證——本期 margin 明顯收窄，須如實呈現：</b>FORM（接替 LASR，09-12 起 5 期）累計平均報酬 <b style="color:var(--bad)">-17.55%</b>、勝率 0%；LRCX（接替 AVGO，同期起算）累計平均報酬 <b style="color:var(--bad)">-14.06%</b>、勝率 0%。相對地，若未換股，LASR 全 7 期批次平均報酬為 <b style="color:var(--bad)">-39.24%</b>；AVGO 全 7 期批次平均報酬 <b style="color:var(--bad)">-14.32%</b>。FORM 仍明顯優於 LASR（差距 21.7 個百分點），但 <b>LRCX 與 AVGO 的差距已收窄至僅 0.26 個百分點</b>——本期系統性回檔對設備/網通類股一視同仁，剔除換股的優勢幾乎被抹平，這是須誠實標註的方法論觀察點。</p>
+
+  <details>
+    <summary>展開完整逐筆明細（197 筆，含 v1/v2、推薦價、現價、報酬率、SPY 同期、超額報酬、信心等級）</summary>
+    <div class="tblwrap" style="margin-top:10px; max-height:520px; overflow-y:auto">
+      <table>
+        <thead><tr><th>日期</th><th>版本</th><th>類別</th><th>Ticker</th><th>推薦價</th><th>現價</th><th>報酬率</th><th>SPY同期</th><th>超額報酬</th><th>信心</th></tr></thead>
+        <tbody>
+<tr class="new"><td>2026-10-16</td><td>v2</td><td>高風險</td><td class="tkr">POET</td><td>$5.43</td><td>$5.43</td><td class="num">—</td><td class="num">+0.00%</td><td class="num">—</td><td>中</td></tr>
+<tr class="new"><td>2026-10-16</td><td>v2</td><td>高風險</td><td class="tkr">FORM</td><td>$105.01</td><td>$105.01</td><td class="num">—</td><td class="num">+0.00%</td><td class="num">—</td><td>強</td></tr>
+<tr class="new"><td>2026-10-16</td><td>v2</td><td>高風險</td><td class="tkr">AXTI</td><td>$51.47</td><td>$51.47</td><td class="num">—</td><td class="num">+0.00%</td><td class="num">—</td><td>強</td></tr>
+<tr class="new"><td>2026-10-16</td><td>v2</td><td>高風險</td><td class="tkr">AEHR</td><td>$60.60</td><td>$60.60</td><td class="num">—</td><td class="num">+0.00%</td><td class="num">—</td><td>中</td></tr>
+<tr class="new"><td>2026-10-16</td><td>v2</td><td>高風險</td><td class="tkr">AAOI</td><td>$75.57</td><td>$75.57</td><td class="num">—</td><td class="num">+0.00%</td><td class="num">—</td><td>中</td></tr>
+<tr class="new"><td>2026-10-16</td><td>v2</td><td>穩定</td><td class="tkr">TSM</td><td>$412.61</td><td>$412.61</td><td class="num">—</td><td class="num">+0.00%</td><td class="num">—</td><td>強</td></tr>
+<tr class="new"><td>2026-10-16</td><td>v2</td><td>穩定</td><td class="tkr">NVDA</td><td>$214.13</td><td>$214.13</td><td class="num">—</td><td class="num">+0.00%</td><td class="num">—</td><td>中</td></tr>
+<tr class="new"><td>2026-10-16</td><td>v2</td><td>穩定</td><td class="tkr">MU</td><td>$878.84</td><td>$878.84</td><td class="num">—</td><td class="num">+0.00%</td><td class="num">—</td><td>中</td></tr>
+<tr class="new"><td>2026-10-16</td><td>v2</td><td>穩定</td><td class="tkr">LRCX</td><td>$263.94</td><td>$263.94</td><td class="num">—</td><td class="num">+0.00%</td><td class="num">—</td><td>強</td></tr>
+<tr class="new"><td>2026-10-16</td><td>v2</td><td>穩定</td><td class="tkr">ASML</td><td>$1,641.52</td><td>$1,641.52</td><td class="num">—</td><td class="num">+0.00%</td><td class="num">—</td><td>強</td></tr>
+<tr class="new"><td>2026-10-16</td><td>v2</td><td>ETF</td><td class="tkr">SMH</td><td>$539.79</td><td>$539.79</td><td class="num">—</td><td class="num">+0.00%</td><td class="num">—</td><td>強</td></tr>
+<tr class="new"><td>2026-10-16</td><td>v2</td><td>ETF</td><td class="tkr">SGOV</td><td>$100.59</td><td>$100.59</td><td class="num">—</td><td class="num">+0.00%</td><td class="num">—</td><td>強</td></tr>
+<tr class="new"><td>2026-10-16</td><td>v2</td><td>ETF</td><td class="tkr">EWY</td><td>$150.44</td><td>$150.44</td><td class="num">—</td><td class="num">+0.00%</td><td class="num">—</td><td>中</td></tr>
+<tr class="new"><td>2026-10-16</td><td>v2</td><td>ETF</td><td class="tkr">BOTZ</td><td>$33.02</td><td>$33.02</td><td class="num">—</td><td class="num">+0.00%</td><td class="num">—</td><td>中</td></tr>
+<tr class="neg"><td>2026-10-09</td><td>v2</td><td>高風險</td><td class="tkr">POET</td><td>$6.97</td><td>$5.43</td><td class="num">-22.09%</td><td class="num">-1.97%</td><td class="num">-20.13%</td><td>中</td></tr>
+<tr class="neg"><td>2026-10-09</td><td>v2</td><td>高風險</td><td class="tkr">FORM</td><td>$139.67</td><td>$105.01</td><td class="num">-24.82%</td><td class="num">-1.97%</td><td class="num">-22.85%</td><td>中</td></tr>
+<tr class="neg"><td>2026-10-09</td><td>v2</td><td>高風險</td><td class="tkr">AXTI</td><td>$68.46</td><td>$51.47</td><td class="num">-24.82%</td><td class="num">-1.97%</td><td class="num">-22.85%</td><td>強</td></tr>
+<tr class="neg"><td>2026-10-09</td><td>v2</td><td>高風險</td><td class="tkr">AEHR</td><td>$84.64</td><td>$60.60</td><td class="num">-28.40%</td><td class="num">-1.97%</td><td class="num">-26.43%</td><td>強</td></tr>
+<tr class="neg"><td>2026-10-09</td><td>v2</td><td>高風險</td><td class="tkr">AAOI</td><td>$109.64</td><td>$75.57</td><td class="num">-31.07%</td><td class="num">-1.97%</td><td class="num">-29.11%</td><td>中</td></tr>
+<tr class="neg"><td>2026-10-09</td><td>v2</td><td>穩定</td><td class="tkr">TSM</td><td>$453.31</td><td>$412.61</td><td class="num">-8.98%</td><td class="num">-1.97%</td><td class="num">-7.01%</td><td>強</td></tr>
+<tr class="neg"><td>2026-10-09</td><td>v2</td><td>穩定</td><td class="tkr">NVDA</td><td>$229.28</td><td>$214.13</td><td class="num">-6.61%</td><td class="num">-1.97%</td><td class="num">-4.64%</td><td>中</td></tr>
+<tr class="neg"><td>2026-10-09</td><td>v2</td><td>穩定</td><td class="tkr">MU</td><td>$1,029.00</td><td>$878.84</td><td class="num">-14.59%</td><td class="num">-1.97%</td><td class="num">-12.63%</td><td>強</td></tr>
+<tr class="neg"><td>2026-10-09</td><td>v2</td><td>穩定</td><td class="tkr">LRCX</td><td>$318.84</td><td>$263.94</td><td class="num">-17.22%</td><td class="num">-1.97%</td><td class="num">-15.25%</td><td>強</td></tr>
+<tr class="neg"><td>2026-10-09</td><td>v2</td><td>穩定</td><td class="tkr">ASML</td><td>$1,780.34</td><td>$1,641.52</td><td class="num">-7.80%</td><td class="num">-1.97%</td><td class="num">-5.83%</td><td>強</td></tr>
+<tr class="neg"><td>2026-10-09</td><td>v2</td><td>ETF</td><td class="tkr">SMH</td><td>$603.33</td><td>$539.79</td><td class="num">-10.53%</td><td class="num">-1.97%</td><td class="num">-8.56%</td><td>強</td></tr>
+<tr class="pos"><td>2026-10-09</td><td>v2</td><td>ETF</td><td class="tkr">SGOV</td><td>$100.51</td><td>$100.59</td><td class="num">+0.08%</td><td class="num">-1.97%</td><td class="num">+2.05%</td><td>強</td></tr>
+<tr class="neg"><td>2026-10-09</td><td>v2</td><td>ETF</td><td class="tkr">EWY</td><td>$177.24</td><td>$150.44</td><td class="num">-15.12%</td><td class="num">-1.97%</td><td class="num">-13.15%</td><td>中</td></tr>
+<tr class="neg"><td>2026-10-09</td><td>v2</td><td>ETF</td><td class="tkr">BOTZ</td><td>$35.48</td><td>$33.02</td><td class="num">-6.93%</td><td class="num">-1.97%</td><td class="num">-4.97%</td><td>中</td></tr>
+<tr class="neg"><td>2026-10-05</td><td>v2</td><td>高風險</td><td class="tkr">POET</td><td>$7.85</td><td>$5.43</td><td class="num">-30.83%</td><td class="num">-0.79%</td><td class="num">-30.04%</td><td>中</td></tr>
+<tr class="neg"><td>2026-10-05</td><td>v2</td><td>高風險</td><td class="tkr">FORM</td><td>$148.78</td><td>$105.01</td><td class="num">-29.42%</td><td class="num">-0.79%</td><td class="num">-28.63%</td><td>強</td></tr>
+<tr class="neg"><td>2026-10-05</td><td>v2</td><td>高風險</td><td class="tkr">AXTI</td><td>$86.50</td><td>$51.47</td><td class="num">-40.50%</td><td class="num">-0.79%</td><td class="num">-39.71%</td><td>強</td></tr>
+<tr class="neg"><td>2026-10-05</td><td>v2</td><td>高風險</td><td class="tkr">AEHR</td><td>$107.40</td><td>$60.60</td><td class="num">-43.58%</td><td class="num">-0.79%</td><td class="num">-42.79%</td><td>中</td></tr>
+<tr class="neg"><td>2026-10-05</td><td>v2</td><td>高風險</td><td class="tkr">AAOI</td><td>$116.70</td><td>$75.57</td><td class="num">-35.24%</td><td class="num">-0.79%</td><td class="num">-34.46%</td><td>中</td></tr>
+<tr class="neg"><td>2026-10-05</td><td>v2</td><td>穩定</td><td class="tkr">TSM</td><td>$479.81</td><td>$412.61</td><td class="num">-14.01%</td><td class="num">-0.79%</td><td class="num">-13.22%</td><td>強</td></tr>
+<tr class="neg"><td>2026-10-05</td><td>v2</td><td>穩定</td><td class="tkr">NVDA</td><td>$235.47</td><td>$214.13</td><td class="num">-9.06%</td><td class="num">-0.79%</td><td class="num">-8.27%</td><td>中</td></tr>
+<tr class="neg"><td>2026-10-05</td><td>v2</td><td>穩定</td><td class="tkr">MU</td><td>$1,072.79</td><td>$878.84</td><td class="num">-18.08%</td><td class="num">-0.79%</td><td class="num">-17.29%</td><td>強</td></tr>
+<tr class="neg"><td>2026-10-05</td><td>v2</td><td>穩定</td><td class="tkr">LRCX</td><td>$344.33</td><td>$263.94</td><td class="num">-23.35%</td><td class="num">-0.79%</td><td class="num">-22.56%</td><td>強</td></tr>
+<tr class="neg"><td>2026-10-05</td><td>v2</td><td>穩定</td><td class="tkr">ASML</td><td>$1,854.48</td><td>$1,641.52</td><td class="num">-11.48%</td><td class="num">-0.79%</td><td class="num">-10.69%</td><td>強</td></tr>
+<tr class="neg"><td>2026-10-05</td><td>v2</td><td>ETF</td><td class="tkr">SMH</td><td>$629.00</td><td>$539.79</td><td class="num">-14.18%</td><td class="num">-0.79%</td><td class="num">-13.39%</td><td>強</td></tr>
+<tr class="pos"><td>2026-10-05</td><td>v2</td><td>ETF</td><td class="tkr">SGOV</td><td>$100.45</td><td>$100.59</td><td class="num">+0.14%</td><td class="num">-0.79%</td><td class="num">+0.93%</td><td>強</td></tr>
+<tr class="neg"><td>2026-10-05</td><td>v2</td><td>ETF</td><td class="tkr">EWY</td><td>$191.24</td><td>$150.44</td><td class="num">-21.33%</td><td class="num">-0.79%</td><td class="num">-20.55%</td><td>中</td></tr>
+<tr class="neg"><td>2026-10-05</td><td>v2</td><td>ETF</td><td class="tkr">BOTZ</td><td>$35.97</td><td>$33.02</td><td class="num">-8.20%</td><td class="num">-0.79%</td><td class="num">-7.41%</td><td>中</td></tr>
+<tr class="neg"><td>2026-09-25</td><td>v2</td><td>高風險</td><td class="tkr">POET</td><td>$7.77</td><td>$5.43</td><td class="num">-30.12%</td><td class="num">-1.05%</td><td class="num">-29.07%</td><td>中</td></tr>
+<tr class="neg"><td>2026-09-25</td><td>v2</td><td>高風險</td><td class="tkr">FORM</td><td>$129.69</td><td>$105.01</td><td class="num">-19.03%</td><td class="num">-1.05%</td><td class="num">-17.98%</td><td>中</td></tr>
+<tr class="neg"><td>2026-09-25</td><td>v2</td><td>高風險</td><td class="tkr">AXTI</td><td>$78.94</td><td>$51.47</td><td class="num">-34.80%</td><td class="num">-1.05%</td><td class="num">-33.75%</td><td>強</td></tr>
+<tr class="neg"><td>2026-09-25</td><td>v2</td><td>高風險</td><td class="tkr">AEHR</td><td>$104.39</td><td>$60.60</td><td class="num">-41.95%</td><td class="num">-1.05%</td><td class="num">-40.90%</td><td>強</td></tr>
+<tr class="neg"><td>2026-09-25</td><td>v2</td><td>高風險</td><td class="tkr">AAOI</td><td>$101.40</td><td>$75.57</td><td class="num">-25.47%</td><td class="num">-1.05%</td><td class="num">-24.42%</td><td>弱</td></tr>
+<tr class="neg"><td>2026-09-25</td><td>v2</td><td>穩定</td><td class="tkr">TSM</td><td>$450.61</td><td>$412.61</td><td class="num">-8.43%</td><td class="num">-1.05%</td><td class="num">-7.38%</td><td>強</td></tr>
+<tr class="neg"><td>2026-09-25</td><td>v2</td><td>穩定</td><td class="tkr">NVDA</td><td>$225.07</td><td>$214.13</td><td class="num">-4.86%</td><td class="num">-1.05%</td><td class="num">-3.81%</td><td>中</td></tr>
+<tr class="neg"><td>2026-09-25</td><td>v2</td><td>穩定</td><td class="tkr">MU</td><td>$1,082.28</td><td>$878.84</td><td class="num">-18.80%</td><td class="num">-1.05%</td><td class="num">-17.75%</td><td>中</td></tr>
+<tr class="neg"><td>2026-09-25</td><td>v2</td><td>穩定</td><td class="tkr">LRCX</td><td>$315.21</td><td>$263.94</td><td class="num">-16.27%</td><td class="num">-1.05%</td><td class="num">-15.22%</td><td>強</td></tr>
+<tr class="neg"><td>2026-09-25</td><td>v2</td><td>穩定</td><td class="tkr">ASML</td><td>$1,743.94</td><td>$1,641.52</td><td class="num">-5.87%</td><td class="num">-1.05%</td><td class="num">-4.82%</td><td>強</td></tr>
+<tr class="neg"><td>2026-09-25</td><td>v2</td><td>ETF</td><td class="tkr">SMH</td><td>$606.56</td><td>$539.79</td><td class="num">-11.01%</td><td class="num">-1.05%</td><td class="num">-9.96%</td><td>強</td></tr>
+<tr class="pos"><td>2026-09-25</td><td>v2</td><td>ETF</td><td class="tkr">SGOV</td><td>$100.66</td><td>$100.59</td><td class="num">-0.07%</td><td class="num">-1.05%</td><td class="num">+0.98%</td><td>強</td></tr>
+<tr class="neg"><td>2026-09-25</td><td>v2</td><td>ETF</td><td class="tkr">EWY</td><td>$187.18</td><td>$150.44</td><td class="num">-19.63%</td><td class="num">-1.05%</td><td class="num">-18.58%</td><td>中</td></tr>
+<tr class="neg"><td>2026-09-25</td><td>v2</td><td>ETF</td><td class="tkr">BOTZ</td><td>$35.40</td><td>$33.02</td><td class="num">-6.72%</td><td class="num">-1.05%</td><td class="num">-5.67%</td><td>中</td></tr>
+<tr class="neg"><td>2026-09-17</td><td>v2</td><td>高風險</td><td class="tkr">POET</td><td>$7.51</td><td>$5.43</td><td class="num">-27.70%</td><td class="num">+0.09%</td><td class="num">-27.78%</td><td>弱</td></tr>
+<tr class="neg"><td>2026-09-17</td><td>v2</td><td>高風險</td><td class="tkr">FORM</td><td>$111.53</td><td>$105.01</td><td class="num">-5.85%</td><td class="num">+0.09%</td><td class="num">-5.93%</td><td>中</td></tr>
+<tr class="neg"><td>2026-09-17</td><td>v2</td><td>高風險</td><td class="tkr">AXTI</td><td>$67.75</td><td>$51.47</td><td class="num">-24.03%</td><td class="num">+0.09%</td><td class="num">-24.11%</td><td>強</td></tr>
+<tr class="neg"><td>2026-09-17</td><td>v2</td><td>高風險</td><td class="tkr">AEHR</td><td>$90.55</td><td>$60.60</td><td class="num">-33.08%</td><td class="num">+0.09%</td><td class="num">-33.16%</td><td>強</td></tr>
+<tr class="neg"><td>2026-09-17</td><td>v2</td><td>高風險</td><td class="tkr">AAOI</td><td>$98.06</td><td>$75.57</td><td class="num">-22.93%</td><td class="num">+0.09%</td><td class="num">-23.02%</td><td>弱</td></tr>
+<tr class="neg"><td>2026-09-17</td><td>v2</td><td>穩定</td><td class="tkr">TSM</td><td>$430.26</td><td>$412.61</td><td class="num">-4.10%</td><td class="num">+0.09%</td><td class="num">-4.19%</td><td>強</td></tr>
+<tr class="neg"><td>2026-09-17</td><td>v2</td><td>穩定</td><td class="tkr">NVDA</td><td>$219.34</td><td>$214.13</td><td class="num">-2.38%</td><td class="num">+0.09%</td><td class="num">-2.46%</td><td>中</td></tr>
+<tr class="neg"><td>2026-09-17</td><td>v2</td><td>穩定</td><td class="tkr">MU</td><td>$977.50</td><td>$878.84</td><td class="num">-10.09%</td><td class="num">+0.09%</td><td class="num">-10.18%</td><td>中</td></tr>
+<tr class="neg"><td>2026-09-17</td><td>v2</td><td>穩定</td><td class="tkr">LRCX</td><td>$269.31</td><td>$263.94</td><td class="num">-1.99%</td><td class="num">+0.09%</td><td class="num">-2.08%</td><td>中</td></tr>
+<tr class="pos"><td>2026-09-17</td><td>v2</td><td>穩定</td><td class="tkr">ASML</td><td>$1,629.67</td><td>$1,641.52</td><td class="num">+0.73%</td><td class="num">+0.09%</td><td class="num">+0.64%</td><td>強</td></tr>
+<tr class="neg"><td>2026-09-17</td><td>v2</td><td>ETF</td><td class="tkr">SMH</td><td>$560.61</td><td>$539.79</td><td class="num">-3.71%</td><td class="num">+0.09%</td><td class="num">-3.80%</td><td>強</td></tr>
+<tr class="neg"><td>2026-09-17</td><td>v2</td><td>ETF</td><td class="tkr">SGOV</td><td>$100.56</td><td>$100.59</td><td class="num">+0.03%</td><td class="num">+0.09%</td><td class="num">-0.06%</td><td>強</td></tr>
+<tr class="neg"><td>2026-09-17</td><td>v2</td><td>ETF</td><td class="tkr">EWY</td><td>$182.39</td><td>$150.44</td><td class="num">-17.52%</td><td class="num">+0.09%</td><td class="num">-17.60%</td><td>中</td></tr>
+<tr class="neg"><td>2026-09-17</td><td>v2</td><td>ETF</td><td class="tkr">BOTZ</td><td>$35.12</td><td>$33.02</td><td class="num">-5.98%</td><td class="num">+0.09%</td><td class="num">-6.06%</td><td>中</td></tr>
+<tr class="neg"><td>2026-09-12</td><td>v2</td><td>高風險</td><td class="tkr">POET</td><td>$7.95</td><td>$5.43</td><td class="num">-31.70%</td><td class="num">-0.14%</td><td class="num">-31.56%</td><td>強</td></tr>
+<tr class="neg"><td>2026-09-12</td><td>v2</td><td>高風險</td><td class="tkr">FORM</td><td>$114.95</td><td>$105.01</td><td class="num">-8.65%</td><td class="num">-0.14%</td><td class="num">-8.51%</td><td>強</td></tr>
+<tr class="neg"><td>2026-09-12</td><td>v2</td><td>高風險</td><td class="tkr">AXTI</td><td>$64.77</td><td>$51.47</td><td class="num">-20.53%</td><td class="num">-0.14%</td><td class="num">-20.40%</td><td>強</td></tr>
+<tr class="neg"><td>2026-09-12</td><td>v2</td><td>高風險</td><td class="tkr">AEHR</td><td>$94.69</td><td>$60.60</td><td class="num">-36.00%</td><td class="num">-0.14%</td><td class="num">-35.87%</td><td>強</td></tr>
+<tr class="neg"><td>2026-09-12</td><td>v2</td><td>高風險</td><td class="tkr">AAOI</td><td>$105.36</td><td>$75.57</td><td class="num">-28.27%</td><td class="num">-0.14%</td><td class="num">-28.14%</td><td>中</td></tr>
+<tr class="neg"><td>2026-09-12</td><td>v2</td><td>穩定</td><td class="tkr">TSM</td><td>$433.24</td><td>$412.61</td><td class="num">-4.76%</td><td class="num">-0.14%</td><td class="num">-4.63%</td><td>強</td></tr>
+<tr class="neg"><td>2026-09-12</td><td>v2</td><td>穩定</td><td class="tkr">NVDA</td><td>$218.29</td><td>$214.13</td><td class="num">-1.91%</td><td class="num">-0.14%</td><td class="num">-1.77%</td><td>中</td></tr>
+<tr class="neg"><td>2026-09-12</td><td>v2</td><td>穩定</td><td class="tkr">MU</td><td>$975.26</td><td>$878.84</td><td class="num">-9.89%</td><td class="num">-0.14%</td><td class="num">-9.75%</td><td>中</td></tr>
+<tr class="neg"><td>2026-09-12</td><td>v2</td><td>穩定</td><td class="tkr">LRCX</td><td>$298.22</td><td>$263.94</td><td class="num">-11.49%</td><td class="num">-0.14%</td><td class="num">-11.36%</td><td>強</td></tr>
+<tr class="neg"><td>2026-09-12</td><td>v2</td><td>穩定</td><td class="tkr">ASML</td><td>$1,698.30</td><td>$1,641.52</td><td class="num">-3.34%</td><td class="num">-0.14%</td><td class="num">-3.21%</td><td>強</td></tr>
+<tr class="neg"><td>2026-09-12</td><td>v2</td><td>ETF</td><td class="tkr">SMH</td><td>$568.53</td><td>$539.79</td><td class="num">-5.06%</td><td class="num">-0.14%</td><td class="num">-4.92%</td><td>強</td></tr>
+<tr class="pos"><td>2026-09-12</td><td>v2</td><td>ETF</td><td class="tkr">SGOV</td><td>$100.52</td><td>$100.59</td><td class="num">+0.07%</td><td class="num">-0.14%</td><td class="num">+0.21%</td><td>強</td></tr>
+<tr class="neg"><td>2026-09-12</td><td>v2</td><td>ETF</td><td class="tkr">EWY</td><td>$188.72</td><td>$150.44</td><td class="num">-20.28%</td><td class="num">-0.14%</td><td class="num">-20.15%</td><td>中</td></tr>
+<tr class="neg"><td>2026-09-12</td><td>v2</td><td>ETF</td><td class="tkr">BOTZ</td><td>$35.28</td><td>$33.02</td><td class="num">-6.41%</td><td class="num">-0.14%</td><td class="num">-6.27%</td><td>中</td></tr>
+<tr class="neg"><td>2026-09-04</td><td>v2</td><td>高風險</td><td class="tkr">POET</td><td>$7.44</td><td>$5.43</td><td class="num">-27.02%</td><td class="num">-1.10%</td><td class="num">-25.92%</td><td>中</td></tr>
+<tr class="neg"><td>2026-09-04</td><td>v2</td><td>高風險</td><td class="tkr">LASR</td><td>$41.94</td><td>$33.67</td><td class="num">-19.72%</td><td class="num">-1.10%</td><td class="num">-18.62%</td><td>弱</td></tr>
+<tr class="neg"><td>2026-09-04</td><td>v2</td><td>高風險</td><td class="tkr">AXTI</td><td>$57.94</td><td>$51.47</td><td class="num">-11.17%</td><td class="num">-1.10%</td><td class="num">-10.07%</td><td>強</td></tr>
+<tr class="neg"><td>2026-09-04</td><td>v2</td><td>高風險</td><td class="tkr">AEHR</td><td>$77.96</td><td>$60.60</td><td class="num">-22.27%</td><td class="num">-1.10%</td><td class="num">-21.17%</td><td>強</td></tr>
+<tr class="neg"><td>2026-09-04</td><td>v2</td><td>高風險</td><td class="tkr">AAOI</td><td>$100.90</td><td>$75.57</td><td class="num">-25.10%</td><td class="num">-1.10%</td><td class="num">-24.00%</td><td>弱</td></tr>
+<tr class="neg"><td>2026-09-04</td><td>v2</td><td>穩定</td><td class="tkr">TSM</td><td>$421.80</td><td>$412.61</td><td class="num">-2.18%</td><td class="num">-1.10%</td><td class="num">-1.08%</td><td>強</td></tr>
+<tr class="neg"><td>2026-09-04</td><td>v2</td><td>穩定</td><td class="tkr">NVDA</td><td>$231.20</td><td>$214.13</td><td class="num">-7.38%</td><td class="num">-1.10%</td><td class="num">-6.28%</td><td>中</td></tr>
+<tr class="neg"><td>2026-09-04</td><td>v2</td><td>穩定</td><td class="tkr">MU</td><td>$969.77</td><td>$878.84</td><td class="num">-9.38%</td><td class="num">-1.10%</td><td class="num">-8.28%</td><td>弱</td></tr>
+<tr class="neg"><td>2026-09-04</td><td>v2</td><td>穩定</td><td class="tkr">AVGO</td><td>$358.85</td><td>$328.75</td><td class="num">-8.39%</td><td class="num">-1.10%</td><td class="num">-7.29%</td><td>弱</td></tr>
+<tr class="neg"><td>2026-09-04</td><td>v2</td><td>穩定</td><td class="tkr">ASML</td><td>$1,675.36</td><td>$1,641.52</td><td class="num">-2.02%</td><td class="num">-1.10%</td><td class="num">-0.92%</td><td>強</td></tr>
+<tr class="neg"><td>2026-09-04</td><td>v2</td><td>ETF</td><td class="tkr">SMH</td><td>$559.00</td><td>$539.79</td><td class="num">-3.44%</td><td class="num">-1.10%</td><td class="num">-2.34%</td><td>強</td></tr>
+<tr class="pos"><td>2026-09-04</td><td>v2</td><td>ETF</td><td class="tkr">SGOV</td><td>$100.46</td><td>$100.59</td><td class="num">+0.13%</td><td class="num">-1.10%</td><td class="num">+1.23%</td><td>強</td></tr>
+<tr class="neg"><td>2026-09-04</td><td>v2</td><td>ETF</td><td class="tkr">EWY</td><td>$180.53</td><td>$150.44</td><td class="num">-16.67%</td><td class="num">-1.10%</td><td class="num">-15.57%</td><td>中</td></tr>
+<tr class="neg"><td>2026-09-04</td><td>v2</td><td>ETF</td><td class="tkr">BOTZ</td><td>$36.15</td><td>$33.02</td><td class="num">-8.66%</td><td class="num">-1.10%</td><td class="num">-7.56%</td><td>中</td></tr>
+<tr class="neg"><td>2026-08-25</td><td>v2</td><td>高風險</td><td class="tkr">POET</td><td>$7.98</td><td>$5.43</td><td class="num">-31.95%</td><td class="num">-0.43%</td><td class="num">-31.52%</td><td>強</td></tr>
+<tr class="neg"><td>2026-08-25</td><td>v2</td><td>高風險</td><td class="tkr">LASR</td><td>$44.84</td><td>$33.67</td><td class="num">-24.91%</td><td class="num">-0.43%</td><td class="num">-24.48%</td><td>弱</td></tr>
+<tr class="neg"><td>2026-08-25</td><td>v2</td><td>高風險</td><td class="tkr">AXTI</td><td>$69.30</td><td>$51.47</td><td class="num">-25.73%</td><td class="num">-0.43%</td><td class="num">-25.30%</td><td>強</td></tr>
+<tr class="neg"><td>2026-08-25</td><td>v2</td><td>高風險</td><td class="tkr">AEHR</td><td>$101.00</td><td>$60.60</td><td class="num">-40.00%</td><td class="num">-0.43%</td><td class="num">-39.57%</td><td>強</td></tr>
+<tr class="neg"><td>2026-08-25</td><td>v2</td><td>高風險</td><td class="tkr">AAOI</td><td>$112.97</td><td>$75.57</td><td class="num">-33.11%</td><td class="num">-0.43%</td><td class="num">-32.68%</td><td>弱</td></tr>
+<tr class="neg"><td>2026-08-25</td><td>v2</td><td>穩定</td><td class="tkr">TSM</td><td>$416.63</td><td>$412.61</td><td class="num">-0.96%</td><td class="num">-0.43%</td><td class="num">-0.53%</td><td>強</td></tr>
+<tr class="pos"><td>2026-08-25</td><td>v2</td><td>穩定</td><td class="tkr">NVDA</td><td>$211.10</td><td>$214.13</td><td class="num">+1.44%</td><td class="num">-0.43%</td><td class="num">+1.87%</td><td>弱</td></tr>
+<tr class="neg"><td>2026-08-25</td><td>v2</td><td>穩定</td><td class="tkr">MU</td><td>$931.50</td><td>$878.84</td><td class="num">-5.65%</td><td class="num">-0.43%</td><td class="num">-5.22%</td><td>強</td></tr>
+<tr class="neg"><td>2026-08-25</td><td>v2</td><td>穩定</td><td class="tkr">AVGO</td><td>$363.40</td><td>$328.75</td><td class="num">-9.53%</td><td class="num">-0.43%</td><td class="num">-9.10%</td><td>弱</td></tr>
+<tr class="neg"><td>2026-08-25</td><td>v2</td><td>穩定</td><td class="tkr">ASML</td><td>$1,767.00</td><td>$1,641.52</td><td class="num">-7.10%</td><td class="num">-0.43%</td><td class="num">-6.67%</td><td>強</td></tr>
+<tr class="neg"><td>2026-08-25</td><td>v2</td><td>ETF</td><td class="tkr">SMH</td><td>$556.86</td><td>$539.79</td><td class="num">-3.07%</td><td class="num">-0.43%</td><td class="num">-2.63%</td><td>強</td></tr>
+<tr class="pos"><td>2026-08-25</td><td>v2</td><td>ETF</td><td class="tkr">SGOV</td><td>$100.64</td><td>$100.59</td><td class="num">-0.05%</td><td class="num">-0.43%</td><td class="num">+0.38%</td><td>強</td></tr>
+<tr class="neg"><td>2026-08-25</td><td>v2</td><td>ETF</td><td class="tkr">EWY</td><td>$178.95</td><td>$150.44</td><td class="num">-15.93%</td><td class="num">-0.43%</td><td class="num">-15.50%</td><td>中</td></tr>
+<tr class="neg"><td>2026-08-25</td><td>v2</td><td>ETF</td><td class="tkr">BOTZ</td><td>$35.83</td><td>$33.02</td><td class="num">-7.84%</td><td class="num">-0.43%</td><td class="num">-7.41%</td><td>中</td></tr>
+<tr class="neg"><td>2026-08-14</td><td>v2</td><td>高風險</td><td class="tkr">POET</td><td>$9.58</td><td>$5.43</td><td class="num">-43.32%</td><td class="num">-1.69%</td><td class="num">-41.63%</td><td>中</td></tr>
+<tr class="neg"><td>2026-08-14</td><td>v2</td><td>高風險</td><td class="tkr">LASR</td><td>$52.60</td><td>$33.67</td><td class="num">-35.99%</td><td class="num">-1.69%</td><td class="num">-34.30%</td><td>弱</td></tr>
+<tr class="neg"><td>2026-08-14</td><td>v2</td><td>高風險</td><td class="tkr">AXTI</td><td>$81.64</td><td>$51.47</td><td class="num">-36.95%</td><td class="num">-1.69%</td><td class="num">-35.27%</td><td>強</td></tr>
+<tr class="neg"><td>2026-08-14</td><td>v2</td><td>高風險</td><td class="tkr">AEHR</td><td>$134.06</td><td>$60.60</td><td class="num">-54.80%</td><td class="num">-1.69%</td><td class="num">-53.11%</td><td>中</td></tr>
+<tr class="neg"><td>2026-08-14</td><td>v2</td><td>高風險</td><td class="tkr">AAOI</td><td>$150.28</td><td>$75.57</td><td class="num">-49.71%</td><td class="num">-1.69%</td><td class="num">-48.03%</td><td>中</td></tr>
+<tr class="neg"><td>2026-08-14</td><td>v2</td><td>穩定</td><td class="tkr">TSM</td><td>$426.35</td><td>$412.61</td><td class="num">-3.22%</td><td class="num">-1.69%</td><td class="num">-1.54%</td><td>強</td></tr>
+<tr class="neg"><td>2026-08-14</td><td>v2</td><td>穩定</td><td class="tkr">NVDA</td><td>$225.16</td><td>$214.13</td><td class="num">-4.90%</td><td class="num">-1.69%</td><td class="num">-3.21%</td><td>中</td></tr>
+<tr class="neg"><td>2026-08-14</td><td>v2</td><td>穩定</td><td class="tkr">MU</td><td>$971.66</td><td>$878.84</td><td class="num">-9.55%</td><td class="num">-1.69%</td><td class="num">-7.87%</td><td>強</td></tr>
+<tr class="neg"><td>2026-08-14</td><td>v2</td><td>穩定</td><td class="tkr">AVGO</td><td>$392.99</td><td>$328.75</td><td class="num">-16.35%</td><td class="num">-1.69%</td><td class="num">-14.66%</td><td>弱</td></tr>
+<tr class="neg"><td>2026-08-14</td><td>v2</td><td>穩定</td><td class="tkr">ASML</td><td>$1,844.08</td><td>$1,641.52</td><td class="num">-10.98%</td><td class="num">-1.69%</td><td class="num">-9.30%</td><td>強</td></tr>
+<tr class="neg"><td>2026-08-14</td><td>v2</td><td>ETF</td><td class="tkr">SMH</td><td>$587.82</td><td>$539.79</td><td class="num">-8.17%</td><td class="num">-1.69%</td><td class="num">-6.48%</td><td>強</td></tr>
+<tr class="pos"><td>2026-08-14</td><td>v2</td><td>ETF</td><td class="tkr">SGOV</td><td>$100.56</td><td>$100.59</td><td class="num">+0.03%</td><td class="num">-1.69%</td><td class="num">+1.72%</td><td>強</td></tr>
+<tr class="neg"><td>2026-08-14</td><td>v2</td><td>ETF</td><td class="tkr">EWY</td><td>$179.74</td><td>$150.44</td><td class="num">-16.30%</td><td class="num">-1.69%</td><td class="num">-14.62%</td><td>中</td></tr>
+<tr class="neg"><td>2026-08-14</td><td>v2</td><td>ETF</td><td class="tkr">BOTZ</td><td>$37.74</td><td>$33.02</td><td class="num">-12.51%</td><td class="num">-1.69%</td><td class="num">-10.82%</td><td>中</td></tr>
+<tr class="neg"><td>2026-08-08</td><td>v2</td><td>高風險</td><td class="tkr">POET</td><td>$8.91</td><td>$5.43</td><td class="num">-39.06%</td><td class="num">-1.29%</td><td class="num">-37.76%</td><td>弱</td></tr>
+<tr class="neg"><td>2026-08-08</td><td>v2</td><td>高風險</td><td class="tkr">LASR</td><td>$56.15</td><td>$33.67</td><td class="num">-40.04%</td><td class="num">-1.29%</td><td class="num">-38.74%</td><td>中</td></tr>
+<tr class="neg"><td>2026-08-08</td><td>v2</td><td>高風險</td><td class="tkr">AXTI</td><td>$88.58</td><td>$51.47</td><td class="num">-41.89%</td><td class="num">-1.29%</td><td class="num">-40.60%</td><td>強</td></tr>
+<tr class="neg"><td>2026-08-08</td><td>v2</td><td>高風險</td><td class="tkr">AEHR</td><td>$103.07</td><td>$60.60</td><td class="num">-41.21%</td><td class="num">-1.29%</td><td class="num">-39.91%</td><td>強</td></tr>
+<tr class="neg"><td>2026-08-08</td><td>v2</td><td>高風險</td><td class="tkr">AAOI</td><td>$135.63</td><td>$75.57</td><td class="num">-44.28%</td><td class="num">-1.29%</td><td class="num">-42.99%</td><td>中</td></tr>
+<tr class="neg"><td>2026-08-08</td><td>v2</td><td>穩定</td><td class="tkr">TSM</td><td>$420.04</td><td>$412.61</td><td class="num">-1.77%</td><td class="num">-1.29%</td><td class="num">-0.47%</td><td>強</td></tr>
+<tr class="neg"><td>2026-08-08</td><td>v2</td><td>穩定</td><td class="tkr">NVDA</td><td>$223.96</td><td>$214.13</td><td class="num">-4.39%</td><td class="num">-1.29%</td><td class="num">-3.09%</td><td>中</td></tr>
+<tr class="pos"><td>2026-08-08</td><td>v2</td><td>穩定</td><td class="tkr">MU</td><td>$877.57</td><td>$878.84</td><td class="num">+0.14%</td><td class="num">-1.29%</td><td class="num">+1.44%</td><td>中</td></tr>
+<tr class="neg"><td>2026-08-08</td><td>v2</td><td>穩定</td><td class="tkr">AVGO</td><td>$427.76</td><td>$328.75</td><td class="num">-23.15%</td><td class="num">-1.29%</td><td class="num">-21.85%</td><td>中</td></tr>
+<tr class="neg"><td>2026-08-08</td><td>v2</td><td>穩定</td><td class="tkr">ASML</td><td>$1,740.99</td><td>$1,641.52</td><td class="num">-5.71%</td><td class="num">-1.29%</td><td class="num">-4.42%</td><td>強</td></tr>
+<tr class="neg"><td>2026-08-08</td><td>v2</td><td>ETF</td><td class="tkr">SMH</td><td>$582.70</td><td>$539.79</td><td class="num">-7.36%</td><td class="num">-1.29%</td><td class="num">-6.07%</td><td>強</td></tr>
+<tr class="pos"><td>2026-08-08</td><td>v2</td><td>ETF</td><td class="tkr">SGOV</td><td>$100.48</td><td>$100.59</td><td class="num">+0.11%</td><td class="num">-1.29%</td><td class="num">+1.40%</td><td>強</td></tr>
+<tr class="neg"><td>2026-08-08</td><td>v2</td><td>ETF</td><td class="tkr">EWY</td><td>$166.09</td><td>$150.44</td><td class="num">-9.42%</td><td class="num">-1.29%</td><td class="num">-8.13%</td><td>中</td></tr>
+<tr class="neg"><td>2026-08-08</td><td>v2</td><td>ETF</td><td class="tkr">BOTZ</td><td>$37.61</td><td>$33.02</td><td class="num">-12.20%</td><td class="num">-1.29%</td><td class="num">-10.91%</td><td>中</td></tr>
+<tr class="neg"><td>2026-07-31</td><td>v2</td><td>高風險</td><td class="tkr">POET</td><td>$7.28</td><td>$5.43</td><td class="num">-25.41%</td><td class="num">+2.91%</td><td class="num">-28.32%</td><td>弱</td></tr>
+<tr class="neg"><td>2026-07-31</td><td>v2</td><td>高風險</td><td class="tkr">LASR</td><td>$65.71</td><td>$33.67</td><td class="num">-48.76%</td><td class="num">+2.91%</td><td class="num">-51.67%</td><td>強</td></tr>
+<tr class="pos"><td>2026-07-31</td><td>v2</td><td>高風險</td><td class="tkr">AXTI</td><td>$46.94</td><td>$51.47</td><td class="num">+9.65%</td><td class="num">+2.91%</td><td class="num">+6.74%</td><td>強</td></tr>
+<tr class="neg"><td>2026-07-31</td><td>v2</td><td>高風險</td><td class="tkr">AEHR</td><td>$76.87</td><td>$60.60</td><td class="num">-21.17%</td><td class="num">+2.91%</td><td class="num">-24.07%</td><td>強</td></tr>
+<tr class="neg"><td>2026-07-31</td><td>v2</td><td>高風險</td><td class="tkr">AAOI</td><td>$90.11</td><td>$75.57</td><td class="num">-16.14%</td><td class="num">+2.91%</td><td class="num">-19.04%</td><td>中</td></tr>
+<tr class="neg"><td>2026-07-31</td><td>v2</td><td>穩定</td><td class="tkr">TSM</td><td>$403.31</td><td>$412.61</td><td class="num">+2.31%</td><td class="num">+2.91%</td><td class="num">-0.60%</td><td>強</td></tr>
+<tr class="pos"><td>2026-07-31</td><td>v2</td><td>穩定</td><td class="tkr">NVDA</td><td>$195.04</td><td>$214.13</td><td class="num">+9.79%</td><td class="num">+2.91%</td><td class="num">+6.88%</td><td>中</td></tr>
+<tr class="neg"><td>2026-07-31</td><td>v2</td><td>穩定</td><td class="tkr">MU</td><td>$874.66</td><td>$878.84</td><td class="num">+0.48%</td><td class="num">+2.91%</td><td class="num">-2.43%</td><td>強</td></tr>
+<tr class="neg"><td>2026-07-31</td><td>v2</td><td>穩定</td><td class="tkr">AVGO</td><td>$387.84</td><td>$328.75</td><td class="num">-15.24%</td><td class="num">+2.91%</td><td class="num">-18.14%</td><td>中</td></tr>
+<tr class="neg"><td>2026-07-31</td><td>v2</td><td>穩定</td><td class="tkr">ASML</td><td>$1,651.44</td><td>$1,641.52</td><td class="num">-0.60%</td><td class="num">+2.91%</td><td class="num">-3.51%</td><td>強</td></tr>
+<tr class="neg"><td>2026-07-31</td><td>v2</td><td>ETF</td><td class="tkr">SMH</td><td>$538.90</td><td>$539.79</td><td class="num">+0.17%</td><td class="num">+2.91%</td><td class="num">-2.74%</td><td>強</td></tr>
+<tr class="neg"><td>2026-07-31</td><td>v2</td><td>ETF</td><td class="tkr">SGOV</td><td>$100.69</td><td>$100.59</td><td class="num">-0.10%</td><td class="num">+2.91%</td><td class="num">-3.01%</td><td>強</td></tr>
+<tr class="neg"><td>2026-07-31</td><td>v2</td><td>ETF</td><td class="tkr">EWY</td><td>$161.21</td><td>$150.44</td><td class="num">-6.68%</td><td class="num">+2.91%</td><td class="num">-9.59%</td><td>中</td></tr>
+<tr class="neg"><td>2026-07-31</td><td>v2</td><td>ETF</td><td class="tkr">BOTZ</td><td>$34.90</td><td>$33.02</td><td class="num">-5.39%</td><td class="num">+2.91%</td><td class="num">-8.29%</td><td>中</td></tr>
+<tr class="neg"><td>2026-07-24</td><td>v2</td><td>高風險</td><td class="tkr">POET</td><td>$7.60</td><td>$5.43</td><td class="num">-28.55%</td><td class="num">+3.40%</td><td class="num">-31.95%</td><td>弱</td></tr>
+<tr class="neg"><td>2026-07-24</td><td>v2</td><td>高風險</td><td class="tkr">LASR</td><td>$73.00</td><td>$33.67</td><td class="num">-53.88%</td><td class="num">+3.40%</td><td class="num">-57.27%</td><td>強</td></tr>
+<tr class="neg"><td>2026-07-24</td><td>v2</td><td>高風險</td><td class="tkr">AXTI</td><td>$52.93</td><td>$51.47</td><td class="num">-2.76%</td><td class="num">+3.40%</td><td class="num">-6.15%</td><td>強</td></tr>
+<tr class="neg"><td>2026-07-24</td><td>v2</td><td>高風險</td><td class="tkr">AEHR</td><td>$88.51</td><td>$60.60</td><td class="num">-31.53%</td><td class="num">+3.40%</td><td class="num">-34.93%</td><td>強</td></tr>
+<tr class="neg"><td>2026-07-24</td><td>v2</td><td>高風險</td><td class="tkr">AAOI</td><td>$112.02</td><td>$75.57</td><td class="num">-32.54%</td><td class="num">+3.40%</td><td class="num">-35.94%</td><td>中</td></tr>
+<tr class="neg"><td>2026-07-24</td><td>v2</td><td>穩定</td><td class="tkr">TSM</td><td>$415.58</td><td>$412.61</td><td class="num">-0.71%</td><td class="num">+3.40%</td><td class="num">-4.11%</td><td>強</td></tr>
+<tr class="neg"><td>2026-07-24</td><td>v2</td><td>穩定</td><td class="tkr">NVDA</td><td>$208.76</td><td>$214.13</td><td class="num">+2.57%</td><td class="num">+3.40%</td><td class="num">-0.82%</td><td>中</td></tr>
+<tr class="neg"><td>2026-07-24</td><td>v2</td><td>穩定</td><td class="tkr">MU</td><td>$990.21</td><td>$878.84</td><td class="num">-11.25%</td><td class="num">+3.40%</td><td class="num">-14.64%</td><td>強</td></tr>
+<tr class="neg"><td>2026-07-24</td><td>v2</td><td>穩定</td><td class="tkr">AVGO</td><td>$392.47</td><td>$328.75</td><td class="num">-16.24%</td><td class="num">+3.40%</td><td class="num">-19.63%</td><td>中</td></tr>
+<tr class="neg"><td>2026-07-24</td><td>v2</td><td>穩定</td><td class="tkr">ASML</td><td>$1,803.00</td><td>$1,641.52</td><td class="num">-8.96%</td><td class="num">+3.40%</td><td class="num">-12.35%</td><td>強</td></tr>
+<tr class="neg"><td>2026-07-24</td><td>v2</td><td>ETF</td><td class="tkr">SMH</td><td>$580.17</td><td>$539.79</td><td class="num">-6.96%</td><td class="num">+3.40%</td><td class="num">-10.36%</td><td>強</td></tr>
+<tr class="neg"><td>2026-07-24</td><td>v2</td><td>ETF</td><td class="tkr">SGOV</td><td>$100.61</td><td>$100.59</td><td class="num">-0.02%</td><td class="num">+3.40%</td><td class="num">-3.42%</td><td>強</td></tr>
+<tr class="neg"><td>2026-07-24</td><td>v2</td><td>ETF</td><td class="tkr">EWY</td><td>$173.86</td><td>$150.44</td><td class="num">-13.47%</td><td class="num">+3.40%</td><td class="num">-16.87%</td><td>中</td></tr>
+<tr class="neg"><td>2026-07-24</td><td>v2</td><td>ETF</td><td class="tkr">BOTZ</td><td>$34.31</td><td>$33.02</td><td class="num">-3.76%</td><td class="num">+3.40%</td><td class="num">-7.16%</td><td>中</td></tr>
+<tr class="neg"><td>2026-07-19</td><td>v1</td><td>高風險</td><td class="tkr">URGN</td><td>$40.23</td><td>$34.56</td><td class="num">-14.09%</td><td class="num">+2.69%</td><td class="num">-16.78%</td><td>強</td></tr>
+<tr class="neg"><td>2026-07-19</td><td>v1</td><td>高風險</td><td class="tkr">SEZL</td><td>$174.67</td><td>$127.65</td><td class="num">-26.92%</td><td class="num">+2.69%</td><td class="num">-29.60%</td><td>中</td></tr>
+<tr class="neg"><td>2026-07-19</td><td>v2</td><td>高風險</td><td class="tkr">POET</td><td>$7.39</td><td>$5.43</td><td class="num">-26.52%</td><td class="num">+2.69%</td><td class="num">-29.21%</td><td>弱</td></tr>
+<tr class="neg"><td>2026-07-19</td><td>v1</td><td>高風險</td><td class="tkr">PENG</td><td>$60.41</td><td>$57.10</td><td class="num">-5.48%</td><td class="num">+2.69%</td><td class="num">-8.16%</td><td>弱</td></tr>
+<tr class="pos"><td>2026-07-19</td><td>v1</td><td>高風險</td><td class="tkr">OSCR</td><td>$29.10</td><td>$31.89</td><td class="num">+9.59%</td><td class="num">+2.69%</td><td class="num">+6.90%</td><td>弱</td></tr>
+<tr class="neg"><td>2026-07-19</td><td>v2</td><td>高風險</td><td class="tkr">LASR</td><td>$69.25</td><td>$33.67</td><td class="num">-51.38%</td><td class="num">+2.69%</td><td class="num">-54.06%</td><td>中</td></tr>
+<tr class="neg"><td>2026-07-19</td><td>v1</td><td>高風險</td><td class="tkr">DAVE</td><td>$440.42</td><td>$367.40</td><td class="num">-16.58%</td><td class="num">+2.69%</td><td class="num">-19.26%</td><td>中</td></tr>
+<tr class="pos"><td>2026-07-19</td><td>v2</td><td>高風險</td><td class="tkr">AXTI</td><td>$45.86</td><td>$51.47</td><td class="num">+12.23%</td><td class="num">+2.69%</td><td class="num">+9.55%</td><td>強</td></tr>
+<tr class="neg"><td>2026-07-19</td><td>v2</td><td>高風險</td><td class="tkr">AEHR</td><td>$81.05</td><td>$60.60</td><td class="num">-25.23%</td><td class="num">+2.69%</td><td class="num">-27.92%</td><td>強</td></tr>
+<tr class="neg"><td>2026-07-19</td><td>v2</td><td>高風險</td><td class="tkr">AAOI</td><td>$102.41</td><td>$75.57</td><td class="num">-26.21%</td><td class="num">+2.69%</td><td class="num">-28.89%</td><td>中</td></tr>
+<tr class="pos"><td>2026-07-19</td><td>v1</td><td>穩定</td><td class="tkr">WDS</td><td>$21.72</td><td>$23.64</td><td class="num">+8.84%</td><td class="num">+2.69%</td><td class="num">+6.15%</td><td>中</td></tr>
+<tr class="pos"><td>2026-07-19</td><td>v2</td><td>穩定</td><td class="tkr">TSM</td><td>$398.37</td><td>$412.61</td><td class="num">+3.57%</td><td class="num">+2.69%</td><td class="num">+0.89%</td><td>強</td></tr>
+<tr class="pos"><td>2026-07-19</td><td>v2</td><td>穩定</td><td class="tkr">NVDA</td><td>$202.81</td><td>$214.13</td><td class="num">+5.58%</td><td class="num">+2.69%</td><td class="num">+2.90%</td><td>中</td></tr>
+<tr class="pos"><td>2026-07-19</td><td>v2</td><td>穩定</td><td class="tkr">MU</td><td>$848.95</td><td>$878.84</td><td class="num">+3.52%</td><td class="num">+2.69%</td><td class="num">+0.84%</td><td>中</td></tr>
+<tr class="neg"><td>2026-07-19</td><td>v1</td><td>穩定</td><td class="tkr">MPLX</td><td>$57.06</td><td>$58.16</td><td class="num">+1.93%</td><td class="num">+2.69%</td><td class="num">-0.76%</td><td>強</td></tr>
+<tr class="neg"><td>2026-07-19</td><td>v1</td><td>穩定</td><td class="tkr">GLPI</td><td>$45.08</td><td>$39.28</td><td class="num">-12.87%</td><td class="num">+2.69%</td><td class="num">-15.55%</td><td>強</td></tr>
+<tr class="pos"><td>2026-07-19</td><td>v1</td><td>穩定</td><td class="tkr">GFI</td><td>$31.99</td><td>$37.60</td><td class="num">+17.54%</td><td class="num">+2.69%</td><td class="num">+14.85%</td><td>中</td></tr>
+<tr class="neg"><td>2026-07-19</td><td>v1</td><td>穩定</td><td class="tkr">CNA</td><td>$52.27</td><td>$47.90</td><td class="num">-8.36%</td><td class="num">+2.69%</td><td class="num">-11.05%</td><td>中</td></tr>
+<tr class="neg"><td>2026-07-19</td><td>v2</td><td>穩定</td><td class="tkr">AVGO</td><td>$370.83</td><td>$328.75</td><td class="num">-11.35%</td><td class="num">+2.69%</td><td class="num">-14.03%</td><td>中</td></tr>
+<tr class="neg"><td>2026-07-19</td><td>v2</td><td>穩定</td><td class="tkr">ASML</td><td>$1,747.58</td><td>$1,641.52</td><td class="num">-6.07%</td><td class="num">+2.69%</td><td class="num">-8.75%</td><td>強</td></tr>
+<tr class="neg"><td>2026-07-19</td><td>v1</td><td>ETF</td><td class="tkr">XLF</td><td>$56.26</td><td>$55.52</td><td class="num">-1.32%</td><td class="num">+2.69%</td><td class="num">-4.00%</td><td>中</td></tr>
+<tr class="pos"><td>2026-07-19</td><td>v1</td><td>ETF</td><td class="tkr">XLE</td><td>$57.68</td><td>$68.24</td><td class="num">+18.31%</td><td class="num">+2.69%</td><td class="num">+15.62%</td><td>中</td></tr>
+<tr class="pos"><td>2026-07-19</td><td>v1</td><td>ETF</td><td class="tkr">VOO</td><td>$683.17</td><td>$701.61</td><td class="num">+2.70%</td><td class="num">+2.69%</td><td class="num">+0.01%</td><td>強</td></tr>
+<tr class="neg"><td>2026-07-19</td><td>v2</td><td>ETF</td><td class="tkr">SMH</td><td>$556.53</td><td>$539.79</td><td class="num">-3.01%</td><td class="num">+2.69%</td><td class="num">-5.69%</td><td>強</td></tr>
+<tr class="neg"><td>2026-07-19</td><td>v1</td><td>ETF</td><td class="tkr">SGOV</td><td>$100.58</td><td>$100.59</td><td class="num">+0.01%</td><td class="num">+2.69%</td><td class="num">-2.68%</td><td>強</td></tr>
+<tr class="neg"><td>2026-07-19</td><td>v2</td><td>ETF</td><td class="tkr">SGOV</td><td>$100.58</td><td>$100.59</td><td class="num">+0.01%</td><td class="num">+2.69%</td><td class="num">-2.68%</td><td>強</td></tr>
+<tr class="pos"><td>2026-07-19</td><td>v1</td><td>ETF</td><td class="tkr">SCHD</td><td>$32.91</td><td>$34.35</td><td class="num">+4.38%</td><td class="num">+2.69%</td><td class="num">+1.69%</td><td>強</td></tr>
+<tr class="neg"><td>2026-07-19</td><td>v2</td><td>ETF</td><td class="tkr">EWY</td><td>$162.54</td><td>$150.44</td><td class="num">-7.44%</td><td class="num">+2.69%</td><td class="num">-10.13%</td><td>中</td></tr>
+<tr class="neg"><td>2026-07-19</td><td>v2</td><td>ETF</td><td class="tkr">BOTZ</td><td>$34.40</td><td>$33.02</td><td class="num">-4.01%</td><td class="num">+2.69%</td><td class="num">-6.70%</td><td>中</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+</section>
+
+<section id="s6">
+  <h2><span class="sec-num">06</span>延伸觀察</h2>
+  <p class="lede">Serenity 名單中美股買不到報價的標的，僅供研究追蹤，不進 Top 5：</p>
+  <div class="extwatch">
+    <div class="row"><span class="t">$SIVE</span><span>（斯德哥爾摩）— CPO 外部光源 CW 雷射，Phase 3 第一信心標的，基本面兌現在 2027–28</span></div>
+    <div class="row"><span class="t">$IQE</span><span>（倫敦）— 化合物半導體磊晶，基礎材料層</span></div>
+    <div class="row"><span class="t">$XFAB</span><span>（巴黎）— SiC 代工 + 800VDC 電源半導體對 NVDA 供應鏈雙重曝險</span></div>
+    <div class="row"><span class="t">$SOI</span><span>（巴黎，Soitec）— SOI 基板，總經錯殺修正案例</span></div>
+  </div>
+</section>
+
+<footer>
+  <b>免責聲明</b>｜本報告非投資建議，僅為基於公開資料（Finviz、公開新聞）的研究整理。卡點框架與覆蓋名單轉述自 Serenity (@aleabitoreddit) 公開發文之整理，未經驗證其歷史績效真實性。本報告標的集中於 AI/半導體單一產業鏈，無分散效果；高風險類多為中小型股，流動性與波動風險高，本期勝率驟降至 10.1%、平均超額報酬 -14.99% 即為此風險史上最嚴峻的實例，絕非系統性回檔不會發生的保證。Finviz 免費版數據可能延遲且無歷史收盤查詢功能；歷史績效不代表未來表現。實際投資前請自行查證第一手資料（10-K/10-Q、法說會、SEC 備案）。
+</footer>
+
+</div>

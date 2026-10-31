@@ -1,0 +1,669 @@
+<title>供應鏈卡點週報</title>
+<style>
+:root{
+  --bg:#f5f2ea;
+  --surface:#ffffff;
+  --surface-2:#efe9db;
+  --ink:#211d16;
+  --ink-2:#5b5546;
+  --muted:#8a8371;
+  --line:#ddd4bf;
+  --accent:#9c5a1f;
+  --accent-2:#5a6b57;
+  --good:#2f7d5c;
+  --good-bg:#e4efe7;
+  --warn:#a9791f;
+  --warn-bg:#f4ecda;
+  --bad:#a5402c;
+  --bad-bg:#f4e4de;
+  --grey:#7a7263;
+  --grey-bg:#eae5d8;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "Source Sans 3", "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#15130f;
+    --surface:#1e1c16;
+    --surface-2:#262319;
+    --ink:#eee8d9;
+    --ink-2:#c2b9a4;
+    --muted:#8f8770;
+    --line:#3a352a;
+    --accent:#d69756;
+    --accent-2:#93a68e;
+    --good:#5cbd8e;
+    --good-bg:#1c2b23;
+    --warn:#d8ab54;
+    --warn-bg:#302a19;
+    --bad:#e0806a;
+    --bad-bg:#332019;
+    --grey:#a39b87;
+    --grey-bg:#2a271e;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#15130f;
+  --surface:#1e1c16;
+  --surface-2:#262319;
+  --ink:#eee8d9;
+  --ink-2:#c2b9a4;
+  --muted:#8f8770;
+  --line:#3a352a;
+  --accent:#d69756;
+  --accent-2:#93a68e;
+  --good:#5cbd8e;
+  --good-bg:#1c2b23;
+  --warn:#d8ab54;
+  --warn-bg:#302a19;
+  --bad:#e0806a;
+  --bad-bg:#332019;
+  --grey:#a39b87;
+  --grey-bg:#2a271e;
+}
+
+*{box-sizing:border-box;}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--sans);
+  line-height:1.6;
+  margin:0;
+  padding:0 0 5rem;
+}
+.wrap{max-width:920px;margin:0 auto;padding:0 1.5rem;}
+
+header.hero{
+  border-bottom:1px solid var(--line);
+  padding:3rem 0 2.2rem;
+  margin-bottom:2.5rem;
+}
+.eyebrow{
+  font-family:var(--mono);
+  font-size:.75rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin:0 0 .8rem;
+}
+h1{
+  font-family:var(--serif);
+  font-size:clamp(2rem,5vw,2.9rem);
+  font-weight:600;
+  margin:0 0 .6rem;
+  text-wrap:balance;
+  letter-spacing:-.01em;
+}
+.subhead{color:var(--ink-2);font-size:1.05rem;max-width:60ch;margin:0;}
+.meta-row{
+  display:flex;gap:1.5rem;flex-wrap:wrap;
+  margin-top:1.4rem;font-family:var(--mono);font-size:.78rem;color:var(--muted);
+}
+
+section{margin-bottom:3rem;}
+h2{
+  font-family:var(--serif);
+  font-size:1.5rem;
+  font-weight:600;
+  border-bottom:2px solid var(--ink);
+  padding-bottom:.5rem;
+  margin:0 0 1.3rem;
+  display:flex;align-items:baseline;gap:.6rem;
+}
+h2 .num{font-family:var(--mono);color:var(--accent);font-size:1rem;}
+h3.sub{font-family:var(--serif);font-size:1.1rem;margin:1.6rem 0 .8rem;color:var(--ink);}
+
+p.lede{color:var(--ink-2);margin:0 0 1rem;}
+.callout{
+  background:var(--surface-2);
+  border-left:3px solid var(--accent);
+  padding:.9rem 1.1rem;
+  font-size:.92rem;
+  color:var(--ink-2);
+  border-radius:0 6px 6px 0;
+  margin-bottom:1.3rem;
+}
+
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.9rem;margin-bottom:1.4rem;}
+.stat-tile{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:.9rem 1rem;
+}
+.stat-tile .label{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-family:var(--mono);}
+.stat-tile .value{font-family:var(--mono);font-size:1.4rem;font-variant-numeric:tabular-nums;margin-top:.2rem;}
+.stat-tile .value.pos{color:var(--good);}
+.stat-tile .value.neg{color:var(--bad);}
+
+.phase-track{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;margin:1rem 0 1.4rem;}
+.phase-seg{flex:1;padding:.8rem .9rem;font-size:.82rem;border-right:1px solid var(--line);position:relative;}
+.phase-seg:last-child{border-right:none;}
+.phase-seg .ph-label{font-family:var(--mono);font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;}
+.phase-seg .ph-name{font-weight:600;margin:.15rem 0;}
+.phase-seg.active{background:var(--warn-bg);}
+.phase-seg.active .ph-name{color:var(--warn);}
+.phase-seg .ph-state{font-size:.78rem;color:var(--ink-2);}
+
+.card-grid{display:grid;grid-template-columns:1fr;gap:1.1rem;}
+.card{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:1.3rem 1.4rem;
+}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap;}
+.ticker-block{display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap;}
+.ticker{font-family:var(--mono);font-size:1.3rem;font-weight:700;}
+.company{color:var(--ink-2);font-size:.9rem;}
+.price-block{text-align:right;font-family:var(--mono);}
+.price{font-size:1.2rem;font-variant-numeric:tabular-nums;}
+.mcap{font-size:.75rem;color:var(--muted);}
+
+.tag-row{display:flex;gap:.5rem;flex-wrap:wrap;margin:.7rem 0;}
+.tag{
+  font-family:var(--mono);font-size:.72rem;padding:.25rem .6rem;border-radius:20px;
+  border:1px solid var(--line);color:var(--ink-2);
+}
+.tag.layer{background:var(--surface-2);}
+.conf{font-weight:700;border:none;}
+.conf.strong{background:var(--good-bg);color:var(--good);}
+.conf.mid{background:var(--warn-bg);color:var(--warn);}
+.conf.weak{background:var(--grey-bg);color:var(--grey);}
+
+.thesis{font-size:.92rem;color:var(--ink);margin:.6rem 0;}
+
+.signal-row{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin:.9rem 0;}
+.signal{
+  background:var(--surface-2);border-radius:6px;padding:.5rem .6rem;font-size:.78rem;
+}
+.signal .sig-label{color:var(--muted);font-family:var(--mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.04em;}
+.signal .sig-val{margin-top:.25rem;display:flex;align-items:center;gap:.3rem;font-weight:600;}
+.sig-val.up::before{content:"✓";color:var(--good);}
+.sig-val.neutral::before{content:"–";color:var(--warn);}
+.sig-val.down::before{content:"✗";color:var(--bad);}
+
+.bonus-note{font-size:.76rem;color:var(--accent);font-style:italic;margin-top:-.4rem;margin-bottom:.6rem;}
+.risk{font-size:.84rem;color:var(--ink-2);border-top:1px dashed var(--line);padding-top:.6rem;margin-top:.4rem;}
+.risk b{color:var(--bad);font-weight:600;}
+
+.moat{font-size:.84rem;color:var(--ink-2);}
+.fund-row{display:flex;gap:1.4rem;font-family:var(--mono);font-size:.82rem;margin:.5rem 0;flex-wrap:wrap;}
+.fund-row span b{display:block;font-size:1rem;color:var(--ink);}
+
+table{width:100%;border-collapse:collapse;font-size:.85rem;}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;}
+th,td{padding:.55rem .7rem;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap;}
+th{font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);background:var(--surface-2);position:sticky;top:0;}
+td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;text-align:right;}
+td.pos{color:var(--good);}
+td.neg{color:var(--bad);}
+tr:last-child td{border-bottom:none;}
+
+.etf-table td.ratio{font-family:var(--mono);font-weight:700;}
+
+.reject-box{
+  margin-top:1.2rem;padding:1rem 1.2rem;background:var(--surface-2);border-radius:8px;font-size:.85rem;color:var(--ink-2);
+}
+.reject-box .rj-ticker{font-family:var(--mono);font-weight:700;color:var(--ink);}
+
+.winrate-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-bottom:1rem;}
+.wr-card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:1rem 1.1rem;}
+.wr-card .wr-cat{font-family:var(--mono);font-size:.75rem;color:var(--muted);text-transform:uppercase;}
+.wr-card .wr-pct{font-family:var(--mono);font-size:1.7rem;margin:.2rem 0;}
+.wr-bar{height:6px;border-radius:4px;background:var(--surface-2);overflow:hidden;margin-top:.4rem;}
+.wr-bar-fill{height:100%;background:var(--good);}
+.wr-card .wr-sub{font-size:.76rem;color:var(--muted);}
+.wr-card.v1{opacity:.75;}
+
+.ver-tag{font-family:var(--mono);font-size:.68rem;padding:.1rem .4rem;border-radius:4px;background:var(--surface-2);color:var(--muted);}
+
+.extend-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.8rem;}
+.ext-item{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:.8rem 1rem;font-size:.84rem;}
+.ext-item .ext-ticker{font-family:var(--mono);font-weight:700;}
+.ext-item .ext-market{color:var(--muted);font-size:.74rem;}
+
+footer.disclaimer{
+  border-top:1px solid var(--line);
+  padding-top:1.4rem;margin-top:2rem;
+  font-size:.78rem;color:var(--muted);
+  max-width:75ch;
+}
+footer.disclaimer p{margin:.4rem 0;}
+
+@media (max-width:640px){
+  .signal-row{grid-template-columns:repeat(2,1fr);}
+  .phase-track{flex-direction:column;}
+  .phase-seg{border-right:none;border-bottom:1px solid var(--line);}
+}
+</style>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<div class="wrap">
+
+<header class="hero">
+  <p class="eyebrow">Chokepoint Portfolio Watch · Week of 2026-09-17</p>
+  <h1>AI 供應鏈卡點週報</h1>
+  <p class="subhead">以 Finviz 量化數據、分析師評級、產業新聞與 Serenity 卡點框架四訊號交叉驗證，追蹤 AI／晶片／機器人／記憶體供應鏈中「持有瓶頸而非品牌」的錯價機會。</p>
+  <div class="meta-row">
+    <span>報告日期 2026-09-17</span>
+    <span>數據時間戳 2026-09-17 收盤</span>
+    <span>第 10 期追蹤（首次 2026-07-19）</span>
+  </div>
+</header>
+
+<section id="overview">
+  <h2><span class="num">01</span> 市場概況</h2>
+  <p class="lede">SPY 收 $762.60，週線 +0.63%、月線 −0.63%，距 52 週高點僅 −2.15%——大盤本週先跌後漲；SMH 收 $560.61，週線幾近持平（+0.06%）、月線 −1.61%，距高點仍有 −16.55% 空間。本週經歷一次典型的「總經雜訊→修正」小循環：9/14 產業人士拋出「AI 降溫」說法，晶片股全面走弱，但 9/16-17 隨 NVIDIA 執行長重申並上修成長預期、Meta 執行長公開反駁降溫論，加上 Micron 記憶體漲價敘事發酵，半導體股大舉反彈收復失地。</p>
+
+  <div class="stat-row">
+    <div class="stat-tile"><div class="label">SPY</div><div class="value">$762.60</div></div>
+    <div class="stat-tile"><div class="label">SPY 週變化</div><div class="value pos">+0.63%</div></div>
+    <div class="stat-tile"><div class="label">SMH</div><div class="value">$560.61</div></div>
+    <div class="stat-tile"><div class="label">SMH 週變化</div><div class="value pos">+0.06%</div></div>
+  </div>
+
+  <p class="lede"><b>大趨勢驗證（方法論步驟一）：</b>Hyperscaler 資本支出大趨勢未變，NVIDIA 執行長 9/17 進一步表示晶片銷售明年可能「翻倍」，上修先前 +70% 的成長預期；Meta 執行長同日公開否認「AI 降溫」敘事，強調投資必要性；Micron 方面 Intel 執行長示警記憶體短缺持續惡化，分析師稱短缺可能延續至 2029 年——三則都是需求端的正面驗證。9/14 的「AI 降溫」說法依方法論步驟六判定：沒有任何客戶砍單或違約的具體證據，屬於總經雜訊而非基本面警訊，且雜訊本身已在 9/16-17 被產業龍頭的言論與訂單事實反駁，是本期最乾淨的一次「總經錯殺後修正」教材案例（同 theses.md 的 $SOI 案例邏輯）。避險比例暫維持不變。</p>
+
+  <h3 class="sub">機構輪動相位</h3>
+  <div class="phase-track">
+    <div class="phase-seg active">
+      <div class="ph-label">Phase 1</div>
+      <div class="ph-name">記憶體超級週期</div>
+      <div class="ph-state">重新加溫延續：Intel CEO 示警記憶體短缺惡化，分析師稱缺貨可能延續至 2029；MU 512GB DDR5 新品同步驗證供給端話語權</div>
+    </div>
+    <div class="phase-seg">
+      <div class="ph-label">Phase 2</div>
+      <div class="ph-name">光收發模組</div>
+      <div class="ph-state">分化持續：AXTI 因 CPO 光模組贊獲選+指數納入單週跳漲；AAOI 技術面連三期走弱、EPS 仍為負，稀釋疑慮未散</div>
+    </div>
+    <div class="phase-seg">
+      <div class="ph-label">Phase 3</div>
+      <div class="ph-name">外部光源／矽光子</div>
+      <div class="ph-state">降溫：POET 三線 SMA 轉為全面負值，技術面轉弱疊加缺乏新催化，本期信心等級下修至弱</div>
+    </div>
+  </div>
+</section>
+
+<section id="high-risk">
+  <h2><span class="num">02</span> 高風險高報酬 Top 5</h2>
+  <div class="callout">本類標的與半導體景氣高度連動，系統性回檔時會齊跌；多為中小型股，流動性差、可能單日大幅跳空。</div>
+
+  <div class="card-grid" id="hr-cards"></div>
+
+  <div class="reject-box">
+    <b>本期無標的剔除。</b>但兩檔進入觀察名單：<span class="rj-ticker">POET</span> 本期三線技術面（SMA20/50/200）全面轉負、量化訊號由正轉反，信心由強降至弱；<span class="rj-ticker">AAOI</span> 技術面已連續第三期反向（SMA20/50/200 持續下降、EPS QoQ 仍為 −74.2%），僅分析師與卡點兩訊號同向。兩者目前都只有一項反向訊號，尚未達到「二反向即剔除」門檻，但若下期量化或新聞訊號再轉弱，將是下一輪最優先的剔除候選。
+  </div>
+</section>
+
+<section id="stable">
+  <h2><span class="num">03</span> 穩定投資 Top 5（產業龍頭）</h2>
+  <p class="lede">供應鏈核心層的壟斷或寡佔龍頭，護城河以卡點語言描述：製程壟斷、設備寡佔、生態系鎖定。</p>
+
+  <div class="card-grid" id="stable-cards"></div>
+
+  <div class="reject-box">
+    <b>本期無標的剔除。</b>上期取代 AVGO 納入的 <span class="rj-ticker">LRCX</span> 本期隨半導體設備股同步回檔（9/14「AI 降溫」雜訊+中國競爭疑慮），四訊號驗證由全同向降為三同向、新聞訊號轉中性，信心由強降至中，暫不影響 Top 5 名額。
+  </div>
+</section>
+
+<section id="etf">
+  <h2><span class="num">04</span> ETF 產業主題三層配置</h2>
+  <p class="lede">單一產業組合無分散效果，避險層是唯一緩衝。本期維持 35% 避險比例：9/14 的降溫雜訊已在 9/16-17 被產業龍頭言論與訂單事實反駁，未見系統性回檔證據，暫不調整；但循環融資與監管雜訊的結構性風險仍未完全消散，尚不具備下調避險的條件。</p>
+
+  <div class="table-wrap">
+    <table class="etf-table">
+      <thead><tr><th>層</th><th>Ticker</th><th>比例</th><th>價格</th><th>費用率</th><th>理由</th></tr></thead>
+      <tbody>
+        <tr><td>核心</td><td class="num">SMH</td><td class="ratio">45%</td><td class="num">$560.61</td><td class="num">0.35%</td><td>半導體大盤型，週線持平（+0.06%）但距高點仍 −16.55%，本週經歷降溫雜訊後收復失地，驗證骨幹配置的抗噪性</td></tr>
+        <tr><td>主題衛星</td><td class="num">BOTZ</td><td class="ratio">10%</td><td class="num">$35.12</td><td class="num">0.68%</td><td>機器人主題，週線 +1.02%，NVDA 生態系持續延伸至機器人客戶群</td></tr>
+        <tr><td>主題衛星</td><td class="num">EWY</td><td class="ratio">10%</td><td class="num">$182.39</td><td class="num">0.59%</td><td>記憶體代理（Samsung/SK Hynix），Phase 1 記憶體超級週期重新加溫最直接受惠者，月線仍 +7.26%</td></tr>
+        <tr><td>避險</td><td class="num">SGOV</td><td class="ratio">35%</td><td class="num">$100.56</td><td class="num">0.09%</td><td>零久期現金層，融資結構與監管雜訊性質未變，維持較高比例</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="history">
+  <h2><span class="num">05</span> 歷史推薦績效回顧</h2>
+  <p class="lede">誠實記帳：以下每一筆推薦皆計入，虧損照列。2026-07-19 當天同時存在兩批紀錄——前段為改版前「全市場版本」（v1，本次改版前的推薦邏輯，僅供歷史對照，不計入本 skill 現行方法論的績效評估）、後段起為改版後「產業聚焦版」（v2，本 skill 現行追蹤邏輯）。以下統計依 <code>version</code> 欄位分開呈現。</p>
+
+  <h3 class="sub">v2 產業聚焦版（本 skill 現行邏輯，n=<span id="v2-n"></span>）</h3>
+  <div class="winrate-grid" id="winrate-grid-v2"></div>
+
+  <h3 class="sub">v1 全市場版（改版前，僅供歷史對照，n=<span id="v1-n"></span>）</h3>
+  <div class="winrate-grid" id="winrate-grid-v1"></div>
+
+  <p class="lede" style="margin-top:1rem;"><b>誠實觀察：</b>v2 整體勝率降至 <span id="v2-overall-note"></span>，本期最大拖累是已剔除標的 LASR（累計超額報酬近 −51%，nLIGHT 財報後轉弱疊加技術面破位）與本期新降級的 LRCX（納入僅一期即隨設備股回檔 −9.7%）。高風險類勝率仍是三類別中最低，本宇宙的高波動特性持續在績效上真實反映，並非只在文字風險提示中出現。</p>
+
+  <h3 class="sub">推薦明細（依日期新→舊，含版本標籤）</h3>
+  <div class="table-wrap">
+    <table id="history-table">
+      <thead>
+        <tr><th>日期</th><th>版本</th><th>類別</th><th>Ticker</th><th>推薦價</th><th>現價</th><th class="num">報酬率</th><th class="num">SPY 同期</th><th class="num">超額報酬</th><th>信心</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</section>
+
+<section id="extended">
+  <h2><span class="num">06</span> 延伸觀察</h2>
+  <p class="lede">Serenity 名單中美股買不到報價的標的，僅供研究追蹤，不進 Top 5：</p>
+  <div class="extend-list">
+    <div class="ext-item"><span class="ext-ticker">$SIVE</span> <span class="ext-market">斯德哥爾摩</span><br>CPO 外部光源 CW 雷射，Phase 3 第一信心標的，基本面兌現在 2027-28</div>
+    <div class="ext-item"><span class="ext-ticker">$IQE</span> <span class="ext-market">倫敦</span><br>化合物半導體磊晶，基礎材料層</div>
+    <div class="ext-item"><span class="ext-ticker">$XFAB</span> <span class="ext-market">巴黎</span><br>SiC 代工 + 800VDC 電源半導體對 NVDA 供應鏈雙重曝險</div>
+    <div class="ext-item"><span class="ext-ticker">$SOI</span> <span class="ext-market">巴黎（Soitec）</span><br>SOI 基板，總經錯殺修正案例</div>
+  </div>
+</section>
+
+<footer class="disclaimer">
+  <p><b>免責聲明：</b>本報告非投資建議，僅為基於公開資料（Finviz、公開新聞）的研究整理。卡點框架與覆蓋名單轉述自 Serenity (@aleabitoreddit) 公開發文之整理，未經驗證其歷史績效真實性。本報告標的集中於 AI/半導體單一產業鏈，無分散效果；高風險類多為中小型股，流動性與波動風險高，本期與累計報酬已實際證明此風險。Finviz 免費版數據可能延遲；歷史績效不代表未來表現。實際投資前請自行查證第一手資料（10-K/10-Q、法說會、SEC 備案）。</p>
+</footer>
+
+</div>
+
+<script>
+const currentSPY = 762.60;
+
+const currentPrices = {
+  URGN:43.95, SEZL:113.08, DAVE:356.49, OSCR:31.98, PENG:52.55, MPLX:58.62,
+  GLPI:40.11, CNA:48.20, WDS:23.61, GFI:43.34, VOO:701.03, SGOV:100.56,
+  SCHD:33.89, XLE:64.48, XLF:55.88,
+  AXTI:67.75, AEHR:90.55, AAOI:98.06, LASR:38.43, POET:7.51,
+  TSM:430.26, ASML:1629.67, AVGO:347.30, MU:977.50, NVDA:219.34,
+  SMH:560.61, BOTZ:35.12, EWY:182.39, FORM:111.53, LRCX:269.31
+};
+
+const records = [
+{date:"2026-07-19",category:"high_risk",ticker:"URGN",price_at_rec:40.23,spy_at_rec:743.29,confidence:"強",version:"v1"},
+{date:"2026-07-19",category:"high_risk",ticker:"SEZL",price_at_rec:174.67,spy_at_rec:743.29,confidence:"中",version:"v1"},
+{date:"2026-07-19",category:"high_risk",ticker:"DAVE",price_at_rec:440.42,spy_at_rec:743.29,confidence:"中",version:"v1"},
+{date:"2026-07-19",category:"high_risk",ticker:"OSCR",price_at_rec:29.1,spy_at_rec:743.29,confidence:"弱",version:"v1"},
+{date:"2026-07-19",category:"high_risk",ticker:"PENG",price_at_rec:60.41,spy_at_rec:743.29,confidence:"弱",version:"v1"},
+{date:"2026-07-19",category:"stable",ticker:"MPLX",price_at_rec:57.06,spy_at_rec:743.29,confidence:"強",version:"v1"},
+{date:"2026-07-19",category:"stable",ticker:"GLPI",price_at_rec:45.08,spy_at_rec:743.29,confidence:"強",version:"v1"},
+{date:"2026-07-19",category:"stable",ticker:"CNA",price_at_rec:52.27,spy_at_rec:743.29,confidence:"中",version:"v1"},
+{date:"2026-07-19",category:"stable",ticker:"WDS",price_at_rec:21.72,spy_at_rec:743.29,confidence:"中",version:"v1"},
+{date:"2026-07-19",category:"stable",ticker:"GFI",price_at_rec:31.99,spy_at_rec:743.29,confidence:"中",version:"v1"},
+{date:"2026-07-19",category:"etf",ticker:"VOO",price_at_rec:683.17,spy_at_rec:743.29,confidence:"強",version:"v1"},
+{date:"2026-07-19",category:"etf",ticker:"SGOV",price_at_rec:100.58,spy_at_rec:743.29,confidence:"強",version:"v1"},
+{date:"2026-07-19",category:"etf",ticker:"SCHD",price_at_rec:32.91,spy_at_rec:743.29,confidence:"強",version:"v1"},
+{date:"2026-07-19",category:"etf",ticker:"XLE",price_at_rec:57.68,spy_at_rec:743.29,confidence:"中",version:"v1"},
+{date:"2026-07-19",category:"etf",ticker:"XLF",price_at_rec:56.26,spy_at_rec:743.29,confidence:"中",version:"v1"},
+{date:"2026-07-19",category:"high_risk",ticker:"AXTI",price_at_rec:45.86,spy_at_rec:743.29,confidence:"強",version:"v2"},
+{date:"2026-07-19",category:"high_risk",ticker:"AEHR",price_at_rec:81.05,spy_at_rec:743.29,confidence:"強",version:"v2"},
+{date:"2026-07-19",category:"high_risk",ticker:"AAOI",price_at_rec:102.41,spy_at_rec:743.29,confidence:"中",version:"v2"},
+{date:"2026-07-19",category:"high_risk",ticker:"LASR",price_at_rec:69.25,spy_at_rec:743.29,confidence:"中",version:"v2"},
+{date:"2026-07-19",category:"high_risk",ticker:"POET",price_at_rec:7.39,spy_at_rec:743.29,confidence:"弱",version:"v2"},
+{date:"2026-07-19",category:"stable",ticker:"TSM",price_at_rec:398.37,spy_at_rec:743.29,confidence:"強",version:"v2"},
+{date:"2026-07-19",category:"stable",ticker:"ASML",price_at_rec:1747.58,spy_at_rec:743.29,confidence:"強",version:"v2"},
+{date:"2026-07-19",category:"stable",ticker:"AVGO",price_at_rec:370.83,spy_at_rec:743.29,confidence:"中",version:"v2"},
+{date:"2026-07-19",category:"stable",ticker:"MU",price_at_rec:848.95,spy_at_rec:743.29,confidence:"中",version:"v2"},
+{date:"2026-07-19",category:"stable",ticker:"NVDA",price_at_rec:202.81,spy_at_rec:743.29,confidence:"中",version:"v2"},
+{date:"2026-07-19",category:"etf",ticker:"SMH",price_at_rec:556.53,spy_at_rec:743.29,confidence:"強",version:"v2"},
+{date:"2026-07-19",category:"etf",ticker:"BOTZ",price_at_rec:34.4,spy_at_rec:743.29,confidence:"中",version:"v2"},
+{date:"2026-07-19",category:"etf",ticker:"EWY",price_at_rec:162.54,spy_at_rec:743.29,confidence:"中",version:"v2"},
+{date:"2026-07-19",category:"etf",ticker:"SGOV",price_at_rec:100.58,spy_at_rec:743.29,confidence:"強",version:"v2"},
+{date:"2026-07-24",category:"high_risk",ticker:"AXTI",price_at_rec:52.93,spy_at_rec:738.18,confidence:"強",version:"v2"},
+{date:"2026-07-24",category:"high_risk",ticker:"AEHR",price_at_rec:88.51,spy_at_rec:738.18,confidence:"強",version:"v2"},
+{date:"2026-07-24",category:"high_risk",ticker:"LASR",price_at_rec:73,spy_at_rec:738.18,confidence:"強",version:"v2"},
+{date:"2026-07-24",category:"high_risk",ticker:"AAOI",price_at_rec:112.02,spy_at_rec:738.18,confidence:"中",version:"v2"},
+{date:"2026-07-24",category:"high_risk",ticker:"POET",price_at_rec:7.6,spy_at_rec:738.18,confidence:"弱",version:"v2"},
+{date:"2026-07-24",category:"stable",ticker:"TSM",price_at_rec:415.58,spy_at_rec:738.18,confidence:"強",version:"v2"},
+{date:"2026-07-24",category:"stable",ticker:"ASML",price_at_rec:1803,spy_at_rec:738.18,confidence:"強",version:"v2"},
+{date:"2026-07-24",category:"stable",ticker:"MU",price_at_rec:990.21,spy_at_rec:738.18,confidence:"強",version:"v2"},
+{date:"2026-07-24",category:"stable",ticker:"AVGO",price_at_rec:392.47,spy_at_rec:738.18,confidence:"中",version:"v2"},
+{date:"2026-07-24",category:"stable",ticker:"NVDA",price_at_rec:208.76,spy_at_rec:738.18,confidence:"中",version:"v2"},
+{date:"2026-07-24",category:"etf",ticker:"SMH",price_at_rec:580.17,spy_at_rec:738.18,confidence:"強",version:"v2"},
+{date:"2026-07-24",category:"etf",ticker:"BOTZ",price_at_rec:34.31,spy_at_rec:738.18,confidence:"中",version:"v2"},
+{date:"2026-07-24",category:"etf",ticker:"EWY",price_at_rec:173.86,spy_at_rec:738.18,confidence:"中",version:"v2"},
+{date:"2026-07-24",category:"etf",ticker:"SGOV",price_at_rec:100.61,spy_at_rec:738.18,confidence:"強",version:"v2"},
+{date:"2026-07-31",category:"high_risk",ticker:"AXTI",price_at_rec:46.94,spy_at_rec:741.69,confidence:"強",version:"v2"},
+{date:"2026-07-31",category:"high_risk",ticker:"AEHR",price_at_rec:76.87,spy_at_rec:741.69,confidence:"強",version:"v2"},
+{date:"2026-07-31",category:"high_risk",ticker:"LASR",price_at_rec:65.71,spy_at_rec:741.69,confidence:"強",version:"v2"},
+{date:"2026-07-31",category:"high_risk",ticker:"AAOI",price_at_rec:90.11,spy_at_rec:741.69,confidence:"中",version:"v2"},
+{date:"2026-07-31",category:"high_risk",ticker:"POET",price_at_rec:7.28,spy_at_rec:741.69,confidence:"弱",version:"v2"},
+{date:"2026-07-31",category:"stable",ticker:"TSM",price_at_rec:403.31,spy_at_rec:741.69,confidence:"強",version:"v2"},
+{date:"2026-07-31",category:"stable",ticker:"ASML",price_at_rec:1651.44,spy_at_rec:741.69,confidence:"強",version:"v2"},
+{date:"2026-07-31",category:"stable",ticker:"MU",price_at_rec:874.66,spy_at_rec:741.69,confidence:"強",version:"v2"},
+{date:"2026-07-31",category:"stable",ticker:"AVGO",price_at_rec:387.84,spy_at_rec:741.69,confidence:"中",version:"v2"},
+{date:"2026-07-31",category:"stable",ticker:"NVDA",price_at_rec:195.04,spy_at_rec:741.69,confidence:"中",version:"v2"},
+{date:"2026-07-31",category:"etf",ticker:"SMH",price_at_rec:538.9,spy_at_rec:741.69,confidence:"強",version:"v2"},
+{date:"2026-07-31",category:"etf",ticker:"BOTZ",price_at_rec:34.9,spy_at_rec:741.69,confidence:"中",version:"v2"},
+{date:"2026-07-31",category:"etf",ticker:"EWY",price_at_rec:161.21,spy_at_rec:741.69,confidence:"中",version:"v2"},
+{date:"2026-07-31",category:"etf",ticker:"SGOV",price_at_rec:100.69,spy_at_rec:741.69,confidence:"強",version:"v2"},
+{date:"2026-08-08",category:"high_risk",ticker:"AXTI",price_at_rec:88.58,spy_at_rec:773.26,confidence:"強",version:"v2"},
+{date:"2026-08-08",category:"high_risk",ticker:"AEHR",price_at_rec:103.07,spy_at_rec:773.26,confidence:"強",version:"v2"},
+{date:"2026-08-08",category:"high_risk",ticker:"AAOI",price_at_rec:135.63,spy_at_rec:773.26,confidence:"中",version:"v2"},
+{date:"2026-08-08",category:"high_risk",ticker:"LASR",price_at_rec:56.15,spy_at_rec:773.26,confidence:"中",version:"v2"},
+{date:"2026-08-08",category:"high_risk",ticker:"POET",price_at_rec:8.91,spy_at_rec:773.26,confidence:"弱",version:"v2"},
+{date:"2026-08-08",category:"stable",ticker:"TSM",price_at_rec:420.04,spy_at_rec:773.26,confidence:"強",version:"v2"},
+{date:"2026-08-08",category:"stable",ticker:"ASML",price_at_rec:1740.99,spy_at_rec:773.26,confidence:"強",version:"v2"},
+{date:"2026-08-08",category:"stable",ticker:"AVGO",price_at_rec:427.76,spy_at_rec:773.26,confidence:"中",version:"v2"},
+{date:"2026-08-08",category:"stable",ticker:"NVDA",price_at_rec:223.96,spy_at_rec:773.26,confidence:"中",version:"v2"},
+{date:"2026-08-08",category:"stable",ticker:"MU",price_at_rec:877.57,spy_at_rec:773.26,confidence:"中",version:"v2"},
+{date:"2026-08-08",category:"etf",ticker:"SMH",price_at_rec:582.7,spy_at_rec:773.26,confidence:"強",version:"v2"},
+{date:"2026-08-08",category:"etf",ticker:"BOTZ",price_at_rec:37.61,spy_at_rec:773.26,confidence:"中",version:"v2"},
+{date:"2026-08-08",category:"etf",ticker:"EWY",price_at_rec:166.09,spy_at_rec:773.26,confidence:"中",version:"v2"},
+{date:"2026-08-08",category:"etf",ticker:"SGOV",price_at_rec:100.48,spy_at_rec:773.26,confidence:"強",version:"v2"},
+{date:"2026-08-14",category:"high_risk",ticker:"AXTI",price_at_rec:81.64,spy_at_rec:776.34,confidence:"強",version:"v2"},
+{date:"2026-08-14",category:"high_risk",ticker:"AEHR",price_at_rec:134.06,spy_at_rec:776.34,confidence:"中",version:"v2"},
+{date:"2026-08-14",category:"high_risk",ticker:"AAOI",price_at_rec:150.28,spy_at_rec:776.34,confidence:"中",version:"v2"},
+{date:"2026-08-14",category:"high_risk",ticker:"LASR",price_at_rec:52.6,spy_at_rec:776.34,confidence:"弱",version:"v2"},
+{date:"2026-08-14",category:"high_risk",ticker:"POET",price_at_rec:9.58,spy_at_rec:776.34,confidence:"中",version:"v2"},
+{date:"2026-08-14",category:"stable",ticker:"TSM",price_at_rec:426.35,spy_at_rec:776.34,confidence:"強",version:"v2"},
+{date:"2026-08-14",category:"stable",ticker:"ASML",price_at_rec:1844.08,spy_at_rec:776.34,confidence:"強",version:"v2"},
+{date:"2026-08-14",category:"stable",ticker:"AVGO",price_at_rec:392.99,spy_at_rec:776.34,confidence:"弱",version:"v2"},
+{date:"2026-08-14",category:"stable",ticker:"NVDA",price_at_rec:225.16,spy_at_rec:776.34,confidence:"中",version:"v2"},
+{date:"2026-08-14",category:"stable",ticker:"MU",price_at_rec:971.66,spy_at_rec:776.34,confidence:"強",version:"v2"},
+{date:"2026-08-14",category:"etf",ticker:"SMH",price_at_rec:587.82,spy_at_rec:776.34,confidence:"強",version:"v2"},
+{date:"2026-08-14",category:"etf",ticker:"BOTZ",price_at_rec:37.74,spy_at_rec:776.34,confidence:"中",version:"v2"},
+{date:"2026-08-14",category:"etf",ticker:"EWY",price_at_rec:179.74,spy_at_rec:776.34,confidence:"中",version:"v2"},
+{date:"2026-08-14",category:"etf",ticker:"SGOV",price_at_rec:100.56,spy_at_rec:776.34,confidence:"強",version:"v2"},
+{date:"2026-08-25",category:"high_risk",ticker:"AXTI",price_at_rec:69.3,spy_at_rec:766.55,confidence:"強",version:"v2"},
+{date:"2026-08-25",category:"high_risk",ticker:"AEHR",price_at_rec:101,spy_at_rec:766.55,confidence:"強",version:"v2"},
+{date:"2026-08-25",category:"high_risk",ticker:"AAOI",price_at_rec:112.97,spy_at_rec:766.55,confidence:"弱",version:"v2"},
+{date:"2026-08-25",category:"high_risk",ticker:"LASR",price_at_rec:44.84,spy_at_rec:766.55,confidence:"弱",version:"v2"},
+{date:"2026-08-25",category:"high_risk",ticker:"POET",price_at_rec:7.98,spy_at_rec:766.55,confidence:"強",version:"v2"},
+{date:"2026-08-25",category:"stable",ticker:"TSM",price_at_rec:416.63,spy_at_rec:766.55,confidence:"強",version:"v2"},
+{date:"2026-08-25",category:"stable",ticker:"ASML",price_at_rec:1767,spy_at_rec:766.55,confidence:"強",version:"v2"},
+{date:"2026-08-25",category:"stable",ticker:"AVGO",price_at_rec:363.4,spy_at_rec:766.55,confidence:"弱",version:"v2"},
+{date:"2026-08-25",category:"stable",ticker:"NVDA",price_at_rec:211.1,spy_at_rec:766.55,confidence:"弱",version:"v2"},
+{date:"2026-08-25",category:"stable",ticker:"MU",price_at_rec:931.5,spy_at_rec:766.55,confidence:"強",version:"v2"},
+{date:"2026-08-25",category:"etf",ticker:"SMH",price_at_rec:556.86,spy_at_rec:766.55,confidence:"強",version:"v2"},
+{date:"2026-08-25",category:"etf",ticker:"BOTZ",price_at_rec:35.83,spy_at_rec:766.55,confidence:"中",version:"v2"},
+{date:"2026-08-25",category:"etf",ticker:"EWY",price_at_rec:178.95,spy_at_rec:766.55,confidence:"中",version:"v2"},
+{date:"2026-08-25",category:"etf",ticker:"SGOV",price_at_rec:100.64,spy_at_rec:766.55,confidence:"強",version:"v2"},
+{date:"2026-09-04",category:"high_risk",ticker:"AXTI",price_at_rec:57.94,spy_at_rec:771.74,confidence:"強",version:"v2"},
+{date:"2026-09-04",category:"high_risk",ticker:"AEHR",price_at_rec:77.96,spy_at_rec:771.74,confidence:"強",version:"v2"},
+{date:"2026-09-04",category:"high_risk",ticker:"AAOI",price_at_rec:100.9,spy_at_rec:771.74,confidence:"弱",version:"v2"},
+{date:"2026-09-04",category:"high_risk",ticker:"LASR",price_at_rec:41.94,spy_at_rec:771.74,confidence:"弱",version:"v2"},
+{date:"2026-09-04",category:"high_risk",ticker:"POET",price_at_rec:7.44,spy_at_rec:771.74,confidence:"中",version:"v2"},
+{date:"2026-09-04",category:"stable",ticker:"TSM",price_at_rec:421.8,spy_at_rec:771.74,confidence:"強",version:"v2"},
+{date:"2026-09-04",category:"stable",ticker:"ASML",price_at_rec:1675.36,spy_at_rec:771.74,confidence:"強",version:"v2"},
+{date:"2026-09-04",category:"stable",ticker:"AVGO",price_at_rec:358.85,spy_at_rec:771.74,confidence:"弱",version:"v2"},
+{date:"2026-09-04",category:"stable",ticker:"NVDA",price_at_rec:231.2,spy_at_rec:771.74,confidence:"中",version:"v2"},
+{date:"2026-09-04",category:"stable",ticker:"MU",price_at_rec:969.77,spy_at_rec:771.74,confidence:"弱",version:"v2"},
+{date:"2026-09-04",category:"etf",ticker:"SMH",price_at_rec:559,spy_at_rec:771.74,confidence:"強",version:"v2"},
+{date:"2026-09-04",category:"etf",ticker:"BOTZ",price_at_rec:36.15,spy_at_rec:771.74,confidence:"中",version:"v2"},
+{date:"2026-09-04",category:"etf",ticker:"EWY",price_at_rec:180.53,spy_at_rec:771.74,confidence:"中",version:"v2"},
+{date:"2026-09-04",category:"etf",ticker:"SGOV",price_at_rec:100.46,spy_at_rec:771.74,confidence:"強",version:"v2"},
+{date:"2026-09-12",category:"high_risk",ticker:"AXTI",price_at_rec:64.77,spy_at_rec:764.29,confidence:"強",version:"v2"},
+{date:"2026-09-12",category:"high_risk",ticker:"AEHR",price_at_rec:94.69,spy_at_rec:764.29,confidence:"強",version:"v2"},
+{date:"2026-09-12",category:"high_risk",ticker:"POET",price_at_rec:7.95,spy_at_rec:764.29,confidence:"強",version:"v2"},
+{date:"2026-09-12",category:"high_risk",ticker:"FORM",price_at_rec:114.95,spy_at_rec:764.29,confidence:"強",version:"v2",replaces:"LASR"},
+{date:"2026-09-12",category:"high_risk",ticker:"AAOI",price_at_rec:105.36,spy_at_rec:764.29,confidence:"中",version:"v2"},
+{date:"2026-09-12",category:"stable",ticker:"TSM",price_at_rec:433.24,spy_at_rec:764.29,confidence:"強",version:"v2"},
+{date:"2026-09-12",category:"stable",ticker:"ASML",price_at_rec:1698.3,spy_at_rec:764.29,confidence:"強",version:"v2"},
+{date:"2026-09-12",category:"stable",ticker:"LRCX",price_at_rec:298.22,spy_at_rec:764.29,confidence:"強",version:"v2",replaces:"AVGO"},
+{date:"2026-09-12",category:"stable",ticker:"NVDA",price_at_rec:218.29,spy_at_rec:764.29,confidence:"中",version:"v2"},
+{date:"2026-09-12",category:"stable",ticker:"MU",price_at_rec:975.26,spy_at_rec:764.29,confidence:"中",version:"v2"},
+{date:"2026-09-12",category:"etf",ticker:"SMH",price_at_rec:568.53,spy_at_rec:764.29,confidence:"強",version:"v2"},
+{date:"2026-09-12",category:"etf",ticker:"BOTZ",price_at_rec:35.28,spy_at_rec:764.29,confidence:"中",version:"v2"},
+{date:"2026-09-12",category:"etf",ticker:"EWY",price_at_rec:188.72,spy_at_rec:764.29,confidence:"中",version:"v2"},
+{date:"2026-09-12",category:"etf",ticker:"SGOV",price_at_rec:100.52,spy_at_rec:764.29,confidence:"強",version:"v2"}
+];
+
+const catLabel = {high_risk:"高風險", stable:"穩定", etf:"ETF"};
+const confClass = {"強":"strong","中":"mid","弱":"weak"};
+
+function pct(a,b){ return (a/b - 1) * 100; }
+function fmtPct(v){ const s = v>=0? "+":""; return s+v.toFixed(1)+"%"; }
+
+// history table
+const tbody = document.querySelector("#history-table tbody");
+const sorted = [...records].sort((a,b)=> b.date.localeCompare(a.date));
+let rowsHtml = "";
+sorted.forEach(r=>{
+  const cur = currentPrices[r.ticker];
+  const ret = pct(cur, r.price_at_rec);
+  const spyRet = pct(currentSPY, r.spy_at_rec);
+  const excess = ret - spyRet;
+  rowsHtml += `<tr>
+    <td>${r.date}</td>
+    <td><span class="ver-tag">${r.version}</span></td>
+    <td>${catLabel[r.category]}</td>
+    <td><b>${r.ticker}</b>${r.replaces?` <span class="ver-tag">←${r.replaces}</span>`:""}</td>
+    <td class="num">$${r.price_at_rec.toFixed(2)}</td>
+    <td class="num">$${cur.toFixed(2)}</td>
+    <td class="num ${ret>=0?'pos':'neg'}">${fmtPct(ret)}</td>
+    <td class="num">${fmtPct(spyRet)}</td>
+    <td class="num ${excess>=0?'pos':'neg'}">${fmtPct(excess)}</td>
+    <td>${r.confidence}</td>
+  </tr>`;
+});
+tbody.innerHTML = rowsHtml;
+
+function excessOf(r){
+  const cur = currentPrices[r.ticker];
+  const ret = pct(cur, r.price_at_rec);
+  const spyRet = pct(currentSPY, r.spy_at_rec);
+  return ret - spyRet;
+}
+
+function renderWinrateGrid(version, elId, cats, dim) {
+  const grid = document.getElementById(elId);
+  let html = "";
+  cats.forEach(cat=>{
+    const rs = records.filter(r=>r.version===version && (cat==="all" || r.category===cat));
+    if (!rs.length) return;
+    const excesses = rs.map(excessOf);
+    const wins = excesses.filter(e=>e>0).length;
+    const winRate = wins/rs.length*100;
+    const avgExcess = excesses.reduce((a,b)=>a+b,0)/rs.length;
+    const label = cat==="all" ? `全部（n=${rs.length}）` : `${catLabel[cat]}（n=${rs.length}）`;
+    html += `<div class="wr-card${dim?' v1':''}">
+      <div class="wr-cat">${label}</div>
+      <div class="wr-pct">${winRate.toFixed(0)}%</div>
+      <div class="wr-bar"><div class="wr-bar-fill" style="width:${winRate}%"></div></div>
+      <div class="wr-sub">平均超額報酬 ${fmtPct(avgExcess)}</div>
+    </div>`;
+  });
+  grid.innerHTML = html;
+}
+
+renderWinrateGrid("v2", "winrate-grid-v2", ["all","high_risk","stable","etf"], false);
+renderWinrateGrid("v1", "winrate-grid-v1", ["all"], true);
+
+document.getElementById("v2-n").textContent = records.filter(r=>r.version==="v2").length;
+document.getElementById("v1-n").textContent = records.filter(r=>r.version==="v1").length;
+
+const v2All = records.filter(r=>r.version==="v2").map(excessOf);
+const v2WinRate = (v2All.filter(e=>e>0).length/v2All.length*100).toFixed(0);
+document.getElementById("v2-overall-note").textContent = v2WinRate + "%";
+
+// ---- High risk cards ----
+const hrData = [
+  {ticker:"AXTI", company:"AXT Inc", price:67.75, mcap:"$4.44B", layer:"基礎材料層 · 核心卡點",
+   thesis:"InP 磊晶基板雙寡頭（與住友合計 60-70% 市佔），9/16-17 獲選為共封裝光學（CPO）供應商並疊加指數納入消息，單週跳漲逾 10%；7/30 財報 EPS QoQ +208% 延續需求敘事。",
+   sig:{quant:"up",analyst:"up",news:"up",chokepoint:"up"}, conf:"強",
+   risk:"三線 SMA 全數轉正後短期漲多，追高風險上升；Insider Trans −9.1% 賣壓持續但幅度收斂，需留意消息面過後的獲利了結。"},
+  {ticker:"AEHR", company:"Aehr Test Systems", price:90.55, mcap:"$2.96B", layer:"測試設備層 · 次級卡點",
+   thesis:"光子學測試設備商，9 月獲 Oppenheimer（Outperform，目標價 $120）與 Jefferies（Buy，目標價 $175）分別發布評等，延續「資格認證訂單領先量產」邏輯，8 月 $22M 矽光子追加訂單效應仍在發酵。",
+   sig:{quant:"up",analyst:"up",news:"up",chokepoint:"up"}, conf:"強",
+   risk:"Insider Trans −31.3% 為本期最大內部人賣壓；Beta 3.49 波動極大，SMA50 轉為小幅負值（−1.8%），短期估值消化壓力未完全釋放。"},
+  {ticker:"FORM", company:"FormFactor Inc", price:111.53, mcap:"$8.71B", layer:"測試/量測層 · 次級卡點",
+   thesis:"晶圓測試探針卡供應商，切入 CPO 放量爬坡期的晶圓測試瓶頸；本期無新增催化，主要消息仍是 6-7 月的 Russell 1000 納入與分析師上調目標價的延續效應，基本面（EPS QoQ +502%）未變但新聞熱度降溫。",
+   sig:{quant:"up",analyst:"up",news:"neutral",chokepoint:"up"}, conf:"中",
+   risk:"分析師目標價空間收窄至 +33.9%（前期 +37.6%），加上本期缺乏新訂單/產能消息，信心自上期「強」下修至「中」；追蹤窗口仍短，尚待下期驗證。"},
+  {ticker:"AAOI", company:"Applied Optoelectronics", price:98.06, mcap:"$8.33B", layer:"光收發模組層 · 次級卡點（Phase 2）",
+   thesis:"光收發模組廠，Sales Q/Q +86.4% 需求端仍強，本週隨 COHR、GLW 等同業齊漲，但 EPS Q/Q 仍為 −74.2%，8 月 $600M 增資稀釋疑慮尚未完全消化。",
+   sig:{quant:"down",analyst:"up",news:"neutral",chokepoint:"up"}, conf:"弱",
+   risk:"SMA20/50/200 全數負值，技術面已連續第三期反向；方法論原則 14（稀釋是論文殺手）持續適用，若下期新聞或分析師訊號再轉弱，將觸及二反向剔除門檻。"},
+  {ticker:"POET", company:"POET Technologies", price:7.51, mcap:"$1.30B", layer:"CPO 光學整合層 · 次級卡點（Phase 3）",
+   thesis:"矽光子/CPO 整合平台，Sales Q/Q +112.3%、EPS Q/Q +67.2% 基本面仍強，9/4 僅有例行展會消息（CIOE 2026 高功率雷射光源展示），缺乏新訂單或量產進度更新。",
+   sig:{quant:"down",analyst:"up",news:"neutral",chokepoint:"neutral"}, conf:"弱",
+   risk:"SMA20/50/200 三線本期全面轉負，技術面明顯轉弱；Short Float 24.6% 維持高檔，基本面兌現窗口仍在 2027-28 年，信心由上期「強」大幅下修至「弱」，是本期波動最大的降級案例。"}
+];
+
+const stableData = [
+  {ticker:"TSM", company:"台積電", price:430.26, mcap:"$2,230B", layer:"代工層 · 核心卡點", moat:"先進製程代工壟斷；<3nm 全球產能集中度最高",
+   fund:[["淨利率","50.3%"],["EPS QoQ","+73.3%"],["目標價空間","+26.4%"]],
+   thesis:"9/11 公布 8 月營收超 NT$500B 帶動股價反彈，9/16-17 市場聚焦 2nm 製程進入手機競賽，先進製程話語權持續強化；9/10「創紀錄營收仍下跌」反映部分利多已定價，屬短期情緒雜訊。",
+   sig:{quant:"up",analyst:"up",news:"up",chokepoint:"up"}, conf:"強",
+   risk:"2027 年資本支出上看 $85B，資本密集度持續攀升；市場對「賣事實」情緒需持續辨識是否轉為實質基本面轉弱訊號。"},
+  {ticker:"ASML", company:"ASML Holding", price:1629.67, mcap:"$628.11B", layer:"設備層 · 核心卡點", moat:"EUV 微影設備獨供，先進製程唯一供應商",
+   fund:[["淨利率","30.1%"],["EPS QoQ","+31.9%"],["目標價空間","+43.9%"]],
+   thesis:"9/8 與 TSM/Samsung 深化 EUV 合作、9/4 宣布日本人力擴編 40%，9/17 進度邁向 110 台 EUV 設備年產能里程碑；9/14 產業「AI 降溫」說法一度拖累股價，但無客戶砍單證據，屬總經雜訊。",
+   sig:{quant:"up",analyst:"up",news:"neutral",chokepoint:"up"}, conf:"強",
+   risk:"核心卡點加分規則：卡點訊號為核心卡點時，將新聞訊號的「中性」視同「同向」，故信心維持「強」（已標註使用加分規則）。中國 DUV 自製威脅仍是長期需追蹤的競爭風險。"},
+  {ticker:"LRCX", company:"Lam Research", price:269.31, mcap:"$336.99B", layer:"設備層 · 次級卡點", moat:"蝕刻/沉積設備寡佔（與 AMAT/KLAC 三強鼎立）",
+   fund:[["淨利率","31.3%"],["EPS QoQ","+34.6%"],["目標價空間","+42.6%"]],
+   thesis:"9 月宣布印度 10 億美元製造擴建計畫，延續 8 月 Oregon $1.5B 研發投資的資本支出加碼敘事；惟本週隨 9/14「AI 降溫」雜訊與中國設備競爭疑慮同步遭遇股價回檔（自納入時下跌近 −9.7%）。",
+   sig:{quant:"up",analyst:"up",news:"neutral",chokepoint:"up"}, conf:"中",
+   risk:"上期以四訊號全同向納入 Top 5，本期新聞訊號降為中性，信心同步由強降為中；納入僅一期即出現顯著回檔，需觀察是否為總經雜訊或設備寡佔地位本身出現裂縫。"},
+  {ticker:"NVDA", company:"NVIDIA", price:219.34, mcap:"$5,286.09B", layer:"GPU 生態系層 · 已定價（非核心卡點）", moat:"GPU 生態系鎖定（CUDA），品牌層已定價",
+   fund:[["淨利率","63.7%"],["EPS QoQ","+128.2%"],["目標價空間","+52.5%"]],
+   thesis:"9/17 執行長進一步上修明年晶片銷售看法至「翻倍」（前次為 +70%），CoreWeave 多機架 Rubin GPU 叢集上線、Meta 執行長公開反駁 AI 降溫論，供應鏈鎖定與需求驗證同步走強，新聞訊號由中性轉為同向。",
+   sig:{quant:"up",analyst:"up",news:"up",chokepoint:"neutral"}, conf:"中",
+   risk:"品牌層卡點屬性已被市場充分定價，資訊差有限，故信心仍維持「中」而非「強」；循環融資／監管調查等結構性雜訊本週未見新頭條，但議題本身尚未解除。"},
+  {ticker:"MU", company:"Micron Technology", price:977.50, mcap:"$1,103.98B", layer:"記憶體層 · 次級卡點", moat:"HBM 三寡頭（與 Samsung/SK Hynix）",
+   fund:[["淨利率","55.9%"],["EPS QoQ","+1372.1%"],["目標價空間","+61.2%"]],
+   thesis:"9/17 Intel 執行長示警記憶體短缺持續惡化，分析師稱缺貨可能延續至 2029 年，9/15 展示 512GB DDR5 新品，記憶體超級週期（Phase 1）供給端話語權再度獲驗證；但 Intel 支持的新創進入市場、台灣廠區罷工風險為新增雜訊。",
+   sig:{quant:"up",analyst:"up",news:"neutral",chokepoint:"up"}, conf:"中",
+   risk:"Phase 1 多數增量報酬已被定價，此處更接近『產業龍頭穩定配置』邏輯；中國 CXMT 競爭與台灣勞資雜訊需持續追蹤是否升級為基本面轉弱訊號。"}
+];
+
+function sigLabel(v){ return v==="up"?"正向":v==="down"?"反向":"中性"; }
+
+function renderCard(d, kind){
+  const cc = confClass[d.conf];
+  let extra = "";
+  if(kind==="stable"){
+    extra = `<div class="moat"><b>護城河：</b>${d.moat}</div>
+      <div class="fund-row">${d.fund.map(f=>`<span>${f[0]}<b>${f[1]}</b></span>`).join("")}</div>`;
+  }
+  return `<div class="card">
+    <div class="card-top">
+      <div class="ticker-block">
+        <span class="ticker">${d.ticker}</span>
+        <span class="company">${d.company}</span>
+      </div>
+      <div class="price-block">
+        <div class="price">$${d.price.toFixed(2)}</div>
+        <div class="mcap">市值 ${d.mcap}</div>
+      </div>
+    </div>
+    <div class="tag-row">
+      <span class="tag layer">${d.layer}</span>
+      <span class="tag conf ${cc}">信心：${d.conf}</span>
+    </div>
+    ${extra}
+    <p class="thesis">${d.thesis}</p>
+    <div class="signal-row">
+      <div class="signal"><div class="sig-label">量化</div><div class="sig-val ${d.sig.quant}">${sigLabel(d.sig.quant)}</div></div>
+      <div class="signal"><div class="sig-label">分析師</div><div class="sig-val ${d.sig.analyst}">${sigLabel(d.sig.analyst)}</div></div>
+      <div class="signal"><div class="sig-label">新聞</div><div class="sig-val ${d.sig.news}">${sigLabel(d.sig.news)}</div></div>
+      <div class="signal"><div class="sig-label">卡點</div><div class="sig-val ${d.sig.chokepoint}">${sigLabel(d.sig.chokepoint)}</div></div>
+    </div>
+    <div class="risk"><b>風險：</b>${d.risk}</div>
+  </div>`;
+}
+
+document.getElementById("hr-cards").innerHTML = hrData.map(d=>renderCard(d,"hr")).join("");
+document.getElementById("stable-cards").innerHTML = stableData.map(d=>renderCard(d,"stable")).join("");
+</script>

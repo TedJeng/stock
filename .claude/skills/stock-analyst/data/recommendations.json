@@ -1,0 +1,2116 @@
+{
+  "recommendations": [
+    {
+      "date": "2026-07-19",
+      "category": "high_risk",
+      "ticker": "URGN",
+      "price_at_rec": 40.23,
+      "spy_at_rec": 743.29,
+      "thesis_summary": "營收 QoQ +151.6%，ZUSDURI 數據強，新專利至 2044 + UGN-501 FDA IND，三訊號同向",
+      "confidence": "強",
+      "version": "v1"
+    },
+    {
+      "date": "2026-07-19",
+      "category": "high_risk",
+      "ticker": "SEZL",
+      "price_at_rec": 174.67,
+      "spy_at_rec": 743.29,
+      "thesis_summary": "BNPL 超級 App，營收 +29%/EPS +47%，$300M 信貸額度；目標價落後現價故降為中",
+      "confidence": "中",
+      "version": "v1"
+    },
+    {
+      "date": "2026-07-19",
+      "category": "high_risk",
+      "ticker": "DAVE",
+      "price_at_rec": 440.42,
+      "spy_at_rec": 743.29,
+      "thesis_summary": "EPS QoQ +104.5%，納入 S&P SmallCap 600，評級 1.17；股價已超過目標價 + 內部人賣股",
+      "confidence": "中",
+      "version": "v1"
+    },
+    {
+      "date": "2026-07-19",
+      "category": "high_risk",
+      "ticker": "OSCR",
+      "price_at_rec": 29.1,
+      "spy_at_rec": 743.29,
+      "thesis_summary": "健保科技轉盈 + ACA 補貼順風，但分析師中性且目標價低於現價 13%，降為弱",
+      "confidence": "弱",
+      "version": "v1"
+    },
+    {
+      "date": "2026-07-19",
+      "category": "high_risk",
+      "ticker": "PENG",
+      "price_at_rec": 60.41,
+      "spy_at_rec": 743.29,
+      "thesis_summary": "NVIDIA AI Factory 夥伴、上檔 +21%，但正處半導體回檔震央 + 可轉債稀釋，降為弱",
+      "confidence": "弱",
+      "version": "v1"
+    },
+    {
+      "date": "2026-07-19",
+      "category": "stable",
+      "ticker": "MPLX",
+      "price_at_rec": 57.06,
+      "spy_at_rec": 743.29,
+      "thesis_summary": "中游 MLP，殖利率 8%/Payout 82%，配息上調 12.5%，能源輪動受惠，三訊號同向",
+      "confidence": "強",
+      "version": "v1"
+    },
+    {
+      "date": "2026-07-19",
+      "category": "stable",
+      "ticker": "GLPI",
+      "price_at_rec": 45.08,
+      "spy_at_rec": 743.29,
+      "thesis_summary": "博弈 REIT 三重淨租賃，殖利率 7.1%，股息上調 5%，目標價上檔 +20%",
+      "confidence": "強",
+      "version": "v1"
+    },
+    {
+      "date": "2026-07-19",
+      "category": "stable",
+      "ticker": "CNA",
+      "price_at_rec": 52.27,
+      "spy_at_rec": 743.29,
+      "thesis_summary": "產險 Beta 0.27/Payout 39%，EPS +35.9%，AM Best 升評；分析師目標價落後故為中",
+      "confidence": "中",
+      "version": "v1"
+    },
+    {
+      "date": "2026-07-19",
+      "category": "stable",
+      "ticker": "WDS",
+      "price_at_rec": 21.72,
+      "spy_at_rec": 743.29,
+      "thesis_summary": "澳洲 LNG 龍頭，殖利率 7%/Beta 0.34，能源輪動 + 新供氣合約；上檔空間有限故為中",
+      "confidence": "中",
+      "version": "v1"
+    },
+    {
+      "date": "2026-07-19",
+      "category": "stable",
+      "ticker": "GFI",
+      "price_at_rec": 31.99,
+      "spy_at_rec": 743.29,
+      "thesis_summary": "金礦逆勢價值：P/E 8.1/Payout 30%，目標價 +58%，但趨勢仍向下屬接刀部位",
+      "confidence": "中",
+      "version": "v1"
+    },
+    {
+      "date": "2026-07-19",
+      "category": "etf",
+      "ticker": "VOO",
+      "price_at_rec": 683.17,
+      "spy_at_rec": 743.29,
+      "thesis_summary": "核心配置 60%：最低成本大盤曝險，首檔破 $1T ETF",
+      "confidence": "強",
+      "version": "v1"
+    },
+    {
+      "date": "2026-07-19",
+      "category": "etf",
+      "ticker": "SGOV",
+      "price_at_rec": 100.58,
+      "spy_at_rec": 743.29,
+      "thesis_summary": "防禦配置：Warsh 鷹派下零久期短債，~3.5%+ 現金殖利率",
+      "confidence": "強",
+      "version": "v1"
+    },
+    {
+      "date": "2026-07-19",
+      "category": "etf",
+      "ticker": "SCHD",
+      "price_at_rec": 32.91,
+      "spy_at_rec": 743.29,
+      "thesis_summary": "防禦配置：高股息價值，季 +6.8% 印證輪動方向",
+      "confidence": "強",
+      "version": "v1"
+    },
+    {
+      "date": "2026-07-19",
+      "category": "etf",
+      "ticker": "XLE",
+      "price_at_rec": 57.68,
+      "spy_at_rec": 743.29,
+      "thesis_summary": "衛星配置：能源板塊，下跌週逆勢 +4.7%，輪動最明確受惠者",
+      "confidence": "中",
+      "version": "v1"
+    },
+    {
+      "date": "2026-07-19",
+      "category": "etf",
+      "ticker": "XLF",
+      "price_at_rec": 56.26,
+      "spy_at_rec": 743.29,
+      "thesis_summary": "衛星配置：金融板塊，輪動第二受惠者，月線 +3.5%",
+      "confidence": "中",
+      "version": "v1"
+    },
+    {
+      "date": "2026-07-19",
+      "category": "high_risk",
+      "ticker": "AXTI",
+      "price_at_rec": 45.86,
+      "spy_at_rec": 743.29,
+      "thesis_summary": "v2 產業聚焦｜基礎材料層核心卡點：InP 基板雙寡頭，回檔 44% 屬總經錯殺，目標價 +110%，7/30 財報為驗證窗口",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-07-19",
+      "category": "high_risk",
+      "ticker": "AEHR",
+      "price_at_rec": 81.05,
+      "spy_at_rec": 743.29,
+      "thesis_summary": "v2｜測試設備層次級卡點：FY27 財測 160-200% 成長 + 矽光子追加訂單，回檔中逆勢持平",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-07-19",
+      "category": "high_risk",
+      "ticker": "AAOI",
+      "price_at_rec": 102.41,
+      "spy_at_rec": 743.29,
+      "thesis_summary": "v2｜光學元件層次級卡點：Phase 2 錯殺候選，德州擴產驗證需求，目標價 +69%，RSI 超賣",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-07-19",
+      "category": "high_risk",
+      "ticker": "LASR",
+      "price_at_rec": 69.25,
+      "spy_at_rec": 743.29,
+      "thesis_summary": "v2｜半導體雷射：$627M 國防定向能合約第二引擎，與 AI 鏈相關性最低的一檔",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-07-19",
+      "category": "high_risk",
+      "ticker": "POET",
+      "price_at_rec": 7.39,
+      "spy_at_rec": 743.29,
+      "thesis_summary": "v2｜Phase 3 矽光子樂透部位：基本面兌現在 2027-28，空單 30%，僅適合極小倉位",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-07-19",
+      "category": "stable",
+      "ticker": "TSM",
+      "price_at_rec": 398.37,
+      "spy_at_rec": 743.29,
+      "thesis_summary": "v2｜代工層核心卡點：先進製程壟斷，Q2 大勝 + capex 上修 $64B，forward P/E 18.7",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-07-19",
+      "category": "stable",
+      "ticker": "ASML",
+      "price_at_rec": 1747.58,
+      "spy_at_rec": 743.29,
+      "thesis_summary": "v2｜設備層核心卡點：EUV 獨供，2026 展望上修 + Intel 導入 High-NA，相對強度最佳",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-07-19",
+      "category": "stable",
+      "ticker": "AVGO",
+      "price_at_rec": 370.83,
+      "spy_at_rec": 743.29,
+      "thesis_summary": "v2｜ASIC/網通次級卡點：Apple $30B 協議為龍頭鎖定驗證訊號；P/E 61 偏高故為中",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-07-19",
+      "category": "stable",
+      "ticker": "MU",
+      "price_at_rec": 848.95,
+      "spy_at_rec": 743.29,
+      "thesis_summary": "v2｜記憶體層次級卡點：HBM 三寡頭，forward P/E 5.5 + 車用長約；Phase 1 已走完為框架警示",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-07-19",
+      "category": "stable",
+      "ticker": "NVDA",
+      "price_at_rec": 202.81,
+      "spy_at_rec": 743.29,
+      "thesis_summary": "v2｜GPU 層生態系卡點（已定價）：CUDA 鎖定 + 成長無可挑剔，但屬品牌層無資訊差",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-07-19",
+      "category": "etf",
+      "ticker": "SMH",
+      "price_at_rec": 556.53,
+      "spy_at_rec": 743.29,
+      "thesis_summary": "v2｜核心 45%：半導體大盤型，週 −8.9% 提供分批點",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-07-19",
+      "category": "etf",
+      "ticker": "BOTZ",
+      "price_at_rec": 34.4,
+      "spy_at_rec": 743.29,
+      "thesis_summary": "v2｜衛星 10%：機器人主題（Optimus 量產 ramp、Unitree IPO），個股純度不足由 ETF 承接",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-07-19",
+      "category": "etf",
+      "ticker": "EWY",
+      "price_at_rec": 162.54,
+      "spy_at_rec": 743.29,
+      "thesis_summary": "v2｜衛星 10%：Samsung/SK Hynix 記憶體代理（serenity 慣例），HBM 雜訊落地後修復彈性",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-07-19",
+      "category": "etf",
+      "ticker": "SGOV",
+      "price_at_rec": 100.58,
+      "spy_at_rec": 743.29,
+      "thesis_summary": "v2｜避險 35%（回檔中上調）：短久期現金層兼加碼彈藥庫",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-07-24",
+      "category": "high_risk",
+      "ticker": "AXTI",
+      "price_at_rec": 52.93,
+      "spy_at_rec": 738.18,
+      "thesis_summary": "基礎材料層核心卡點：InP 雙寡頭，短均線回落屬回檔錯殺，營收/EPS 成長不受影響，四訊號三同向一中性",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-07-24",
+      "category": "high_risk",
+      "ticker": "AEHR",
+      "price_at_rec": 88.51,
+      "spy_at_rec": 738.18,
+      "thesis_summary": "測試設備層次級卡點：7/21 在手訂單創紀錄+FY27 展望上修單日+22%，四訊號全同向",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-07-24",
+      "category": "high_risk",
+      "ticker": "LASR",
+      "price_at_rec": 73,
+      "spy_at_rec": 738.18,
+      "thesis_summary": "半導體雷射次級卡點：$627M 國防合約第二引擎+均線多頭排列，由中上調為強",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-07-24",
+      "category": "high_risk",
+      "ticker": "AAOI",
+      "price_at_rec": 112.02,
+      "spy_at_rec": 738.18,
+      "thesis_summary": "光學元件層次級卡點：POET 高管公開背書單日+15%，惟 EPS QoQ 轉負降為量化中性",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-07-24",
+      "category": "high_risk",
+      "ticker": "POET",
+      "price_at_rec": 7.6,
+      "spy_at_rec": 738.18,
+      "thesis_summary": "Phase 3 矽光子樂透部位：Google capex 上修外溢利多，但 EPS QoQ 惡化至-203%，僅適合極小倉位",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-07-24",
+      "category": "stable",
+      "ticker": "TSM",
+      "price_at_rec": 415.58,
+      "spy_at_rec": 738.18,
+      "thesis_summary": "代工層核心卡點：Q2創紀錄獲利+2027調漲晶圓價最高10%+Arizona投資擴至$265B",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-07-24",
+      "category": "stable",
+      "ticker": "ASML",
+      "price_at_rec": 1803,
+      "spy_at_rec": 738.18,
+      "thesis_summary": "設備層核心卡點：EUV獨供，7/15財報優於預期並上修2026展望",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-07-24",
+      "category": "stable",
+      "ticker": "MU",
+      "price_at_rec": 990.21,
+      "spy_at_rec": 738.18,
+      "thesis_summary": "記憶體層次級卡點：Musk證實Tesla簽多年期AI記憶體供貨+EPS QoQ暴增1372%，由中上調為強",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-07-24",
+      "category": "stable",
+      "ticker": "AVGO",
+      "price_at_rec": 392.47,
+      "spy_at_rec": 738.18,
+      "thesis_summary": "ASIC/網通次級卡點：Apple $30B協議持續驗證，估值偏高無新增新聞故維持中",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-07-24",
+      "category": "stable",
+      "ticker": "NVDA",
+      "price_at_rec": 208.76,
+      "spy_at_rec": 738.18,
+      "thesis_summary": "GPU生態系已定價：新增Amkor封裝合作+首爾AI實驗室，但屬品牌層卡點訊號記中性",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-07-24",
+      "category": "etf",
+      "ticker": "SMH",
+      "price_at_rec": 580.17,
+      "spy_at_rec": 738.18,
+      "thesis_summary": "核心45%：半導體大盤型，距52週高-16%但週線回穩",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-07-24",
+      "category": "etf",
+      "ticker": "BOTZ",
+      "price_at_rec": 34.31,
+      "spy_at_rec": 738.18,
+      "thesis_summary": "衛星10%：機器人主題，Tesla Optimus量產線建置持續發酵",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-07-24",
+      "category": "etf",
+      "ticker": "EWY",
+      "price_at_rec": 173.86,
+      "spy_at_rec": 738.18,
+      "thesis_summary": "衛星10%：記憶體代理，今日逆勢+2.01%",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-07-24",
+      "category": "etf",
+      "ticker": "SGOV",
+      "price_at_rec": 100.61,
+      "spy_at_rec": 738.18,
+      "thesis_summary": "避險35%（維持上調）：GOOGL/TSLA財報後齊跌顯示波動未散",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-07-31",
+      "category": "high_risk",
+      "ticker": "AXTI",
+      "price_at_rec": 46.94,
+      "spy_at_rec": 741.69,
+      "thesis_summary": "基礎材料層核心卡點：7/30財報轉盈+227% EPS YoY，Lumentum長約，四訊號全同向",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-07-31",
+      "category": "high_risk",
+      "ticker": "AEHR",
+      "price_at_rec": 76.87,
+      "spy_at_rec": 741.69,
+      "thesis_summary": "測試設備層次級卡點：在手訂單創紀錄+FY27展望上修，四訊號全同向",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-07-31",
+      "category": "high_risk",
+      "ticker": "LASR",
+      "price_at_rec": 65.71,
+      "spy_at_rec": 741.69,
+      "thesis_summary": "半導體雷射次級卡點：$627M國防合約+8/6財報將至，卡點訊號中性故維持強",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-07-31",
+      "category": "high_risk",
+      "ticker": "AAOI",
+      "price_at_rec": 90.11,
+      "spy_at_rec": 741.69,
+      "thesis_summary": "光學元件層次級卡點：EPS QoQ轉負降量化訊號為中性，三同向一中性",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-07-31",
+      "category": "high_risk",
+      "ticker": "POET",
+      "price_at_rec": 7.28,
+      "spy_at_rec": 741.69,
+      "thesis_summary": "Phase 3矽光子樂透部位：EPS QoQ惡化至-203%+空單30%，僅適合極小倉位",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-07-31",
+      "category": "stable",
+      "ticker": "TSM",
+      "price_at_rec": 403.31,
+      "spy_at_rec": 741.69,
+      "thesis_summary": "代工層核心卡點：capex上修至$64B+傳2027漲價10%，定價權驗證卡點強度",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-07-31",
+      "category": "stable",
+      "ticker": "ASML",
+      "price_at_rec": 1651.44,
+      "spy_at_rec": 741.69,
+      "thesis_summary": "設備層核心卡點：EUV獨供，中國DUV威脅遭市場判定誇大後反彈6.5%",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-07-31",
+      "category": "stable",
+      "ticker": "MU",
+      "price_at_rec": 874.66,
+      "spy_at_rec": 741.69,
+      "thesis_summary": "記憶體層次級卡點：MSFT AI capex上修70%外溢+Samsung示警短缺至2028，惟Phase1已走完",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-07-31",
+      "category": "stable",
+      "ticker": "AVGO",
+      "price_at_rec": 387.84,
+      "spy_at_rec": 741.69,
+      "thesis_summary": "ASIC/網通次級卡點：Samsung $200B合作+Apple $30B承諾持續驗證，估值偏高維持中",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-07-31",
+      "category": "stable",
+      "ticker": "NVDA",
+      "price_at_rec": 195.04,
+      "spy_at_rec": 741.69,
+      "thesis_summary": "GPU生態系已定價：MSFT/Meta capex同步上修驗證需求，品牌層卡點訊號記中性",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-07-31",
+      "category": "etf",
+      "ticker": "SMH",
+      "price_at_rec": 538.9,
+      "spy_at_rec": 741.69,
+      "thesis_summary": "核心45%：單日反彈+6.88%為半導體回檔以來最強，週線仍-7.1%",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-07-31",
+      "category": "etf",
+      "ticker": "BOTZ",
+      "price_at_rec": 34.9,
+      "spy_at_rec": 741.69,
+      "thesis_summary": "衛星10%：機器人主題，Optimus量產線建置持續發酵",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-07-31",
+      "category": "etf",
+      "ticker": "EWY",
+      "price_at_rec": 161.21,
+      "spy_at_rec": 741.69,
+      "thesis_summary": "衛星10%：記憶體代理，今日隨MU急拉+11.79%但週線仍-7.3%",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-07-31",
+      "category": "etf",
+      "ticker": "SGOV",
+      "price_at_rec": 100.69,
+      "spy_at_rec": 741.69,
+      "thesis_summary": "避險35%（維持上調）：單日反彈尚不足以確認回檔結束",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-08-08",
+      "category": "high_risk",
+      "ticker": "AXTI",
+      "price_at_rec": 88.58,
+      "spy_at_rec": 773.26,
+      "thesis_summary": "基礎材料層核心卡點：8/7單日+17.84%延續7/30財報噴出，InP需求敘事持續獲市場定價，惟短均線乖離已大四訊號降一級",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-08-08",
+      "category": "high_risk",
+      "ticker": "AEHR",
+      "price_at_rec": 103.07,
+      "spy_at_rec": 773.26,
+      "thesis_summary": "測試設備層次級卡點：8/4矽光子追加量產訂單第二引擎確認，四訊號全同向",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-08-08",
+      "category": "high_risk",
+      "ticker": "AAOI",
+      "price_at_rec": 135.63,
+      "spy_at_rec": 773.26,
+      "thesis_summary": "光學元件層次級卡點：8/6財報營收+85% YoY創紀錄推升單日+9.19%，惟EPS QoQ仍為-74%量化訊號維持中性",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-08-08",
+      "category": "high_risk",
+      "ticker": "LASR",
+      "price_at_rec": 56.15,
+      "spy_at_rec": 773.26,
+      "thesis_summary": "半導體雷射次級卡點：8/6財報雖優於預期但Q3展望因對中國光學出口管制轉弱，單日崩跌25.56%，卡點論點未破但短期動能訊號轉負，由強降為中",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-08-08",
+      "category": "high_risk",
+      "ticker": "POET",
+      "price_at_rec": 8.91,
+      "spy_at_rec": 773.26,
+      "thesis_summary": "Phase 3矽光子樂透部位：受同業AAOI財報光環外溢+4.45%，基本面未變、空單仍達30%，僅適合極小倉位",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-08-08",
+      "category": "stable",
+      "ticker": "TSM",
+      "price_at_rec": 420.04,
+      "spy_at_rec": 773.26,
+      "thesis_summary": "代工層核心卡點：Cathie Wood/Lazard等機構型資金持續加碼，定價權敘事未變",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-08-08",
+      "category": "stable",
+      "ticker": "ASML",
+      "price_at_rec": 1740.99,
+      "spy_at_rec": 773.26,
+      "thesis_summary": "設備層核心卡點：EUV獨供，中國DUV威脅疑慮持續消化中，週線反彈確立",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-08-08",
+      "category": "stable",
+      "ticker": "AVGO",
+      "price_at_rec": 427.76,
+      "spy_at_rec": 773.26,
+      "thesis_summary": "ASIC/網通次級卡點：AMD法說會提問聚焦AVGO訂閱式ASIC訂單能見度，估值仍偏高維持中",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-08-08",
+      "category": "stable",
+      "ticker": "NVDA",
+      "price_at_rec": 223.96,
+      "spy_at_rec": 773.26,
+      "thesis_summary": "GPU生態系已定價：SpaceX獨家AI晶片夥伴關係+Stargate/Lancium追加投資，單週+10%，品牌層訊號記中性",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-08-08",
+      "category": "stable",
+      "ticker": "MU",
+      "price_at_rec": 877.57,
+      "spy_at_rec": 773.26,
+      "thesis_summary": "記憶體層次級卡點：Citi將目標價自$1400下修至$1150（仍為Buy）示警記憶體漲價週期放緩，四訊號三同向一反向，由強降為中",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-08-08",
+      "category": "etf",
+      "ticker": "SMH",
+      "price_at_rec": 582.7,
+      "spy_at_rec": 773.26,
+      "thesis_summary": "核心45%：單週+7.8%為近月最強反彈，AI晶片恐慌情緒緩解",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-08-08",
+      "category": "etf",
+      "ticker": "BOTZ",
+      "price_at_rec": 37.61,
+      "spy_at_rec": 773.26,
+      "thesis_summary": "衛星10%：機器人主題隨半導體回穩單週+6.8%",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-08-08",
+      "category": "etf",
+      "ticker": "EWY",
+      "price_at_rec": 166.09,
+      "spy_at_rec": 773.26,
+      "thesis_summary": "衛星10%：記憶體代理單週+5.7%，惟MU目標價下修為短期雜訊來源",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-08-08",
+      "category": "etf",
+      "ticker": "SGOV",
+      "price_at_rec": 100.48,
+      "spy_at_rec": 773.26,
+      "thesis_summary": "避險35%（維持上調）：半導體單週強彈但SIA示警+AXTI乖離過大，避險層暫不下調",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-08-14",
+      "category": "high_risk",
+      "ticker": "AXTI",
+      "price_at_rec": 81.64,
+      "spy_at_rec": 776.34,
+      "thesis_summary": "基礎材料層核心卡點：Lumentum財報驗證InP需求敘事，惟Insider Trans -31.92%減碼+週跌7.83%乖離修復，核心卡點加分維持強",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-08-14",
+      "category": "high_risk",
+      "ticker": "AEHR",
+      "price_at_rec": 134.06,
+      "spy_at_rec": 776.34,
+      "thesis_summary": "測試設備層次級卡點：8/12 $22M追加訂單續兌現，惟股價已超越分析師目標價$127，估值訊號轉中性，由強降為中",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-08-14",
+      "category": "high_risk",
+      "ticker": "AAOI",
+      "price_at_rec": 150.28,
+      "spy_at_rec": 776.34,
+      "thesis_summary": "光學元件層次級卡點：目標價+13.5%空間仍在，EPS QoQ仍-74%量化訊號維持中性",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-08-14",
+      "category": "high_risk",
+      "ticker": "LASR",
+      "price_at_rec": 52.6,
+      "spy_at_rec": 776.34,
+      "thesis_summary": "半導體雷射次級卡點：8/6財報後Q3展望疑慮延續+SMA20/50空頭排列，$627M國防合約未受影響但動能轉弱，由中降為弱",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-08-14",
+      "category": "high_risk",
+      "ticker": "POET",
+      "price_at_rec": 9.58,
+      "spy_at_rec": 776.34,
+      "thesis_summary": "Phase 3矽光子樂透部位：EPS QoQ首度由-203%轉正+67.23%，基本面拐點初現，惟空單28.49%仍高，由弱升為中",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-08-14",
+      "category": "stable",
+      "ticker": "TSM",
+      "price_at_rec": 426.35,
+      "spy_at_rec": 776.34,
+      "thesis_summary": "代工層核心卡點：EPS QoQ +73.33%+Soros加碼+Sony $4.7B合資案驗證定價權，四訊號全同向",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-08-14",
+      "category": "stable",
+      "ticker": "ASML",
+      "price_at_rec": 1844.08,
+      "spy_at_rec": 776.34,
+      "thesis_summary": "設備層核心卡點：EUV獨供，TSMC營收+45%重燃設備需求，中國威脅疑慮消化中週反彈+5.92%",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-08-14",
+      "category": "stable",
+      "ticker": "AVGO",
+      "price_at_rec": 392.99,
+      "spy_at_rec": 776.34,
+      "thesis_summary": "ASIC/網通次級卡點：BofA示警AI融資載體$370B債務觸發risk-off單週-8.13%，AI營收指引未變屬情緒性非基本面轉弱，由中降為弱",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-08-14",
+      "category": "stable",
+      "ticker": "NVDA",
+      "price_at_rec": 225.16,
+      "spy_at_rec": 776.34,
+      "thesis_summary": "GPU生態系已定價：SpaceX入股利多與Ohio融資保證縮手利空互抵，品牌層訊號維持中性",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-08-14",
+      "category": "stable",
+      "ticker": "MU",
+      "price_at_rec": 971.66,
+      "spy_at_rec": 776.34,
+      "thesis_summary": "記憶體層次級卡點：New Street 8/14上調目標價至$1250逆轉Citi下修疑慮，Phase 1重新加溫，由中升為強",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-08-14",
+      "category": "etf",
+      "ticker": "SMH",
+      "price_at_rec": 587.82,
+      "spy_at_rec": 776.34,
+      "thesis_summary": "核心45%：月線+3.32%續墊高但本週個股分化明顯（MU/EWY強、AVGO弱）",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-08-14",
+      "category": "etf",
+      "ticker": "BOTZ",
+      "price_at_rec": 37.74,
+      "spy_at_rec": 776.34,
+      "thesis_summary": "衛星10%：機器人主題隨大盤持平整理",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-08-14",
+      "category": "etf",
+      "ticker": "EWY",
+      "price_at_rec": 179.74,
+      "spy_at_rec": 776.34,
+      "thesis_summary": "衛星10%：記憶體代理，Phase 1重新加溫最直接受惠者，MU目標價上修外溢單週+8.22%",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-08-14",
+      "category": "etf",
+      "ticker": "SGOV",
+      "price_at_rec": 100.56,
+      "spy_at_rec": 776.34,
+      "thesis_summary": "避險35%（維持上調）：AVGO融資疑慮顯示AI資本支出可持續性雜訊未散，避險比例暫不下調",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-08-25",
+      "category": "high_risk",
+      "ticker": "AXTI",
+      "price_at_rec": 69.3,
+      "spy_at_rec": 766.55,
+      "thesis_summary": "基礎材料層核心卡點：InP雙寡頭，週跌15%屬總經回檔，EPS QoQ+208%基本面未變，核心卡點加分維持強",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-08-25",
+      "category": "high_risk",
+      "ticker": "AEHR",
+      "price_at_rec": 101,
+      "spy_at_rec": 766.55,
+      "thesis_summary": "測試設備層次級卡點：股價回落至目標價下方重現上檔空間，四訊號全同向，由中升為強",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-08-25",
+      "category": "high_risk",
+      "ticker": "AAOI",
+      "price_at_rec": 112.97,
+      "spy_at_rec": 766.55,
+      "thesis_summary": "光學元件層次級卡點：8/23 $600M增資引發稀釋疑慮單日跌逾10%，新聞訊號首度反向，由中降為弱",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-08-25",
+      "category": "high_risk",
+      "ticker": "LASR",
+      "price_at_rec": 44.84,
+      "spy_at_rec": 766.55,
+      "thesis_summary": "半導體雷射次級卡點：三條均線空頭排列技術面持續惡化，$627M國防合約未受影響，維持弱",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-08-25",
+      "category": "high_risk",
+      "ticker": "POET",
+      "price_at_rec": 7.98,
+      "spy_at_rec": 766.55,
+      "thesis_summary": "Phase 3矽光子樂透部位：EPS QoQ連兩季轉正+6季連續營收成長，基本面驗證累積，由中升為強",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-08-25",
+      "category": "stable",
+      "ticker": "TSM",
+      "price_at_rec": 416.63,
+      "spy_at_rec": 766.55,
+      "thesis_summary": "代工層核心卡點：本期抗跌最強，TSMC capex展望上修至$85B+Sony合資落地，四訊號全同向",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-08-25",
+      "category": "stable",
+      "ticker": "ASML",
+      "price_at_rec": 1767,
+      "spy_at_rec": 766.55,
+      "thesis_summary": "設備層核心卡點：EUV獨供，TSMC支出上修帶動工具需求敘事，惟分析師示警與大戶減碼並存新聞轉中性",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-08-25",
+      "category": "stable",
+      "ticker": "AVGO",
+      "price_at_rec": 363.4,
+      "spy_at_rec": 766.55,
+      "thesis_summary": "ASIC/網通次級卡點：融資債務疑慮延續且升溫（新增尋求$60-80B舉債），已逼近剔除門檻，維持弱",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-08-25",
+      "category": "stable",
+      "ticker": "NVDA",
+      "price_at_rec": 211.1,
+      "spy_at_rec": 766.55,
+      "thesis_summary": "GPU生態系已定價：財報週市場預期過高+WSJ示警AI融資銀行角色風險，新聞訊號轉負，由中降為弱",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-08-25",
+      "category": "stable",
+      "ticker": "MU",
+      "price_at_rec": 931.5,
+      "spy_at_rec": 766.55,
+      "thesis_summary": "記憶體層次級卡點：EPS QoQ+1372%極端強勁+BofA/BMO機構持續捍衛敘事，本期抗跌第二強，維持強",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-08-25",
+      "category": "etf",
+      "ticker": "SMH",
+      "price_at_rec": 556.86,
+      "spy_at_rec": 766.55,
+      "thesis_summary": "核心45%：本週為v2版以來最大單週回檔-5.27%，盤前已現反彈跡象",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-08-25",
+      "category": "etf",
+      "ticker": "BOTZ",
+      "price_at_rec": 35.83,
+      "spy_at_rec": 766.55,
+      "thesis_summary": "衛星10%：隨半導體回檔同步走弱，YTD轉負",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-08-25",
+      "category": "etf",
+      "ticker": "EWY",
+      "price_at_rec": 178.95,
+      "spy_at_rec": 766.55,
+      "thesis_summary": "衛星10%：Phase 1記憶體抗跌最明確受惠者，盤前逆勢+3.06%",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-08-25",
+      "category": "etf",
+      "ticker": "SGOV",
+      "price_at_rec": 100.64,
+      "spy_at_rec": 766.55,
+      "thesis_summary": "避險40%（本期上調）：全面性晶片股回檔+NVDA財報週+AVGO舉債疑慮三重不確定性",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-04",
+      "category": "high_risk",
+      "ticker": "AXTI",
+      "price_at_rec": 57.94,
+      "spy_at_rec": 771.74,
+      "thesis_summary": "基礎材料層核心卡點：InP需求敘事持續但獲利了結修正-16%，Insider仍賣，核心卡點加分維持強",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-04",
+      "category": "high_risk",
+      "ticker": "AEHR",
+      "price_at_rec": 77.96,
+      "spy_at_rec": 771.74,
+      "thesis_summary": "測試設備層次級卡點：$22M追加訂單延續+回落後目標價上檔擴大至+67%，四訊號全同向",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-04",
+      "category": "high_risk",
+      "ticker": "AAOI",
+      "price_at_rec": 100.9,
+      "spy_at_rec": 771.74,
+      "thesis_summary": "光學元件層次級卡點：$600M ATM增資疑慮未散+管理層變動，新聞訊號連兩期反向",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-04",
+      "category": "high_risk",
+      "ticker": "LASR",
+      "price_at_rec": 41.94,
+      "spy_at_rec": 771.74,
+      "thesis_summary": "半導體雷射次級卡點：SMA三線持續空頭排列，$627M國防合約未受影響但技術面未改善",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-04",
+      "category": "high_risk",
+      "ticker": "POET",
+      "price_at_rec": 7.44,
+      "spy_at_rec": 771.74,
+      "thesis_summary": "Phase 3矽光子樂透部位：基本面連兩季驗證但新聞催化降溫+目標價下修，由強降為中",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-04",
+      "category": "stable",
+      "ticker": "TSM",
+      "price_at_rec": 421.8,
+      "spy_at_rec": 771.74,
+      "thesis_summary": "代工層核心卡點：淨利率50.3%+EPS QoQ+73.3%，台灣加碼對美投資，四訊號全同向",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-04",
+      "category": "stable",
+      "ticker": "ASML",
+      "price_at_rec": 1675.36,
+      "spy_at_rec": 771.74,
+      "thesis_summary": "設備層核心卡點：EUV獨供，估值溢價疑慮與TSMC需求外溢互抵，核心卡點加分維持強",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-04",
+      "category": "stable",
+      "ticker": "AVGO",
+      "price_at_rec": 358.85,
+      "spy_at_rec": 771.74,
+      "thesis_summary": "ASIC/網通次級卡點：EPS QoQ+214%創高但債務融資規模擴大至$100B+市場情緒轉空，維持弱",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-04",
+      "category": "stable",
+      "ticker": "NVDA",
+      "price_at_rec": 231.2,
+      "spy_at_rec": 771.74,
+      "thesis_summary": "GPU生態系已定價：財報後大漲近9%+收購Hugging Face+Figure機器人合約，由弱升為中",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-04",
+      "category": "stable",
+      "ticker": "MU",
+      "price_at_rec": 969.77,
+      "spy_at_rec": 771.74,
+      "thesis_summary": "記憶體層次級卡點：中國CXMT DRAM市佔衝上10%三大廠跌破90%，HBM鎖定至2026但新聞轉向，由強降為弱",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-04",
+      "category": "etf",
+      "ticker": "SMH",
+      "price_at_rec": 559,
+      "spy_at_rec": 771.74,
+      "thesis_summary": "核心45%：NVDA/AVGO財報週落地後波動收斂，四交易日反彈約14%",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-04",
+      "category": "etf",
+      "ticker": "BOTZ",
+      "price_at_rec": 36.15,
+      "spy_at_rec": 771.74,
+      "thesis_summary": "衛星10%：機器人主題，NVDA-Figure機器人GPU合約為新催化",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-04",
+      "category": "etf",
+      "ticker": "EWY",
+      "price_at_rec": 180.53,
+      "spy_at_rec": 771.74,
+      "thesis_summary": "衛星10%：記憶體代理，近一月+10%領先大盤，惟CXMT市佔新聞為潛在雜訊",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-04",
+      "category": "etf",
+      "ticker": "SGOV",
+      "price_at_rec": 100.46,
+      "spy_at_rec": 771.74,
+      "thesis_summary": "避險35%（本期下修）：NVDA財報週與AVGO融資疑慮兩大不確定性均已落地未觸發系統性風險",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-12",
+      "category": "high_risk",
+      "ticker": "AXTI",
+      "price_at_rec": 64.77,
+      "spy_at_rec": 764.29,
+      "thesis_summary": "基礎材料層核心卡點：InP雙寡頭，S&P指數納入效應延續+7/30財報EPS YoY+227%驗證需求敘事，四訊號全同向",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-12",
+      "category": "high_risk",
+      "ticker": "AEHR",
+      "price_at_rec": 94.69,
+      "spy_at_rec": 764.29,
+      "thesis_summary": "測試設備層次級卡點：8/12 $22M矽光子追加訂單延續，FY27展望維持高成長，四訊號全同向",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-12",
+      "category": "high_risk",
+      "ticker": "POET",
+      "price_at_rec": 7.95,
+      "spy_at_rec": 764.29,
+      "thesis_summary": "Phase 3矽光子：連兩季EPS QoQ轉正+六季連續營收成長，Alphabet capex外溢利多，由中升為強，惟僅適合極小倉位",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-12",
+      "category": "high_risk",
+      "ticker": "FORM",
+      "price_at_rec": 114.95,
+      "spy_at_rec": 764.29,
+      "thesis_summary": "新納入｜測試/量測層次級卡點：CPO放量帶動晶圓測試瓶頸，EPS QoQ+502%創高，取代技術面破位的LASR",
+      "confidence": "強",
+      "version": "v2",
+      "replaces": "LASR"
+    },
+    {
+      "date": "2026-09-12",
+      "category": "high_risk",
+      "ticker": "AAOI",
+      "price_at_rec": 105.36,
+      "spy_at_rec": 764.29,
+      "thesis_summary": "光收發模組層次級卡點：Sales QoQ+86.4%需求強勁，惟$600M增資稀釋疑慮未散+EPS QoQ仍為負，維持中性",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-12",
+      "category": "stable",
+      "ticker": "TSM",
+      "price_at_rec": 433.24,
+      "spy_at_rec": 764.29,
+      "thesis_summary": "代工層核心卡點：8月營收YoY+53%創新高+ASML深化EUV合作驗證定價權，四訊號全同向",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-12",
+      "category": "stable",
+      "ticker": "ASML",
+      "price_at_rec": 1698.3,
+      "spy_at_rec": 764.29,
+      "thesis_summary": "設備層核心卡點：與TSM/Samsung深化EUV合作+Intel導入High-NA+日本擴編40%人力，核心卡點加分維持強",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-12",
+      "category": "stable",
+      "ticker": "LRCX",
+      "price_at_rec": 298.22,
+      "spy_at_rec": 764.29,
+      "thesis_summary": "新納入｜設備寡佔層：蝕刻/沉積三強之一，創紀錄營收+Oregon $1.5B研發加碼，取代融資疑慮纏身的AVGO",
+      "confidence": "強",
+      "version": "v2",
+      "replaces": "AVGO"
+    },
+    {
+      "date": "2026-09-12",
+      "category": "stable",
+      "ticker": "NVDA",
+      "price_at_rec": 218.29,
+      "spy_at_rec": 764.29,
+      "thesis_summary": "GPU生態系已定價：CEO重申FY27+70%成長，惟DOJ調查Nvidia-Groq交易+循環融資疑慮，新聞訊號中性",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-12",
+      "category": "stable",
+      "ticker": "MU",
+      "price_at_rec": 975.26,
+      "spy_at_rec": 764.29,
+      "thesis_summary": "記憶體層次級卡點：EPS QoQ+1372%+SMA200+56.8%技術面最強，惟中國CXMT市佔衝擊+台灣罷工風險為新雜訊",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-12",
+      "category": "etf",
+      "ticker": "SMH",
+      "price_at_rec": 568.53,
+      "spy_at_rec": 764.29,
+      "thesis_summary": "核心45%：週線逆勢+2.88%但距52週高點仍-15.4%，個股分化明顯",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-12",
+      "category": "etf",
+      "ticker": "BOTZ",
+      "price_at_rec": 35.28,
+      "spy_at_rec": 764.29,
+      "thesis_summary": "衛星10%：機器人主題，NVDA-Figure GPU合約與人形機器人量產持續發酵",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-12",
+      "category": "etf",
+      "ticker": "EWY",
+      "price_at_rec": 188.72,
+      "spy_at_rec": 764.29,
+      "thesis_summary": "衛星10%：記憶體代理，Phase 1重新加溫最直接受惠者，週線+4.52%",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-12",
+      "category": "etf",
+      "ticker": "SGOV",
+      "price_at_rec": 100.52,
+      "spy_at_rec": 764.29,
+      "thesis_summary": "避險35%（維持）：AVGO融資疑慮與NVDA監管調查雜訊未散但未見系統性回檔，暫不調整比例",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-17",
+      "category": "high_risk",
+      "ticker": "AXTI",
+      "price_at_rec": 67.75,
+      "spy_at_rec": 762.6,
+      "thesis_summary": "基礎材料層核心卡點：CPO光模組獲選+指數納入單週跳漲逾10%，四訊號全同向",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-17",
+      "category": "high_risk",
+      "ticker": "AEHR",
+      "price_at_rec": 90.55,
+      "spy_at_rec": 762.6,
+      "thesis_summary": "測試設備層次級卡點：Oppenheimer/Jefferies新增評等維持看多，四訊號全同向",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-17",
+      "category": "high_risk",
+      "ticker": "FORM",
+      "price_at_rec": 111.53,
+      "spy_at_rec": 762.6,
+      "thesis_summary": "測試/量測層次級卡點：本期缺乏新催化，新聞訊號降為中性，信心由強降至中",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-17",
+      "category": "high_risk",
+      "ticker": "AAOI",
+      "price_at_rec": 98.06,
+      "spy_at_rec": 762.6,
+      "thesis_summary": "光收發模組層次級卡點：技術面連三期反向+EPS仍負，600M增資稀釋疑慮未散",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-17",
+      "category": "high_risk",
+      "ticker": "POET",
+      "price_at_rec": 7.51,
+      "spy_at_rec": 762.6,
+      "thesis_summary": "CPO光學整合層次級卡點：SMA20/50/200三線轉負+缺乏新催化，信心由強大幅降至弱",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-17",
+      "category": "stable",
+      "ticker": "TSM",
+      "price_at_rec": 430.26,
+      "spy_at_rec": 762.6,
+      "thesis_summary": "代工層核心卡點：8月營收超NT500B+2nm製程話語權強化，四訊號全同向",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-17",
+      "category": "stable",
+      "ticker": "ASML",
+      "price_at_rec": 1629.67,
+      "spy_at_rec": 762.6,
+      "thesis_summary": "設備層核心卡點：EUV合作深化+110台年產能里程碑，核心卡點加分維持強",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-17",
+      "category": "stable",
+      "ticker": "LRCX",
+      "price_at_rec": 269.31,
+      "spy_at_rec": 762.6,
+      "thesis_summary": "設備層次級卡點：印度10億美元擴建，惟隨AI降溫雜訊回檔，信心由強降至中",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-17",
+      "category": "stable",
+      "ticker": "NVDA",
+      "price_at_rec": 219.34,
+      "spy_at_rec": 762.6,
+      "thesis_summary": "GPU生態系已定價：CEO上修明年銷售翻倍+Meta反駁AI降溫論，新聞轉同向但卡點仍中性",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-17",
+      "category": "stable",
+      "ticker": "MU",
+      "price_at_rec": 977.5,
+      "spy_at_rec": 762.6,
+      "thesis_summary": "記憶體層次級卡點：Intel CEO示警短缺惡化+缺貨恐延續至2029，惟新競爭者與罷工風險為新雜訊",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-17",
+      "category": "etf",
+      "ticker": "SMH",
+      "price_at_rec": 560.61,
+      "spy_at_rec": 762.6,
+      "thesis_summary": "核心45%：本週經歷AI降溫雜訊後收復失地，驗證骨幹配置抗噪性",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-17",
+      "category": "etf",
+      "ticker": "BOTZ",
+      "price_at_rec": 35.12,
+      "spy_at_rec": 762.6,
+      "thesis_summary": "衛星10%：機器人主題，NVDA生態系延伸至機器人客戶群",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-17",
+      "category": "etf",
+      "ticker": "EWY",
+      "price_at_rec": 182.39,
+      "spy_at_rec": 762.6,
+      "thesis_summary": "衛星10%：記憶體代理，Phase1超級週期重新加溫最直接受惠者",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-17",
+      "category": "etf",
+      "ticker": "SGOV",
+      "price_at_rec": 100.56,
+      "spy_at_rec": 762.6,
+      "thesis_summary": "避險35%（維持）：融資結構與監管雜訊性質未變，不調整比例",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-25",
+      "category": "high_risk",
+      "ticker": "AXTI",
+      "price_at_rec": 78.94,
+      "spy_at_rec": 771.35,
+      "thesis_summary": "基礎材料層核心卡點：InP雙寡頭，9/16獲選CPO共封裝光學供應商+指數納入單週跳漲逾10%，Zacks本週選為Bull of the Day，四訊號全同向",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-25",
+      "category": "high_risk",
+      "ticker": "AEHR",
+      "price_at_rec": 104.39,
+      "spy_at_rec": 771.35,
+      "thesis_summary": "測試設備層次級卡點：矽光子產能追加訂單效應延續，Oppenheimer/Jefferies看多評等未變，目標價空間仍有+24.8%，四訊號全同向",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-25",
+      "category": "high_risk",
+      "ticker": "FORM",
+      "price_at_rec": 129.69,
+      "spy_at_rec": 771.35,
+      "thesis_summary": "測試/量測層次級卡點：EPS QoQ+502%基本面強勁，惟本期仍缺乏FORM專屬新催化（新聞多為同業/產業話題），新聞訊號維持中性，信心維持中",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-25",
+      "category": "high_risk",
+      "ticker": "AAOI",
+      "price_at_rec": 101.4,
+      "spy_at_rec": 771.35,
+      "thesis_summary": "光收發模組層次級卡點：CIEN上修2029營收展望外溢+同業COHR/GLW齊漲，新聞訊號轉正，惟EPS QoQ仍為-74%量化訊號維持反向，一反向故信心維持弱",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-25",
+      "category": "high_risk",
+      "ticker": "POET",
+      "price_at_rec": 7.77,
+      "spy_at_rec": 771.35,
+      "thesis_summary": "CPO光學整合層次級卡點：SMA20由負轉正、技術面自谷底回穩，Sales QoQ+112%/EPS QoQ+67%基本面延續，量化訊號不再明確反向，信心由弱回升至中",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-25",
+      "category": "stable",
+      "ticker": "TSM",
+      "price_at_rec": 450.61,
+      "spy_at_rec": 771.35,
+      "thesis_summary": "代工層核心卡點：台灣晶片出口創紀錄$30.8B+先進封裝供應鏈進一步靠攏，四訊號全同向",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-25",
+      "category": "stable",
+      "ticker": "ASML",
+      "price_at_rec": 1743.94,
+      "spy_at_rec": 771.35,
+      "thesis_summary": "設備層核心卡點：EUV獨供，110台EUV設備測試產能里程碑+首批High-NA機台交付更多晶圓廠，核心卡點加分維持強",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-25",
+      "category": "stable",
+      "ticker": "LRCX",
+      "price_at_rec": 315.21,
+      "spy_at_rec": 771.35,
+      "thesis_summary": "設備寡佔層次級卡點：隨晶片設備股齊漲單週表現優於同業，四訊號回復全同向，由中升回強",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-25",
+      "category": "stable",
+      "ticker": "NVDA",
+      "price_at_rec": 225.07,
+      "spy_at_rec": 771.35,
+      "thesis_summary": "GPU生態系已定價：Nscale $10億前置融資+Huang重申AI安全立場，惟中國/關稅雜訊未散，品牌層卡點訊號維持中性",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-25",
+      "category": "stable",
+      "ticker": "MU",
+      "price_at_rec": 1082.28,
+      "spy_at_rec": 771.35,
+      "thesis_summary": "記憶體層次級卡點：HBM全年售罄+DRAM價格季漲50-55%驗證Phase 1超級週期，惟NVDA新品導入時程延後+Netlist專利ITC調查為新雜訊，新聞訊號中性",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-25",
+      "category": "etf",
+      "ticker": "SMH",
+      "price_at_rec": 606.56,
+      "spy_at_rec": 771.35,
+      "thesis_summary": "核心45%：單週+5.86%為近期最強反彈，Trump-Xi會晤前AI貿易緊張緩解+Meta/Alphabet資本支出上修帶動全面性反彈",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-25",
+      "category": "etf",
+      "ticker": "BOTZ",
+      "price_at_rec": 35.4,
+      "spy_at_rec": 771.35,
+      "thesis_summary": "衛星10%：機器人主題本週漲幅溫和落後半導體大盤，NVDA生態系延伸效應尚待進一步發酵",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-25",
+      "category": "etf",
+      "ticker": "EWY",
+      "price_at_rec": 187.18,
+      "spy_at_rec": 771.35,
+      "thesis_summary": "衛星10%：記憶體代理，HBM全年售罄+DRAM漲價驗證Phase 1超級週期，YTD已達+92.5%",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-09-25",
+      "category": "etf",
+      "ticker": "SGOV",
+      "price_at_rec": 100.66,
+      "spy_at_rec": 771.35,
+      "thesis_summary": "避險35%（維持）：本週雖強彈但雙5-800B級hyperscaler capex超越現金流的結構性融資風險未解，暫不下調避險比例",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-05",
+      "category": "high_risk",
+      "ticker": "AXTI",
+      "price_at_rec": 86.5,
+      "spy_at_rec": 769.32,
+      "thesis_summary": "基礎材料層核心卡點：InP雙寡頭，CPO供應商入選效應延續，EPS QoQ+208%需求敘事未變，四訊號全同向",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-05",
+      "category": "high_risk",
+      "ticker": "AEHR",
+      "price_at_rec": 107.4,
+      "spy_at_rec": 769.32,
+      "thesis_summary": "測試設備層次級卡點：本期僅投資人會議公告缺乏實質新催化，新聞訊號由正轉中性，由強降為中",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-05",
+      "category": "high_risk",
+      "ticker": "FORM",
+      "price_at_rec": 148.78,
+      "spy_at_rec": 769.32,
+      "thesis_summary": "測試/量測層次級卡點：9/30 Deutsche Bank新增Buy評等+$200目標價為首度專屬催化，EPS QoQ+502%，四訊號全同向，由中升為強",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-05",
+      "category": "high_risk",
+      "ticker": "AAOI",
+      "price_at_rec": 116.7,
+      "spy_at_rec": 769.32,
+      "thesis_summary": "光收發模組層次級卡點：$600M增資完成移除稀釋疑慮+三線均線由負轉正，量化訊號轉中性，由弱升為中",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-05",
+      "category": "high_risk",
+      "ticker": "POET",
+      "price_at_rec": 7.85,
+      "spy_at_rec": 769.32,
+      "thesis_summary": "CPO光學整合層次級卡點：技術面與基本面延續但缺乏新訂單催化，信心維持中",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-05",
+      "category": "stable",
+      "ticker": "TSM",
+      "price_at_rec": 479.81,
+      "spy_at_rec": 769.32,
+      "thesis_summary": "代工層核心卡點：Musk Terafab參與傳聞+Broadcom $600億訂單外溢+8月營收YoY+53%，四訊號全同向",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-05",
+      "category": "stable",
+      "ticker": "ASML",
+      "price_at_rec": 1854.48,
+      "spy_at_rec": 769.32,
+      "thesis_summary": "設備層核心卡點：EUV獨供，Samsung採用High-NA+110台EUV測試里程碑，核心卡點加分維持強",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-05",
+      "category": "stable",
+      "ticker": "LRCX",
+      "price_at_rec": 344.33,
+      "spy_at_rec": 769.32,
+      "thesis_summary": "設備層次級卡點：Morgan Stanley上修目標價估2026出貨+50%，隨設備股齊漲四訊號維持全同向",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-05",
+      "category": "stable",
+      "ticker": "NVDA",
+      "price_at_rec": 235.47,
+      "spy_at_rec": 769.32,
+      "thesis_summary": "GPU生態系已定價：股價創新高+Morgan Stanley重申首選，惟晶片走私逮捕+Groq訴訟雜訊並存，新聞維持中性",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-05",
+      "category": "stable",
+      "ticker": "MU",
+      "price_at_rec": 1072.79,
+      "spy_at_rec": 769.32,
+      "thesis_summary": "記憶體層次級卡點：10/2財報優於財測上限+FY27創紀錄展望+短缺延續至2028，四訊號首度全同向，由中升為強",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-05",
+      "category": "etf",
+      "ticker": "SMH",
+      "price_at_rec": 629.0,
+      "spy_at_rec": 769.32,
+      "thesis_summary": "核心45%：月線+13.83%延續系列最強反彈，設備股齊漲顯示買盤擴散全產業鏈",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-05",
+      "category": "etf",
+      "ticker": "BOTZ",
+      "price_at_rec": 35.97,
+      "spy_at_rec": 769.32,
+      "thesis_summary": "衛星10%：機器人主題週線+2.39%但YTD仍-0.72%，持續落後半導體大盤",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-05",
+      "category": "etf",
+      "ticker": "EWY",
+      "price_at_rec": 191.24,
+      "spy_at_rec": 769.32,
+      "thesis_summary": "衛星10%：記憶體代理，MU財報全面驗證Phase1超級週期，YTD達+96.71%",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-05",
+      "category": "etf",
+      "ticker": "SGOV",
+      "price_at_rec": 100.45,
+      "spy_at_rec": 769.32,
+      "thesis_summary": "避險35%（維持）：Hyperscaler資本支出達$720-745B持續超越現金流，結構性融資風險未解",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-09",
+      "category": "high_risk",
+      "ticker": "AXTI",
+      "price_at_rec": 68.46,
+      "spy_at_rec": 778.57,
+      "thesis_summary": "基礎材料層核心卡點：InP雙寡頭，隨半導體大盤系統性回檔單週-20.8%，EPS QoQ+208%/Sales QoQ+165%基本面未變，目標價空間回升至+38.8%，四訊號全同向",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-09",
+      "category": "high_risk",
+      "ticker": "AEHR",
+      "price_at_rec": 84.64,
+      "spy_at_rec": 778.57,
+      "thesis_summary": "測試設備層次級卡點：10/7 $6M矽光子追加訂單為本期唯一新增實質催化，四訊號全同向，由中升為強",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-09",
+      "category": "high_risk",
+      "ticker": "FORM",
+      "price_at_rec": 139.67,
+      "spy_at_rec": 778.57,
+      "thesis_summary": "測試/量測層次級卡點：本期僅S&P指數重編（被動資金流）與10/28財報日公告，缺乏專屬新催化，新聞訊號降回中性，由強降為中",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-09",
+      "category": "high_risk",
+      "ticker": "AAOI",
+      "price_at_rec": 109.64,
+      "spy_at_rec": 778.57,
+      "thesis_summary": "光收發模組層次級卡點：800G/1.6T需求加速、Lumentum示警光學件售罄至2029外溢利多，惟EPS QoQ仍-74%量化訊號維持中性",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-09",
+      "category": "high_risk",
+      "ticker": "POET",
+      "price_at_rec": 6.97,
+      "spy_at_rec": 778.57,
+      "thesis_summary": "CPO光學整合層次級卡點：Celestial AI訂單流失但新增Lumilens最高$500M潛在五年訂單對沖，Sales/EPS QoQ雙雙轉強但卡點催化訊號中性，信心維持中",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-09",
+      "category": "stable",
+      "ticker": "TSM",
+      "price_at_rec": 453.31,
+      "spy_at_rec": 778.57,
+      "thesis_summary": "代工層核心卡點：Q3營收預估YoY+51%創高+GlobalFoundries $20億矽中介層合作+Musk Terafab傳聞推升股價創高，四訊號全同向",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-09",
+      "category": "stable",
+      "ticker": "ASML",
+      "price_at_rec": 1780.34,
+      "spy_at_rec": 778.57,
+      "thesis_summary": "設備層核心卡點：EUV獨供，Morgan Stanley/UBS/Bernstein多家上修+市場預期2027展望優於預期，四訊號全同向（未使用核心卡點加分）",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-09",
+      "category": "stable",
+      "ticker": "LRCX",
+      "price_at_rec": 318.84,
+      "spy_at_rec": 778.57,
+      "thesis_summary": "設備層次級卡點：10/8 Morgan Stanley上修至Overweight估2026出貨+50%+南韓晶片基金深化，四訊號全同向",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-09",
+      "category": "stable",
+      "ticker": "NVDA",
+      "price_at_rec": 229.28,
+      "spy_at_rec": 778.57,
+      "thesis_summary": "GPU生態系已定價：OpenAI年化營收目標$700億消解AI需求放緩疑慮，惟品牌層卡點屬性仍中性，維持中",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-09",
+      "category": "stable",
+      "ticker": "MU",
+      "price_at_rec": 1029.0,
+      "spy_at_rec": 778.57,
+      "thesis_summary": "記憶體層次級卡點：New Street/Erste Group接連上調至Buy+OpenAI營收目標外溢，EPS YoY近885%，四訊號全同向",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-09",
+      "category": "etf",
+      "ticker": "SMH",
+      "price_at_rec": 603.33,
+      "spy_at_rec": 778.57,
+      "thesis_summary": "核心45%：半導體大盤單週系統性回檔-4.32%，與SPY同期+1.16%明顯背離，AI估值疑慮再起",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-09",
+      "category": "etf",
+      "ticker": "BOTZ",
+      "price_at_rec": 35.48,
+      "spy_at_rec": 778.57,
+      "thesis_summary": "衛星10%：機器人主題隨大盤小幅走弱，持續落後半導體核心表現",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-09",
+      "category": "etf",
+      "ticker": "EWY",
+      "price_at_rec": 177.24,
+      "spy_at_rec": 778.57,
+      "thesis_summary": "衛星10%：記憶體代理單週-7.3%，隨記憶體股系統性回檔同步修正",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-09",
+      "category": "etf",
+      "ticker": "SGOV",
+      "price_at_rec": 100.51,
+      "spy_at_rec": 778.57,
+      "thesis_summary": "避險40%（本期上調）：半導體單週系統性回檔疊加SPY同期走高的背離，避險比例上調緩衝",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-16",
+      "category": "high_risk",
+      "ticker": "AXTI",
+      "price_at_rec": 51.47,
+      "spy_at_rec": 763.25,
+      "thesis_summary": "基礎材料層核心卡點：InP雙寡頭，隨半導體板塊AI融資疑慮系統性回檔單週-24.8%，惟EPS QoQ+208%/Sales QoQ+165%基本面未變，分析師同步上修2027營收估計逾倍，目標價空間擴大至+84.6%，四訊號全同向（總經錯殺）",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-16",
+      "category": "high_risk",
+      "ticker": "AEHR",
+      "price_at_rec": 60.6,
+      "spy_at_rec": 763.25,
+      "thesis_summary": "測試設備層次級卡點：單週-28.4%，上期10/7 $6M追加訂單效應消化後本期僅股東會/財報日公告，缺乏新催化，新聞訊號降回中性，由強降為中",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-16",
+      "category": "high_risk",
+      "ticker": "FORM",
+      "price_at_rec": 105.01,
+      "spy_at_rec": 763.25,
+      "thesis_summary": "測試/量測層次級卡點：10/12 Teradyne宣布$300M策略投資+晶圓測試合作深化護城河，首度出現同業資本背書，四訊號全同向，由中升為強",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-16",
+      "category": "high_risk",
+      "ticker": "AAOI",
+      "price_at_rec": 75.57,
+      "spy_at_rec": 763.25,
+      "thesis_summary": "光收發模組層次級卡點：$600M增資完成移除稀釋疑慮，惟B. Riley目標價下修至$92+同業齊跌（AI融資疑慮衝擊光學股），EPS QoQ仍-74%量化訊號維持中性，信心維持中",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-16",
+      "category": "high_risk",
+      "ticker": "POET",
+      "price_at_rec": 5.43,
+      "spy_at_rec": 763.25,
+      "thesis_summary": "CPO光學整合層次級卡點：Q3財報日訂於11/16，本期缺乏新訂單催化，新聞與卡點訊號維持中性，信心維持中",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-16",
+      "category": "stable",
+      "ticker": "TSM",
+      "price_at_rec": 412.61,
+      "spy_at_rec": 763.25,
+      "thesis_summary": "代工層核心卡點：Q3創紀錄獲利（淨利率51.5%/EPS QoQ+57.7%）+Barclays上修目標價至$670+日本核准熊本二廠3nm產能，單週隨板塊回檔-9.0%但基本面訊號全同向，屬總經錯殺",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-16",
+      "category": "stable",
+      "ticker": "ASML",
+      "price_at_rec": 1641.52,
+      "spy_at_rec": 763.25,
+      "thesis_summary": "設備層核心卡點：EUV獨供，連續第三季上修全年展望+CEO稱AI晶片需求可能延續至2030+定價權持續強化，單週-7.8%，四訊號全同向",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-16",
+      "category": "stable",
+      "ticker": "LRCX",
+      "price_at_rec": 263.94,
+      "spy_at_rec": 763.25,
+      "thesis_summary": "設備層次級卡點：10個交易日累計重挫24%創上市以來最長連跌紀錄，屬財報前（10/21）去槓桿性總經拋售而非基本面轉弱，21/22分析師維持買進、平均目標價隱含+31%，NVIDIA NanoVDB技術合作深化護城河，四訊號全同向",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-16",
+      "category": "stable",
+      "ticker": "NVDA",
+      "price_at_rec": 214.13,
+      "spy_at_rec": 763.25,
+      "thesis_summary": "GPU生態系已定價：Mercedes/Volvo/Adobe等合作延伸+RTX Spark發布，惟AI融資疑慮（CoreWeave債務雜訊）主導本週賣壓，新聞訊號維持中性，品牌層卡點屬性未變",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-16",
+      "category": "stable",
+      "ticker": "MU",
+      "price_at_rec": 878.84,
+      "spy_at_rec": 763.25,
+      "thesis_summary": "記憶體層次級卡點：Musk公開力挺定價紀律+$35.16B回購授權+股息確認，惟中國CXMT競爭與2029產能過剩疑慮成為本輪賣壓敘事來源（分析師稱其為\"paper tiger\"但疑慮未完全消解），新聞訊號轉中性，由強降為中",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-16",
+      "category": "etf",
+      "ticker": "SMH",
+      "price_at_rec": 539.79,
+      "spy_at_rec": 763.25,
+      "thesis_summary": "核心35%（本期下修）：單週-10.53%為系列追蹤以來最大單週跌幅，AI融資債務疑慮引發估值重新定價",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-16",
+      "category": "etf",
+      "ticker": "BOTZ",
+      "price_at_rec": 33.02,
+      "spy_at_rec": 763.25,
+      "thesis_summary": "衛星10%：機器人主題隨大盤同步走弱，單週-6.9%",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-16",
+      "category": "etf",
+      "ticker": "EWY",
+      "price_at_rec": 150.44,
+      "spy_at_rec": 763.25,
+      "thesis_summary": "衛星10%：記憶體代理單週-15.1%，隨記憶體股深度回檔同步修正",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-16",
+      "category": "etf",
+      "ticker": "SGOV",
+      "price_at_rec": 100.59,
+      "spy_at_rec": 763.25,
+      "thesis_summary": "避險45%（本期大幅上調）：半導體單週史上最深回檔之一+LRCX創40年最長連跌+AI融資債務疑慮全面發酵，避險比例大幅上調",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-31",
+      "category": "high_risk",
+      "ticker": "AXTI",
+      "price_at_rec": 55.06,
+      "spy_at_rec": 755.72,
+      "thesis_summary": "基礎材料層核心卡點：InP雙寡頭，10/29財報EPS QoQ+977.75%大幅超預期但股價反因懷疑情緒重挫，四訊號全同向（核心卡點加分）",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-31",
+      "category": "high_risk",
+      "ticker": "AEHR",
+      "price_at_rec": 54.89,
+      "spy_at_rec": 755.72,
+      "thesis_summary": "測試設備層次級卡點：本期僅人事公告缺乏實質催化，新聞與卡點訊號雙雙中性，維持中",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-31",
+      "category": "high_risk",
+      "ticker": "FORM",
+      "price_at_rec": 87.53,
+      "spy_at_rec": 755.72,
+      "thesis_summary": "測試/量測層次級卡點：10/28財報再超預期EPS QoQ+361.77%，惟產能滿載限制短期成長性，三正一中性維持強",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-31",
+      "category": "high_risk",
+      "ticker": "AAOI",
+      "price_at_rec": 69.05,
+      "spy_at_rec": 755.72,
+      "thesis_summary": "光收發模組層次級卡點：Sales QoQ+86.42%強勁但EPS QoQ仍-74.24%，缺乏個股專屬新聞催化，維持中",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-31",
+      "category": "high_risk",
+      "ticker": "POET",
+      "price_at_rec": 5.2,
+      "spy_at_rec": 755.72,
+      "thesis_summary": "CPO光學整合層次級卡點：11/16財報前靜默期，基本面延續轉強但股價創系列新低，維持中",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-31",
+      "category": "stable",
+      "ticker": "TSM",
+      "price_at_rec": 406.13,
+      "spy_at_rec": 755.72,
+      "thesis_summary": "代工層核心卡點：Q3創紀錄獲利延續，10/30隨亞股科技股情緒外溢重挫6%屬總經性，四訊號全同向（核心卡點加分）",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-31",
+      "category": "stable",
+      "ticker": "ASML",
+      "price_at_rec": 1565.9,
+      "spy_at_rec": 755.72,
+      "thesis_summary": "設備層核心卡點：EUV獨供，10/30隨歐股科技股同步重挫6.55%屬情緒雜訊非結構轉弱，四訊號全同向（核心卡點加分）",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-31",
+      "category": "stable",
+      "ticker": "LRCX",
+      "price_at_rec": 239.11,
+      "spy_at_rec": 755.72,
+      "thesis_summary": "設備層次級卡點：10/28起連續三日隨晶片設備股走高+Zacks納入Top Ranked買進名單，四訊號全同向",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-31",
+      "category": "stable",
+      "ticker": "NVDA",
+      "price_at_rec": 204.64,
+      "spy_at_rec": 755.72,
+      "thesis_summary": "GPU生態系已定價：Apple市值超車+Intel財報崩跌拖累板塊情緒蓋過正面財測，新聞與卡點訊號維持中性",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-31",
+      "category": "stable",
+      "ticker": "MU",
+      "price_at_rec": 884.74,
+      "spy_at_rec": 755.72,
+      "thesis_summary": "記憶體層次級卡點：EPS QoQ+1061%強勁，惟Kioxia NAND漲價示警+SanDisk重挫+Barron's質疑漲價可持續性，首現基本面層級真實反向訊號，由中降為弱",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-31",
+      "category": "etf",
+      "ticker": "SMH",
+      "price_at_rec": 522.49,
+      "spy_at_rec": 755.72,
+      "thesis_summary": "核心30%（本期下修）：半導體大盤型，月線-15.43%為系列追蹤最深跌幅",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-31",
+      "category": "etf",
+      "ticker": "BOTZ",
+      "price_at_rec": 32.22,
+      "spy_at_rec": 755.72,
+      "thesis_summary": "衛星10%：機器人主題，月線-9.06%隨大盤同步走弱",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-31",
+      "category": "etf",
+      "ticker": "EWY",
+      "price_at_rec": 152.89,
+      "spy_at_rec": 755.72,
+      "thesis_summary": "衛星10%：記憶體代理，週線+1.08%逆勢喘息但月線仍-17.85%",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-10-31",
+      "category": "etf",
+      "ticker": "SGOV",
+      "price_at_rec": 100.73,
+      "spy_at_rec": 755.72,
+      "thesis_summary": "避險50%（本期大幅上調）：半導體史上最深月度回檔+Apple市值超車+記憶體漲價可持續性疑慮三重理由",
+      "confidence": "強",
+      "version": "v2"
+    }
+  ]
+}

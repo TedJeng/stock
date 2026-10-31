@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<title>卡點週報 10-31</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f3f5f7; --surface:#ffffff; --surface-2:#eef1f4; --border:#dde2e8;
+  --text:#161b22; --text-muted:#5c6673; --text-faint:#86909c;
+  --accent:#1f6f6b; --accent-ink:#0f4e4a; --accent-soft:#e4f1ef;
+  --good:#1c7a4e; --good-soft:#e5f5ec; --bad:#c0392b; --bad-soft:#fbe9e7; --warn:#9a6b06; --warn-soft:#fbf1dc;
+  --core:#1f6f6b; --secondary:#54606e; --none:#9aa2ad;
+  --shadow: 0 1px 2px rgba(20,30,40,.06), 0 6px 20px -8px rgba(20,30,40,.12);
+}
+:root:not([data-theme="light"]){
+  @media (prefers-color-scheme: dark){
+    --bg:#0e1217; --surface:#161b22; --surface-2:#1c222a; --border:#2a313b;
+    --text:#e8ecf1; --text-muted:#9aa5b2; --text-faint:#6e7885;
+    --accent:#5fc2bd; --accent-ink:#bdeae6; --accent-soft:#17302e;
+    --good:#4fbf85; --good-soft:#15291f; --bad:#e2695c; --bad-soft:#2c1917; --warn:#d7a53a; --warn-soft:#2c2412;
+    --core:#5fc2bd; --secondary:#9aa5b2; --none:#6e7885;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 10px 30px -10px rgba(0,0,0,.5);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e1217; --surface:#161b22; --surface-2:#1c222a; --border:#2a313b;
+  --text:#e8ecf1; --text-muted:#9aa5b2; --text-faint:#6e7885;
+  --accent:#5fc2bd; --accent-ink:#bdeae6; --accent-soft:#17302e;
+  --good:#4fbf85; --good-soft:#15291f; --bad:#e2695c; --bad-soft:#2c1917; --warn:#d7a53a; --warn-soft:#2c2412;
+  --core:#5fc2bd; --secondary:#9aa5b2; --none:#6e7885;
+  --shadow: 0 1px 2px rgba(0,0,0,.4), 0 10px 30px -10px rgba(0,0,0,.5);
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:"IBM Plex Sans", "Noto Sans TC", system-ui, sans-serif;
+  font-size:15px; line-height:1.6;
+  padding-inline:16px; padding-block:28px 60px;
+}
+h1,h2,h3{font-family:"Libre Franklin","Noto Sans TC",sans-serif; text-wrap:balance; margin:0}
+.mono, .num, .tkr, td.num, td.tkr{font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-nums}
+.wrap{max-width:980px; margin:0 auto}
+
+.masthead{display:flex; flex-direction:column; gap:6px; padding-block:4px 20px; border-bottom:2px solid var(--accent)}
+.eyebrow{font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); font-weight:600}
+.masthead h1{font-size:clamp(24px,4vw,34px); font-weight:800; letter-spacing:-.01em}
+.masthead .meta{color:var(--text-muted); font-size:13px}
+
+section{padding-block:34px}
+section + section{border-top:1px solid var(--border)}
+.sec-num{display:inline-flex; align-items:center; justify-content:center; width:28px; height:28px; border-radius:7px; background:var(--accent-soft); color:var(--accent-ink); font-family:"IBM Plex Mono",monospace; font-size:13px; font-weight:600; margin-right:10px}
+h2{font-size:21px; font-weight:700; display:flex; align-items:center; margin-bottom:14px}
+.lede{color:var(--text-muted); max-width:66ch; margin-bottom:18px}
+
+.statrow{display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-bottom:18px}
+.stat{background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:14px 16px; box-shadow:var(--shadow)}
+.stat .k{font-size:12px; color:var(--text-muted); text-transform:uppercase; letter-spacing:.05em}
+.stat .v{font-family:"IBM Plex Mono",monospace; font-size:24px; font-weight:600; margin-top:4px}
+.stat .d{font-size:13px; margin-top:2px}
+.delta-neg{color:var(--bad)} .delta-pos{color:var(--good)}
+
+.callout{background:var(--warn-soft); border:1px solid color-mix(in srgb, var(--warn) 35%, var(--border)); border-radius:10px; padding:14px 16px; font-size:14px; color:var(--text); margin-bottom:16px}
+.callout b{color:var(--warn)}
+
+.phaselist{display:flex; flex-direction:column; gap:10px}
+.phase{display:grid; grid-template-columns:90px 1fr; gap:12px; font-size:14px}
+.phase .ph{font-family:"IBM Plex Mono",monospace; font-weight:600; color:var(--accent)}
+
+.catwarn{font-size:13px; color:var(--text-muted); background:var(--surface-2); border-radius:8px; padding:10px 14px; margin-bottom:18px}
+
+.cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:14px}
+.card{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:16px; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:10px}
+.card-head{display:flex; justify-content:space-between; align-items:flex-start; gap:8px}
+.card-head .nm{font-weight:700; font-size:16px}
+.card-head .tkr{font-size:13px; color:var(--text-muted)}
+.price{font-family:"IBM Plex Mono",monospace; text-align:right}
+.price .p{font-size:17px; font-weight:600}
+.price .c{font-size:12px}
+.badgerow{display:flex; gap:6px; flex-wrap:wrap}
+.badge{font-size:11.5px; font-weight:600; padding:3px 9px; border-radius:999px; border:1px solid transparent; white-space:nowrap}
+.tier-core{background:var(--accent-soft); color:var(--accent-ink); border-color:color-mix(in srgb, var(--accent) 40%, transparent)}
+.tier-secondary{background:var(--surface-2); color:var(--secondary)}
+.tier-none{background:var(--surface-2); color:var(--none)}
+.conf-strong{background:var(--good-soft); color:var(--good)}
+.conf-mid{background:var(--warn-soft); color:var(--warn)}
+.conf-weak{background:var(--surface-2); color:var(--text-faint)}
+.thesis{font-size:13.5px; color:var(--text)}
+.signals{display:grid; grid-template-columns:repeat(4,1fr); gap:6px; font-size:11.5px}
+.sig{display:flex; flex-direction:column; align-items:center; gap:3px; padding:6px 4px; border-radius:7px; background:var(--surface-2)}
+.sig .lbl{color:var(--text-muted)}
+.sig .mk{font-weight:700}
+.sig.ok .mk{color:var(--good)} .sig.neu .mk{color:var(--warn)} .sig.bad .mk{color:var(--bad)}
+.risk{font-size:12.5px; color:var(--text-muted); border-top:1px dashed var(--border); padding-top:8px}
+.risk b{color:var(--text)}
+.moat{font-size:12.5px; background:var(--surface-2); border-radius:7px; padding:6px 10px; color:var(--text)}
+.fundrow{display:flex; gap:14px; font-size:12.5px; font-family:"IBM Plex Mono",monospace; color:var(--text-muted); flex-wrap:wrap}
+.fundrow b{color:var(--text); font-weight:600}
+
+.tblwrap{overflow-x:auto; border:1px solid var(--border); border-radius:10px}
+table{width:100%; border-collapse:collapse; font-size:13.5px; min-width:560px}
+th,td{padding:9px 12px; text-align:left; border-bottom:1px solid var(--border)}
+thead th{background:var(--surface-2); font-size:11.5px; text-transform:uppercase; letter-spacing:.04em; color:var(--text-muted); font-weight:600}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:var(--surface-2)}
+
+.histgrid{display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:20px}
+.hcard{background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:12px 14px; box-shadow:var(--shadow)}
+.hcard .k{font-size:11.5px; color:var(--text-muted); text-transform:uppercase}
+.hcard .v{font-family:"IBM Plex Mono",monospace; font-size:21px; font-weight:600; margin-top:3px}
+.hcard .sub{font-size:11.5px; color:var(--text-muted); margin-top:2px}
+
+.barchart{display:flex; flex-direction:column; gap:10px; margin-bottom:22px}
+.bar-row{display:grid; grid-template-columns:70px 1fr 64px; align-items:center; gap:10px; font-size:13px}
+.bar-track{position:relative; height:16px; background:var(--surface-2); border-radius:4px; overflow:hidden}
+.bar-fill{position:absolute; top:0; bottom:0; left:0; border-radius:4px}
+.bar-fill.good{background:var(--good)} .bar-fill.bad{background:var(--bad)}
+.bar-val{font-family:"IBM Plex Mono",monospace; text-align:right; font-size:12.5px}
+
+details{margin-top:6px}
+summary{cursor:pointer; font-weight:600; color:var(--accent); font-size:13.5px; padding:8px 0}
+tr.pos td.num{color:var(--good)} tr.neg td.num{color:var(--bad)} tr.new td{color:var(--text-faint)}
+
+.extwatch{display:flex; flex-direction:column; gap:8px; font-size:13.5px}
+.extwatch .row{display:grid; grid-template-columns:70px 1fr; gap:10px}
+.extwatch .t{font-family:"IBM Plex Mono",monospace; font-weight:600; color:var(--text-muted)}
+
+footer{font-size:12px; color:var(--text-faint); max-width:72ch; padding-top:24px}
+
+@media (max-width:620px){
+  .statrow{grid-template-columns:1fr}
+  .histgrid{grid-template-columns:repeat(2,1fr)}
+  .signals{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="eyebrow">Chokepoint Portfolio Watch · 第 15 期追蹤（首次 2026-07-19）</div>
+  <h1>AI 供應鏈卡點週報 — 2026-10-31</h1>
+  <div class="meta">數據時間戳：2026-10-31（美股盤後；Finviz 免費版快照實際對應 10/30 收盤，延遲約一個交易日）</div>
+</header>
+
+<section id="s1">
+  <h2><span class="sec-num">01</span>市場概況</h2>
+  <div class="statrow">
+    <div class="stat">
+      <div class="k">SPY</div>
+      <div class="v">$755.72</div>
+      <div class="d delta-neg">週變化 -0.56% · 月變化 -1.08%</div>
+    </div>
+    <div class="stat">
+      <div class="k">SMH（半導體大盤）</div>
+      <div class="v">$522.49</div>
+      <div class="d delta-neg">週變化 -0.89% · 月變化 -15.43% · 距52週高 -22.23%</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <b>大盤與半導體的背離持續擴大。</b> SPY 月線僅小跌 1.08%，SMH 月線重挫 15.43%——賣壓集中在 AI/半導體鏈的資本支出可持續性疑慮，而非全市場性風險。10/29–10/30 出現兩則標誌性新聞：Apple 市值超越 NVIDIA 成為全球最高市值公司；Intel 財報後股價重挫，據報使美國政府持股帳面蒸發約 $12B。TSM、ASML 10/30 單日各重挫 5.95%、6.55%。
+  </div>
+
+  <p class="lede"><b>大趨勢驗證（方法論步驟一）：</b>公司基本面本期仍全面強勁——AXTI EPS QoQ +977.75%、FORM 財報再超預期並上修利潤率基準、TSM 淨利率 51.52%、ASML EPS QoQ +132.33%、NVDA/MU 雙雙創紀錄成長——資本支出大趨勢未見官方指引下修，賣壓仍屬方法論步驟六的<b>總經/情緒面驅動</b>。惟本期出現一項新的、具體到公司層級的負面訊號：Kioxia 對 NAND 價格飆升發出警示、SanDisk 重挫、Micron 多次下跌，Barron's 直指「記憶體漲價未必全是好消息」——與過去幾期「純總經錯殺」定性不同，是本輪首次出現基本面本身被市場質疑的真實反向訊號，MU 信心本期因此下修。</p>
+
+  <h3 style="font-size:14px; margin-bottom:8px; color:var(--text-muted); text-transform:uppercase; letter-spacing:.04em">機構輪動相位判讀</h3>
+  <div class="phaselist">
+    <div class="phase"><span class="ph">Phase 1</span><span>記憶體超級週期 — 出現自 v2 版以來首次「基本面雜訊」：NAND 現貨價格飆升引發 Kioxia 示警與 SanDisk 重挫，市場開始辯論漲價是否等於需求破壞／渠道囤貨。</span></div>
+    <div class="phase"><span class="ph">Phase 2</span><span>光收發模組 — AAOI 延續分化格局，Sales 強勢成長但 EPS 仍負，信心持平。</span></div>
+    <div class="phase"><span class="ph">Phase 3</span><span>外部光源/矽光子 — POET 進入 11/16 財報前靜默期，缺乏新催化，信心持平。</span></div>
+  </div>
+</section>
+
+<section id="s2">
+  <h2><span class="sec-num">02</span>高風險高報酬 Top 5</h2>
+  <div class="catwarn">本類標的與半導體景氣高度連動，系統性回檔時會齊跌；多為中小型股，流動性差、可能單日大幅跳空。</div>
+
+  <div class="cards">
+
+    <article class="card">
+      <div class="card-head">
+        <div><div class="nm">AXTI</div><div class="tkr">AXT Inc · 市值 $3.61B</div></div>
+        <div class="price"><div class="p">$55.06</div><div class="c" style="color:var(--bad)">-9.56%</div></div>
+      </div>
+      <div class="badgerow"><span class="badge tier-core">基礎材料層 · 核心卡點</span><span class="badge conf-strong">信心：強</span></div>
+      <div class="thesis">InP 磊晶基板雙寡頭。10/29 財報營收/EPS 雙雙大幅超預期並給出約 $90M 的 Q4 財測，Sales QoQ +162.60%、EPS QoQ +977.75%，但股價因「市場仍抱持懷疑」反而重挫近 10%——典型基本面兌現、股價不領情的錯價窗口。10/28 另宣布為子公司 Tongmei 安排最高約 $545M 私募融資強化擴產資金。</div>
+      <div class="signals">
+        <div class="sig ok"><span class="lbl">量化</span><span class="mk">✓</span></div>
+        <div class="sig ok"><span class="lbl">分析師</span><span class="mk">✓</span></div>
+        <div class="sig neu"><span class="lbl">新聞</span><span class="mk">–</span></div>
+        <div class="sig ok"><span class="lbl">卡點</span><span class="mk">✓</span></div>
+      </div>
+      <div class="risk">Insider Trans -9.08%；Short Float 19.06%；核心卡點加分：新聞中性視同正向。Tongmei 融資稀釋與產能爬坡執行力為下期觀察重點。</div>
+    </article>
+
+    <article class="card">
+      <div class="card-head">
+        <div><div class="nm">AEHR</div><div class="tkr">Aehr Test Systems · 市值 $1.79B</div></div>
+        <div class="price"><div class="p">$54.89</div><div class="c" style="color:var(--bad)">-10.33%</div></div>
+      </div>
+      <div class="badgerow"><span class="badge tier-secondary">測試設備層 · 次級卡點</span><span class="badge conf-mid">信心：中</span></div>
+      <div class="thesis">矽光子測試設備商。本期僅 10/29 董事會新增前 Meta 基礎設施高管一則人事消息，缺乏實質訂單催化；11/2 將公布 FY27 Q1 財報，為下一關鍵驗證窗口。</div>
+      <div class="signals">
+        <div class="sig ok"><span class="lbl">量化</span><span class="mk">✓</span></div>
+        <div class="sig ok"><span class="lbl">分析師</span><span class="mk">✓</span></div>
+        <div class="sig neu"><span class="lbl">新聞</span><span class="mk">–</span></div>
+        <div class="sig neu"><span class="lbl">卡點</span><span class="mk">–</span></div>
+      </div>
+      <div class="risk">SMA50 -34.40%、SMA200 -26.23% 技術面持續惡化；Beta 3.30；11/2 財報能否驗證 FY27 160–200% 財測為下期關鍵。</div>
+    </article>
+
+    <article class="card">
+      <div class="card-head">
+        <div><div class="nm">FORM</div><div class="tkr">FormFactor Inc · 市值 $6.84B</div></div>
+        <div class="price"><div class="p">$87.53</div><div class="c" style="color:var(--bad)">-24.70%（SMA50）</div></div>
+      </div>
+      <div class="badgerow"><span class="badge tier-secondary">測試/量測層 · 次級卡點</span><span class="badge conf-strong">信心：強</span></div>
+      <div class="thesis">晶圓測試探針卡供應商。10/28 財報再度超預期並上修利潤率基準，EPS QoQ +361.77%；惟公司提及產能已接近滿載，短期爬坡速度可能放緩，驗證需求強勁的同時也是成長性受限的雙面訊號。</div>
+      <div class="signals">
+        <div class="sig ok"><span class="lbl">量化</span><span class="mk">✓</span></div>
+        <div class="sig ok"><span class="lbl">分析師</span><span class="mk">✓</span></div>
+        <div class="sig ok"><span class="lbl">新聞</span><span class="mk">✓</span></div>
+        <div class="sig neu"><span class="lbl">卡點</span><span class="mk">–</span></div>
+      </div>
+      <div class="risk">目標價空間 +73.9%（Recom 1.73）；產能滿載需觀察下一季擴產進度；單週仍隨板塊同步承壓。</div>
+    </article>
+
+    <article class="card">
+      <div class="card-head">
+        <div><div class="nm">AAOI</div><div class="tkr">Applied Optoelectronics · 市值 $5.86B</div></div>
+        <div class="price"><div class="p">$69.05</div><div class="c" style="color:var(--text-muted)">盤後 $69.42</div></div>
+      </div>
+      <div class="badgerow"><span class="badge tier-secondary">光收發模組層 · 次級卡點（Phase 2）</span><span class="badge conf-mid">信心：中</span></div>
+      <div class="thesis">800G/1.6T 光模組需求延續，Sales QoQ +86.42% 強勁，惟 EPS QoQ 仍為 -74.24%，量化訊號維持中性。本期 Finviz 新聞多為與 AAOI 無直接關聯的大盤新聞，個股專屬催化稀缺。</div>
+      <div class="signals">
+        <div class="sig neu"><span class="lbl">量化</span><span class="mk">–</span></div>
+        <div class="sig ok"><span class="lbl">分析師</span><span class="mk">✓</span></div>
+        <div class="sig neu"><span class="lbl">新聞</span><span class="mk">–</span></div>
+        <div class="sig ok"><span class="lbl">卡點</span><span class="mk">✓</span></div>
+      </div>
+      <div class="risk">Short Float 20.24%、Beta 3.98 波動極高；SMA200 -39.53%，長期趨勢仍弱；須觀察 EPS 何時轉正。</div>
+    </article>
+
+    <article class="card">
+      <div class="card-head">
+        <div><div class="nm">POET</div><div class="tkr">POET Technologies · 市值 $899.90M</div></div>
+        <div class="price"><div class="p">$5.20</div><div class="c" style="color:var(--text-muted)">系列追蹤新低</div></div>
+      </div>
+      <div class="badgerow"><span class="badge tier-secondary">CPO光學整合層 · 次級卡點（Phase 3）</span><span class="badge conf-mid">信心：中</span></div>
+      <div class="thesis">矽光子/CPO 整合平台。進入 11/16 財報前觀察靜默期，本期無新增訂單催化；基本面延續轉強（Sales QoQ +112.29%、EPS QoQ +67.23%），但股價已跌至系列追蹤以來新低。</div>
+      <div class="signals">
+        <div class="sig ok"><span class="lbl">量化</span><span class="mk">✓</span></div>
+        <div class="sig ok"><span class="lbl">分析師</span><span class="mk">✓</span></div>
+        <div class="sig neu"><span class="lbl">新聞</span><span class="mk">–</span></div>
+        <div class="sig neu"><span class="lbl">卡點</span><span class="mk">–</span></div>
+      </div>
+      <div class="risk">Short Float 26.23% 空頭擁擠；SMA50 -26.62%、SMA200 -37.07%；11/16 財報為關鍵驗證窗口，僅適合極小倉位。</div>
+    </article>
+
+  </div>
+  <p class="lede" style="margin-top:14px"><b>本期無標的剔除。</b> 五檔信心「三強二中」維持不變；AXTI 財報雖超預期但股價不領情（錯價持續擴大）、FORM 財報再超預期但產能滿載限制短期成長性，皆屬需持續追蹤的雙面訊號。</p>
+</section>
+
+<section id="s3">
+  <h2><span class="sec-num">03</span>穩定投資 Top 5（產業龍頭）</h2>
+  <p class="lede">供應鏈核心層的壟斷或寡佔龍頭，護城河以卡點語言描述：製程壟斷、設備寡佔、生態系鎖定。</p>
+
+  <div class="cards">
+
+    <article class="card">
+      <div class="card-head">
+        <div><div class="nm">TSM</div><div class="tkr">台積電 · 市值 $2,106.39B</div></div>
+        <div class="price"><div class="p">$406.13</div><div class="c" style="color:var(--bad)">-5.95%</div></div>
+      </div>
+      <div class="badgerow"><span class="badge tier-core">代工層 · 核心卡點</span><span class="badge conf-strong">信心：強</span></div>
+      <div class="moat">護城河：先進製程代工壟斷，&lt;3nm 全球產能集中度最高</div>
+      <div class="fundrow"><span>淨利率 <b>51.52%</b></span><span>EPS QoQ <b>+57.72%</b></span><span>目標價空間 <b>+36.2%</b></span></div>
+      <div class="thesis">Q3 創紀錄獲利延續，惟 10/30 隨亞股科技股普遍重挫下跌近 6%，報導明確歸因於「美股財報失望情緒外溢亞股科技股」，屬總經情緒外溢，非 TSM 自身基本面轉弱。</div>
+      <div class="signals">
+        <div class="sig ok"><span class="lbl">量化</span><span class="mk">✓</span></div>
+        <div class="sig ok"><span class="lbl">分析師</span><span class="mk">✓</span></div>
+        <div class="sig neu"><span class="lbl">新聞</span><span class="mk">–</span></div>
+        <div class="sig ok"><span class="lbl">卡點</span><span class="mk">✓</span></div>
+      </div>
+      <div class="risk">單日跌幅罕見達 6%，需觀察是否僅為情緒性超跌；中美貿易/關稅雜訊仍是潛在波動來源。核心卡點加分：新聞中性視同正向。</div>
+    </article>
+
+    <article class="card">
+      <div class="card-head">
+        <div><div class="nm">ASML</div><div class="tkr">ASML Holding · 市值 $603.53B</div></div>
+        <div class="price"><div class="p">$1,565.90</div><div class="c" style="color:var(--bad)">-6.55%</div></div>
+      </div>
+      <div class="badgerow"><span class="badge tier-core">設備層 · 核心卡點</span><span class="badge conf-strong">信心：強</span></div>
+      <div class="moat">護城河：EUV 微影設備獨供，先進製程唯一供應商</div>
+      <div class="fundrow"><span>淨利率 <b>34.10%</b></span><span>EPS QoQ <b>+132.33%</b></span><span>目標價空間 <b>+53.8%</b></span></div>
+      <div class="thesis">EUV 獨供地位未變。10/30 隨歐股科技股同步重挫，同篇報導指出歐股本月仍可能創六月以來最佳單月，顯示下跌屬短期情緒雜訊而非結構性轉弱。</div>
+      <div class="signals">
+        <div class="sig ok"><span class="lbl">量化</span><span class="mk">✓</span></div>
+        <div class="sig ok"><span class="lbl">分析師</span><span class="mk">✓</span></div>
+        <div class="sig neu"><span class="lbl">新聞</span><span class="mk">–</span></div>
+        <div class="sig ok"><span class="lbl">卡點</span><span class="mk">✓</span></div>
+      </div>
+      <div class="risk">單日跌幅 6.55% 為本期個股最大跌幅之一；設備需求仍仰賴晶圓廠資本支出週期的持續性。核心卡點加分：新聞中性視同正向。</div>
+    </article>
+
+    <article class="card">
+      <div class="card-head">
+        <div><div class="nm">LRCX</div><div class="tkr">Lam Research · 市值 $298.69B</div></div>
+        <div class="price"><div class="p">$239.11</div><div class="c" style="color:var(--good)">三日連漲</div></div>
+      </div>
+      <div class="badgerow"><span class="badge tier-secondary">設備層 · 次級卡點</span><span class="badge conf-strong">信心：強</span></div>
+      <div class="moat">護城河：蝕刻/沉積設備寡佔（與 AMAT/KLAC 三強鼎立）</div>
+      <div class="fundrow"><span>淨利率 <b>32.34%</b></span><span>EPS QoQ <b>+77.41%</b></span><span>目標價空間 <b>+53.4%</b></span></div>
+      <div class="thesis">10/28 起連續三日隨晶片設備股同步走高，10/29 Zacks 將 LRCX 列入 Top Ranked Stocks to Buy。上期因財報前去槓桿賣壓創下最長連跌紀錄的壓力已緩解。</div>
+      <div class="signals">
+        <div class="sig ok"><span class="lbl">量化</span><span class="mk">✓</span></div>
+        <div class="sig ok"><span class="lbl">分析師</span><span class="mk">✓</span></div>
+        <div class="sig ok"><span class="lbl">新聞</span><span class="mk">✓</span></div>
+        <div class="sig ok"><span class="lbl">卡點</span><span class="mk">✓</span></div>
+      </div>
+      <div class="risk">財報已於 10/21 公布落地，本期反彈需觀察能否延續；仍受半導體資本支出週期連動。</div>
+    </article>
+
+    <article class="card">
+      <div class="card-head">
+        <div><div class="nm">NVDA</div><div class="tkr">NVIDIA · 市值 $4,931.82B</div></div>
+        <div class="price"><div class="p">$204.64</div><div class="c" style="color:var(--text-muted)">Apple 市值超車</div></div>
+      </div>
+      <div class="badgerow"><span class="badge tier-none">GPU生態系層 · 已定價</span><span class="badge conf-mid">信心：中</span></div>
+      <div class="moat">護城河：GPU 生態系鎖定（CUDA），品牌層已定價</div>
+      <div class="fundrow"><span>淨利率 <b>63.66%</b></span><span>EPS QoQ <b>+128.21%</b></span><span>目標價空間 <b>+63.4%</b></span></div>
+      <div class="thesis">本期新聞雙面性明顯：Zacks 正面稱強勁成長動能帶動樂觀展望，但更受矚目的是「Apple 市值超越 NVIDIA 成為全球最高市值公司」與「Intel 財報崩跌拖累晶片板塊情緒」，負面情緒新聞關注度明顯更高。</div>
+      <div class="signals">
+        <div class="sig ok"><span class="lbl">量化</span><span class="mk">✓</span></div>
+        <div class="sig ok"><span class="lbl">分析師</span><span class="mk">✓</span></div>
+        <div class="sig neu"><span class="lbl">新聞</span><span class="mk">–</span></div>
+        <div class="sig neu"><span class="lbl">卡點</span><span class="mk">–</span></div>
+      </div>
+      <div class="risk">Apple 超車象徵本輪 AI 資本支出疑慮已實質影響市場對 NVDA 的估值敘事定位，需觀察財報指引能否重新奪回敘事主導權。</div>
+    </article>
+
+    <article class="card">
+      <div class="card-head">
+        <div><div class="nm">MU</div><div class="tkr">Micron Technology · 市值 $1,001.02B</div></div>
+        <div class="price"><div class="p">$884.74</div><div class="c" style="color:var(--bad)">Barron's 示警</div></div>
+      </div>
+      <div class="badgerow"><span class="badge tier-secondary">記憶體層 · 次級卡點</span><span class="badge conf-weak">信心：弱（本期下修）</span></div>
+      <div class="moat">護城河：HBM 三寡頭（與 Samsung/SK Hynix）</div>
+      <div class="fundrow"><span>淨利率 <b>63.80%</b></span><span>EPS QoQ <b>+1061.37%</b></span><span>目標價空間 <b>+84.4%</b></span></div>
+      <div class="thesis">HBM 三寡頭地位未變，量化與分析師訊號依舊極強勁。惟本期出現具體到公司層級的新負面訊號：Kioxia 對 NAND 現貨價格飆升發出警示、SanDisk 應聲重挫，Barron's 直接以 MU 為案例發文「漲價未必全是好消息」——點出漲價過快可能引發渠道囤貨、未來需求透支的疑慮，與過去幾期「純總經錯殺」定性不同，是本輪首次出現基本面本身被市場質疑的真實反向訊號。</div>
+      <div class="signals">
+        <div class="sig ok"><span class="lbl">量化</span><span class="mk">✓</span></div>
+        <div class="sig ok"><span class="lbl">分析師</span><span class="mk">✓</span></div>
+        <div class="sig bad"><span class="lbl">新聞</span><span class="mk">✗</span></div>
+        <div class="sig neu"><span class="lbl">卡點</span><span class="mk">–</span></div>
+      </div>
+      <div class="risk"><b>一反向訊號：</b>「記憶體漲價是否等於需求破壞」是下期必須驗證的核心問題；若渠道囤貨去化或客戶轉單觀望，Phase 1 超級週期敘事可能提前降溫。論點仍值得追蹤，尚不到剔除門檻（需兩訊號以上反向）。</div>
+    </article>
+
+  </div>
+  <p class="lede" style="margin-top:14px"><b>本期無標的剔除。</b> MU 由中下修為弱（首次出現基本面層級真實反向訊號，列入下期觀察重點，若新增第二反向訊號將觸發剔除）；其餘四檔持平。</p>
+</section>
+
+<section id="s4">
+  <h2><span class="sec-num">04</span>ETF 產業主題三層配置</h2>
+  <p class="lede">單一產業組合無分散效果，避險層是唯一緩衝。<b>本期避險比例由 45% 大幅上調至 50%</b>：半導體月線跌幅達 -15.43%（系列追蹤以來最深的月度跌幅），疊加 Apple 市值超車 NVIDIA、Intel 財報崩跌等標誌性負面新聞持續發酵，加上本期首次出現記憶體基本面層級的真實疑慮（Kioxia/SanDisk/MU），三重理由支持本期大幅轉向防禦。</p>
+
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>層</th><th>Ticker</th><th>比例</th><th>價格</th><th>費用率</th><th>理由</th></tr></thead>
+      <tbody>
+        <tr><td>核心</td><td class="tkr">SMH</td><td>30%（下修）</td><td class="num">$522.49</td><td class="num">0.35%</td><td>半導體大盤型，月線 -15.43% 為系列追蹤最深跌幅，持續承受 AI 資本支出疑慮重新定價</td></tr>
+        <tr><td>主題衛星</td><td class="tkr">BOTZ</td><td>10%</td><td class="num">$32.22</td><td class="num">0.68%</td><td>機器人主題，月線 -9.06%，隨大盤同步走弱但跌幅略小於半導體核心</td></tr>
+        <tr><td>主題衛星</td><td class="tkr">EWY</td><td>10%</td><td class="num">$152.89</td><td class="num">0.59%</td><td>記憶體代理（Samsung/SK Hynix），週線 +1.08% 逆勢喘息，但月線仍 -17.85%</td></tr>
+        <tr><td>避險</td><td class="tkr">SGOV</td><td>50%（大幅上調）</td><td class="num">$100.73</td><td class="num">0.09%</td><td>零久期現金層，半導體史上最深月度回檔之一＋大盤市值排名劇烈變動＋記憶體漲價可持續性疑慮三重理由</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="s5">
+  <h2><span class="sec-num">05</span>歷史推薦績效回顧</h2>
+  <p class="lede">本次統計涵蓋 2026-07-19 至 2026-10-16 共 13 期已納入追蹤超過一週的 v2 產業聚焦版紀錄（182 筆，含本期前所有歷史快照）；本期（10-31）新增推薦剛納入追蹤，報酬尚為 0，不計入本次統計。2026-07-19 當天同時存在 v1（改版前全市場版，僅供方法論對照，不再納入追蹤統計）與 v2（產業聚焦版，現行追蹤邏輯）兩批紀錄。</p>
+
+  <div class="callout">
+    <b>誠實記帳：</b> v2 整體勝率較上期（2026-10-16 報告統計之 10.1%，17/168）略回升至 <b>12.6%</b>，主因近兩期（10/09、10/16）推薦的虧損幅度明顯小於 8–9 月高點時期進場的部位。這驗證方法論的一個關鍵副作用：<b>在系統性回檔中，越晚進場（越接近底部）的批次表現越好，越早進場（高點附近）的批次承受最深虧損</b>——AEHR 在 2026-08-14（股價階段性高點附近）進場的那筆記錄，至今仍是全系列最差單筆（-56.40%）。本輪 v2 版追蹤以來尚未經歷過一次完整的回檔後反彈驗證週期，截至本期的勝率數字應被理解為「持續性系統性下跌中段的快照」，而非方法論最終成效的定論。
+  </div>
+
+  <div class="histgrid">
+    <div class="hcard"><div class="k">v2 整體勝率</div><div class="v" style="color:var(--bad)">12.6%</div><div class="sub">23/182，上期 10.1%</div></div>
+    <div class="hcard"><div class="k">v2 平均超額報酬</div><div class="v" style="color:var(--bad)">-14.38%</div><div class="sub">上期 -14.99%</div></div>
+    <div class="hcard"><div class="k">最佳單筆</div><div class="v" style="color:var(--good)">+18.39%</div><div class="sub">AXTI · 2026-07-19</div></div>
+    <div class="hcard"><div class="k">最差單筆</div><div class="v" style="color:var(--bad)">-56.40%</div><div class="sub">AEHR · 2026-08-14</div></div>
+  </div>
+
+  <div class="barchart">
+    <div class="bar-row"><span>高風險</span><div class="bar-track"><div class="bar-fill bad" style="width:7.7%"></div></div><span class="bar-val">7.7%（5/65）</span></div>
+    <div class="bar-row"><span>穩定龍頭</span><div class="bar-track"><div class="bar-fill bad" style="width:10.8%"></div></div><span class="bar-val">10.8%（7/65）</span></div>
+    <div class="bar-row"><span>ETF配置</span><div class="bar-track"><div class="bar-fill bad" style="width:21.2%"></div></div><span class="bar-val">21.2%（11/52）</span></div>
+  </div>
+
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>日期</th><th>類別</th><th>Ticker</th><th>推薦價</th><th>現價</th><th>報酬率</th><th>SPY同期</th><th>超額報酬</th><th>信心</th></tr></thead>
+      <tbody>
+        <tr class="pos"><td>2026-10-16</td><td>高風險</td><td class="tkr">AXTI</td><td class="num">$51.47</td><td class="num">$55.06</td><td class="num">+6.97%</td><td class="num">-0.99%</td><td class="num">+7.96%</td><td>強</td></tr>
+        <tr class="neg"><td>2026-10-16</td><td>高風險</td><td class="tkr">AEHR</td><td class="num">$60.60</td><td class="num">$54.89</td><td class="num">-9.42%</td><td class="num">-0.99%</td><td class="num">-8.44%</td><td>中</td></tr>
+        <tr class="neg"><td>2026-10-16</td><td>高風險</td><td class="tkr">FORM</td><td class="num">$105.01</td><td class="num">$87.53</td><td class="num">-16.65%</td><td class="num">-0.99%</td><td class="num">-15.66%</td><td>強</td></tr>
+        <tr class="neg"><td>2026-10-16</td><td>高風險</td><td class="tkr">AAOI</td><td class="num">$75.57</td><td class="num">$69.05</td><td class="num">-8.63%</td><td class="num">-0.99%</td><td class="num">-7.64%</td><td>中</td></tr>
+        <tr class="neg"><td>2026-10-16</td><td>高風險</td><td class="tkr">POET</td><td class="num">$5.43</td><td class="num">$5.20</td><td class="num">-4.24%</td><td class="num">-0.99%</td><td class="num">-3.25%</td><td>中</td></tr>
+        <tr class="neg"><td>2026-10-16</td><td>穩定</td><td class="tkr">TSM</td><td class="num">$412.61</td><td class="num">$406.13</td><td class="num">-1.57%</td><td class="num">-0.99%</td><td class="num">-0.58%</td><td>強</td></tr>
+        <tr class="neg"><td>2026-10-16</td><td>穩定</td><td class="tkr">ASML</td><td class="num">$1,641.52</td><td class="num">$1,565.90</td><td class="num">-4.61%</td><td class="num">-0.99%</td><td class="num">-3.62%</td><td>強</td></tr>
+        <tr class="neg"><td>2026-10-16</td><td>穩定</td><td class="tkr">LRCX</td><td class="num">$263.94</td><td class="num">$239.11</td><td class="num">-9.41%</td><td class="num">-0.99%</td><td class="num">-8.42%</td><td>強</td></tr>
+        <tr class="neg"><td>2026-10-16</td><td>穩定</td><td class="tkr">NVDA</td><td class="num">$214.13</td><td class="num">$204.64</td><td class="num">-4.43%</td><td class="num">-0.99%</td><td class="num">-3.45%</td><td>中</td></tr>
+        <tr class="pos"><td>2026-10-16</td><td>穩定</td><td class="tkr">MU</td><td class="num">$878.84</td><td class="num">$884.74</td><td class="num">+0.67%</td><td class="num">-0.99%</td><td class="num">+1.66%</td><td>中</td></tr>
+        <tr class="neg"><td>2026-10-16</td><td>ETF</td><td class="tkr">SMH</td><td class="num">$539.79</td><td class="num">$522.49</td><td class="num">-3.20%</td><td class="num">-0.99%</td><td class="num">-2.22%</td><td>強</td></tr>
+        <tr class="neg"><td>2026-10-16</td><td>ETF</td><td class="tkr">BOTZ</td><td class="num">$33.02</td><td class="num">$32.22</td><td class="num">-2.42%</td><td class="num">-0.99%</td><td class="num">-1.44%</td><td>中</td></tr>
+        <tr class="pos"><td>2026-10-16</td><td>ETF</td><td class="tkr">EWY</td><td class="num">$150.44</td><td class="num">$152.89</td><td class="num">+1.63%</td><td class="num">-0.99%</td><td class="num">+2.62%</td><td>中</td></tr>
+        <tr class="pos"><td>2026-10-16</td><td>ETF</td><td class="tkr">SGOV</td><td class="num">$100.59</td><td class="num">$100.73</td><td class="num">+0.14%</td><td class="num">-0.99%</td><td class="num">+1.13%</td><td>強</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <details>
+    <summary>統計方法說明（182 筆完整快照未逐筆列出）</summary>
+    <p class="lede" style="margin-top:8px">每筆記錄之 price_at_rec 對比本期抓取之現價（AXTI $55.06／AEHR $54.89／FORM $87.53／AAOI $69.05／POET $5.20／TSM $406.13／ASML $1,565.90／LRCX $239.11／NVDA $204.64／MU $884.74／SMH $522.49／BOTZ $32.22／EWY $152.89／SGOV $100.73），SPY 基準為本期現價 $755.72。LASR、AVGO 已於 2026-09-12 被剔除替換（分別由 FORM、LRCX 取代），其報酬率凍結在剔除當期（2026-09-04）之價格計算，不再變動：兩者剔除時超額報酬均為 +2.08%（在被剔除前已轉為持平/微幅正報酬，剔除理由為技術面/新聞訊號轉弱而非已實現虧損）。</p>
+  </details>
+</section>
+
+<section id="s5b">
+  <h2><span class="sec-num">05b</span>個人持股組合分析與建議</h2>
+  <p class="lede">使用者提供實際持股截圖（2026-10-31 盤後）。以下為整體組合的風險與建議分析——AMD/INTC/MSFT/NOW/QQQ/SPY 不在本 skill 標準四訊號追蹤宇宙內（僅 AXTI 屬本宇宙），故採一般投資組合風險角度分析，非四訊號驗證格式。</p>
+
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>Ticker</th><th>股數</th><th>現價</th><th>成本</th><th>損益%</th><th>市值</th><th>佔淨值比重</th></tr></thead>
+      <tbody>
+        <tr class="pos"><td class="tkr">AMD</td><td class="num">22</td><td class="num">$508.40</td><td class="num">$143.70</td><td class="num">+253.80%</td><td class="num">$11,184.80</td><td class="num">31.3%</td></tr>
+        <tr class="pos"><td class="tkr">INTC</td><td class="num">150</td><td class="num">$64.89</td><td class="num">$21.27</td><td class="num">+205.03%</td><td class="num">$9,733.50</td><td class="num">27.3%</td></tr>
+        <tr class="pos"><td class="tkr">MSFT</td><td class="num">12</td><td class="num">$522.88</td><td class="num">$401.56</td><td class="num">+30.21%</td><td class="num">$6,274.56</td><td class="num">17.6%</td></tr>
+        <tr class="pos"><td class="tkr">QQQ</td><td class="num">3</td><td class="num">$692.63</td><td class="num">$356.90</td><td class="num">+94.07%</td><td class="num">$2,077.89</td><td class="num">5.8%</td></tr>
+        <tr class="pos"><td class="tkr">AXTI</td><td class="num">11</td><td class="num">$55.11</td><td class="num">$51.00</td><td class="num">+8.06%</td><td class="num">$606.21</td><td class="num">1.7%</td></tr>
+        <tr class="pos"><td class="tkr">NOW</td><td class="num">8</td><td class="num">$105.32</td><td class="num">$92.82</td><td class="num">+13.46%</td><td class="num">$842.56</td><td class="num">2.4%</td></tr>
+        <tr class="pos"><td class="tkr">SPY</td><td class="num">1</td><td class="num">$757.00</td><td class="num">$525.74</td><td class="num">+43.99%</td><td class="num">$757.00</td><td class="num">2.1%</td></tr>
+        <tr><td>現金</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="num">$4,233.96</td><td class="num">11.9%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="lede" style="margin-top:10px">淨清倉值 <b>$35,710.48</b>（整體開倉損益 <b style="color:var(--good)">+123.70%</b> / +$17,405.48）｜當日盈虧 <b style="color:var(--bad)">-$5,619.32</b>（10/30 系統性回檔影響）</p>
+
+  <div class="callout">
+    <b>集中度風險是目前最大威脅，不是個股論點破損。</b> AMD + INTC 合計占淨值 <b>58.6%</b>，兩者同屬晶片景氣循環股、高度相關，10/30 雙雙重挫：INTC 因 Q4 財測疲弱單日崩跌 -28.58%（1974 年以來最差單日，Jefferies 稱 Q4 為「實質重置」、BofA 降評至中性），屬真正的公司特定負面訊號；AMD 則因 Intel 財測疑慮遭同業情緒拖累下跌 -10.88%，但自身基本面仍強（Sales QoQ +50.11%、EPS QoQ +158.80%、目標價空間 +30.5%），屬總經/同業情緒錯殺。
+  </div>
+
+  <div class="phaselist">
+    <div class="phase"><span class="ph">INTC</span><span>+205% 帳面獲利 + 公司特定財測轉弱雙重理由，建議優先減碼部分部位降低單一個股曝險。</span></div>
+    <div class="phase"><span class="ph">AMD</span><span>基本面健康但 31.3% 單一部位過度集中，建議逢反彈分批減碼至 20% 左右，兌現部分 +253.80% 獲利。</span></div>
+    <div class="phase"><span class="ph">NOW</span><span>10/29 單日重挫 -31%（史上最差單日），財測疑慮未明朗前不建議攤平加碼。</span></div>
+    <div class="phase"><span class="ph">MSFT</span><span>Beta 1.05 組合中最穩定，本季基建支出目標 &gt;$500 億 + 發債 $250 億，印證 AI capex 大趨勢未熄火，建議維持。</span></div>
+    <div class="phase"><span class="ph">其餘</span><span>AXTI／QQQ／SPY 倉位小，分散與衛星角色，維持不動。</span></div>
+  </div>
+
+  <p class="lede" style="margin-top:10px"><b>現金緩衝 11.9% 相對 58.6% 的同產業循環曝險明顯不足。</b> 本報告第 4 節已將晶片 ETF 避險比例上調至 50%，同一總經背景下，建議將部分 AMD/INTC 減碼資金轉入現金或防禦性部位，拉高現金比例至 20% 以上。一句話總結：帳面獲利豐厚，但應優先逢反彈分批減碼鎖利、提高現金緩衝，而非繼續加碼同產業部位。</p>
+</section>
+
+<section id="s6">
+  <h2><span class="sec-num">06</span>延伸觀察</h2>
+  <div class="extwatch">
+    <div class="row"><span class="t">SIVE</span><span>Sivers Semiconductors（斯德哥爾摩上市）：雷射光源/光子學卡點，無美股 ADR，僅供研究追蹤。</span></div>
+    <div class="row"><span class="t">IQE</span><span>IQE plc（倫敦上市）：磊晶晶圓材料，光學與化合物半導體供應鏈卡點，無美股報價。</span></div>
+    <div class="row"><span class="t">台鏈</span><span>穩懋、波若威等化合物半導體代工，無美股掛牌，需透過台股或 ADR 直接追蹤。</span></div>
+  </div>
+</section>
+
+<footer>
+本報告非投資建議，僅為基於公開資料（Finviz、公開新聞）的研究整理。卡點框架與覆蓋名單轉述自 Serenity (@aleabitoreddit) 公開發文之整理，未經驗證其歷史績效。本報告標的集中於 AI/半導體單一產業鏈，無分散效果；高風險類多為中小型股，流動性與波動風險高。Finviz 免費版數據可能延遲（本期數據實際對應 2026-10-30 收盤）；歷史績效不代表未來表現。實際投資前請自行查證第一手資料（10-K/10-Q、法說會、SEC 備案）。
+</footer>
+
+</div>
+</body>
+</html>
