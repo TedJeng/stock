@@ -2251,6 +2251,146 @@
       "thesis_summary": "避險50%維持：半導體跌勢加速且新增資料中心政策風險",
       "confidence": "強",
       "version": "v2"
+    },
+    {
+      "date": "2026-11-04",
+      "category": "high_risk",
+      "ticker": "AXTI",
+      "price_at_rec": 47.54,
+      "spy_at_rec": 766.81,
+      "thesis_summary": "基礎材料層 · 核心卡點；InP 雙寡頭，Phase 2/3 共同上游",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-04",
+      "category": "high_risk",
+      "ticker": "AEHR",
+      "price_at_rec": 60.84,
+      "spy_at_rec": 766.81,
+      "thesis_summary": "測試設備層 · 次級卡點；晶圓級老化測試，Phase 3 測試端",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-04",
+      "category": "high_risk",
+      "ticker": "FORM",
+      "price_at_rec": 85.24,
+      "spy_at_rec": 766.81,
+      "thesis_summary": "測試/量測層 · 次級卡點；探針卡寡佔，HBM 測試",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-04",
+      "category": "high_risk",
+      "ticker": "AAOI",
+      "price_at_rec": 59.27,
+      "spy_at_rec": 766.81,
+      "thesis_summary": "光收發模組層 · 次級卡點（Phase 2）；光模組 Phase 2，已部分定價",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-04",
+      "category": "high_risk",
+      "ticker": "POET",
+      "price_at_rec": 4.88,
+      "spy_at_rec": 766.81,
+      "thesis_summary": "CPO 光學整合層 · 次級卡點（Phase 3）；矽光子 Phase 3，尚未定價",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-04",
+      "category": "stable",
+      "ticker": "TSM",
+      "price_at_rec": 395.75,
+      "spy_at_rec": 766.81,
+      "thesis_summary": "代工層 · 核心卡點；先進製程獨家量產",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-04",
+      "category": "stable",
+      "ticker": "ASML",
+      "price_at_rec": 1496.3,
+      "spy_at_rec": 766.81,
+      "thesis_summary": "設備層 · 核心卡點；EUV 設備獨家供應",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-04",
+      "category": "stable",
+      "ticker": "LRCX",
+      "price_at_rec": 221.43,
+      "spy_at_rec": 766.81,
+      "thesis_summary": "設備層 · 次級卡點；蝕刻/沉積寡佔，轉換成本高",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-04",
+      "category": "stable",
+      "ticker": "NVDA",
+      "price_at_rec": 200.13,
+      "spy_at_rec": 766.81,
+      "thesis_summary": "GPU 生態系層 · 已定價（非卡點）；CUDA 生態系鎖定",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-04",
+      "category": "stable",
+      "ticker": "MU",
+      "price_at_rec": 795.23,
+      "spy_at_rec": 766.81,
+      "thesis_summary": "記憶體層 · 次級卡點；HBM 三寡頭",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-04",
+      "category": "etf",
+      "ticker": "SMH",
+      "price_at_rec": 504.27,
+      "spy_at_rec": 766.81,
+      "thesis_summary": "半導體大盤型，一週 -11.17%、一月 -20.27%，跌勢加速。",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-04",
+      "category": "etf",
+      "ticker": "BOTZ",
+      "price_at_rec": 32.81,
+      "spy_at_rec": 766.81,
+      "thesis_summary": "機器人主題，11/4 逆勢 +1.52%，一月跌幅小於半導體。",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-04",
+      "category": "etf",
+      "ticker": "EWY",
+      "price_at_rec": 152.12,
+      "spy_at_rec": 766.81,
+      "thesis_summary": "記憶體代理（Samsung/SK Hynix），一週 -8.31%。",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-04",
+      "category": "etf",
+      "ticker": "SGOV",
+      "price_at_rec": 100.45,
+      "spy_at_rec": 766.81,
+      "thesis_summary": "現金層。SMH 週線 -11%，期中選舉後資料中心政策風險未解，避險維持 50%。",
+      "confidence": "強",
+      "version": "v2"
     }
   ]
 }
