@@ -2391,6 +2391,146 @@
       "thesis_summary": "現金層。SMH 週線 -11%，期中選舉後資料中心政策風險未解，避險維持 50%。",
       "confidence": "強",
       "version": "v2"
+    },
+    {
+      "date": "2026-11-05",
+      "category": "high_risk",
+      "ticker": "AXTI",
+      "price_at_rec": 36.72,
+      "spy_at_rec": 733.0,
+      "thesis_summary": "基礎材料層 · 核心卡點：InP 磊晶基板雙寡頭。10/29 財報超預期、Q4 指引約 $90M，Sales QoQ +162.60%、EPS Q",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-05",
+      "category": "high_risk",
+      "ticker": "AEHR",
+      "price_at_rec": 49.16,
+      "spy_at_rec": 733.0,
+      "thesis_summary": "測試設備層 · 次級卡點：FY27 Q1 創紀錄營收 $33.0M，全年展望上修至 $150M，Sales QoQ +200.91%。11/3 財",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-05",
+      "category": "high_risk",
+      "ticker": "FORM",
+      "price_at_rec": 71.76,
+      "spy_at_rec": 733.0,
+      "thesis_summary": "測試/量測層 · 次級卡點：晶圓探針卡。單日 -15.81%、一週 -26.37%，無公司新消息；Sales QoQ +38.42%、EPS QoQ",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-05",
+      "category": "high_risk",
+      "ticker": "AAOI",
+      "price_at_rec": 46.89,
+      "spy_at_rec": 733.0,
+      "thesis_summary": "光收發模組層 · 次級卡點（Phase 2）：11/5 盤後財報：Q3 營收 $269.9M（年增 127%）、non-GAAP EPS $0.17，Finviz 標",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-05",
+      "category": "high_risk",
+      "ticker": "POET",
+      "price_at_rec": 4.26,
+      "spy_at_rec": 733.0,
+      "thesis_summary": "CPO 光學整合層 · 次級卡點（Phase 3）：矽光子/CPO 整合平台。11/2 任命新 CFO，11/16 財報為下一驗證點；Sales QoQ +112.29%，",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-05",
+      "category": "stable",
+      "ticker": "TSM",
+      "price_at_rec": 353.1,
+      "spy_at_rec": 733.0,
+      "thesis_summary": "代工層 · 核心卡點：先進製程壟斷。Sales QoQ +41.11%。9 月全球晶片銷售年增 146.8% 的數據在崩跌前兩天公布，需求面未",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-05",
+      "category": "stable",
+      "ticker": "ASML",
+      "price_at_rec": 1356.65,
+      "spy_at_rec": 733.0,
+      "thesis_summary": "設備層 · 核心卡點：EUV 微影獨供。歐股隨科技股重挫，公司層面僅庫藏股例行公告；Sales QoQ +52.76%。",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-05",
+      "category": "stable",
+      "ticker": "LRCX",
+      "price_at_rec": 185.2,
+      "spy_at_rec": 733.0,
+      "thesis_summary": "設備層 · 次級卡點：蝕刻/沉積設備寡佔。11/5 宣布 $25B 庫藏股授權並發放季股息，為公司層級正面訊息；單日仍 -16.36%、一月 ",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-05",
+      "category": "stable",
+      "ticker": "NVDA",
+      "price_at_rec": 181.6,
+      "spy_at_rec": 733.0,
+      "thesis_summary": "GPU 生態系層 · 已定價（非卡點）：品牌層卡點已被定價。自 10 月高點市值蒸發近 $1.4 兆；Sales QoQ +105.85%，基本面無變化。",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-05",
+      "category": "stable",
+      "ticker": "MU",
+      "price_at_rec": 656.39,
+      "spy_at_rec": 733.0,
+      "thesis_summary": "記憶體層 · 次級卡點：HBM 三寡頭，Sales QoQ +379.27%，17 位分析師全數買進。單日 -17.46%、一週 -29.74%",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-05",
+      "category": "etf",
+      "ticker": "SMH",
+      "price_at_rec": 447.73,
+      "spy_at_rec": 733.0,
+      "thesis_summary": "半導體大盤型，一週 -20.29%、一月 -28.37%。",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-05",
+      "category": "etf",
+      "ticker": "BOTZ",
+      "price_at_rec": 30.64,
+      "spy_at_rec": 733.0,
+      "thesis_summary": "機器人主題，跌幅小於半導體。",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-05",
+      "category": "etf",
+      "ticker": "EWY",
+      "price_at_rec": 131.65,
+      "spy_at_rec": 733.0,
+      "thesis_summary": "記憶體代理（Samsung/SK Hynix），一週 -18.65%。",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-05",
+      "category": "etf",
+      "ticker": "SGOV",
+      "price_at_rec": 100.45,
+      "spy_at_rec": 733.0,
+      "thesis_summary": "現金層。SMH 週線 -20%、Nasdaq 進入修正，避險由 50% 上調至 60%。",
+      "confidence": "強",
+      "version": "v2"
     }
   ]
 }
