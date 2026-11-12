@@ -3091,6 +3091,36 @@
       "thesis_summary": "現金層；避險維持 60%（2026-11-11 例行更新）",
       "confidence": "強",
       "version": "v2"
+    },
+    {
+      "date": "2026-11-11",
+      "category": "high_risk",
+      "ticker": "INTC",
+      "price_at_rec": 62.5,
+      "spy_at_rec": 759.81,
+      "thesis_summary": "INTC 轉型股；先進製程代工次級卡點，量化反向、其餘中性（使用者指定固定追蹤標的，2026-11-11 補入）",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-11",
+      "category": "stable",
+      "ticker": "AMD",
+      "price_at_rec": 552.9,
+      "spy_at_rec": 759.81,
+      "thesis_summary": "AMD 穩定組；GPU/CPU 第二來源次級卡點，三訊號同向（使用者指定固定追蹤標的，2026-11-11 補入）",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-11",
+      "category": "stable",
+      "ticker": "MSFT",
+      "price_at_rec": 521.12,
+      "spy_at_rec": 759.81,
+      "thesis_summary": "MSFT hyperscaler 需求驗證方，非卡點；量化與分析師同向（使用者指定固定追蹤標的，2026-11-11 補入）",
+      "confidence": "弱",
+      "version": "v2"
     }
   ]
 }
