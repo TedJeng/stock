@@ -3771,6 +3771,176 @@
       "thesis_summary": "現金層。避險維持 60%：NVDA 財報事件雖過，但聯準會理事 Waller 警告通膨惡化並提及 12 月升息 50 bp（Investing.com 標題）、Anthropic IPO 即將定價、SEC 調查未解，單一產業無分散效果。",
       "confidence": "強",
       "version": "v2"
+    },
+    {
+      "date": "2026-11-18",
+      "category": "high_risk",
+      "ticker": "AXTI",
+      "price_at_rec": 35.61,
+      "spy_at_rec": 730.2,
+      "thesis_summary": "基礎材料層 · 核心卡點（2026-11-18 例行更新）",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-18",
+      "category": "high_risk",
+      "ticker": "AEHR",
+      "price_at_rec": 49.48,
+      "spy_at_rec": 730.2,
+      "thesis_summary": "測試設備層 · 次級卡點（2026-11-18 例行更新）",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-18",
+      "category": "high_risk",
+      "ticker": "FORM",
+      "price_at_rec": 82.84,
+      "spy_at_rec": 730.2,
+      "thesis_summary": "測試/量測層 · 次級卡點（2026-11-18 例行更新）",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-18",
+      "category": "high_risk",
+      "ticker": "AAOI",
+      "price_at_rec": 40.79,
+      "spy_at_rec": 730.2,
+      "thesis_summary": "光收發模組層（Phase 2） · 次級卡點（2026-11-18 例行更新）",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-18",
+      "category": "high_risk",
+      "ticker": "INTC",
+      "price_at_rec": 54.67,
+      "spy_at_rec": 730.2,
+      "thesis_summary": "晶圓代工/IC 設計層 · 次級卡點（美國本土先進製程第二來源）（2026-11-18 例行更新）",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-18",
+      "category": "high_risk",
+      "ticker": "POET",
+      "price_at_rec": 4.25,
+      "spy_at_rec": 730.2,
+      "thesis_summary": "CPO 光學整合層（Phase 3） · 次級卡點（2026-11-18 例行更新）",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-18",
+      "category": "stable",
+      "ticker": "TSM",
+      "price_at_rec": 362.62,
+      "spy_at_rec": 730.2,
+      "thesis_summary": "代工層 · 核心卡點（2026-11-18 例行更新）",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-18",
+      "category": "stable",
+      "ticker": "ASML",
+      "price_at_rec": 1395.27,
+      "spy_at_rec": 730.2,
+      "thesis_summary": "設備層 · 核心卡點（2026-11-18 例行更新）",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-18",
+      "category": "stable",
+      "ticker": "LRCX",
+      "price_at_rec": 211.67,
+      "spy_at_rec": 730.2,
+      "thesis_summary": "設備層 · 次級卡點（2026-11-18 例行更新）",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-18",
+      "category": "stable",
+      "ticker": "NVDA",
+      "price_at_rec": 150.96,
+      "spy_at_rec": 730.2,
+      "thesis_summary": "GPU 生態系層 · 已定價（非卡點）（2026-11-18 例行更新）",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-18",
+      "category": "stable",
+      "ticker": "MU",
+      "price_at_rec": 705.27,
+      "spy_at_rec": 730.2,
+      "thesis_summary": "記憶體層（Phase 1） · 次級卡點（2026-11-18 例行更新）",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-18",
+      "category": "stable",
+      "ticker": "AMD",
+      "price_at_rec": 530.14,
+      "spy_at_rec": 730.2,
+      "thesis_summary": "GPU/CPU 層 · 次級卡點（GPU 第二來源、x86 雙寡頭）（2026-11-18 例行更新）",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-18",
+      "category": "stable",
+      "ticker": "MSFT",
+      "price_at_rec": 508.29,
+      "spy_at_rec": 730.2,
+      "thesis_summary": "Hyperscaler（AI 需求驗證方） · 非卡點（2026-11-18 例行更新）",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-18",
+      "category": "etf",
+      "ticker": "SMH",
+      "price_at_rec": 459.54,
+      "spy_at_rec": 730.2,
+      "thesis_summary": "半導體大盤型；11/18 -0.12%，一週 -9.35%、一月 -15.89%。",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-18",
+      "category": "etf",
+      "ticker": "BOTZ",
+      "price_at_rec": 29.71,
+      "spy_at_rec": 730.2,
+      "thesis_summary": "機器人主題；11/18 持平，一週 -7.82%。",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-18",
+      "category": "etf",
+      "ticker": "EWY",
+      "price_at_rec": 136.73,
+      "spy_at_rec": 730.2,
+      "thesis_summary": "記憶體代理（Samsung/SK Hynix）；11/18 +1.04%，一週 -7.50%。",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-18",
+      "category": "etf",
+      "ticker": "SGOV",
+      "price_at_rec": 100.6,
+      "spy_at_rec": 730.2,
+      "thesis_summary": "現金層。避險維持 60%：S&P 500 連五日收跌（Schaeffer's）、Waller 警告通膨惡化並提及 12 月升息 50 bp、Anthropic IPO 即將定價、SEC 調查未解，單一產業無分散效果。",
+      "confidence": "強",
+      "version": "v2"
     }
   ]
 }
