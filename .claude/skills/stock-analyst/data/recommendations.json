@@ -4281,6 +4281,176 @@
       "thesis_summary": "現金層。避險由 60% 上調至 70%：SPY 單日 -3.64%、Dow/S&P 進入修正、Nasdaq -5% 抹去年內漲幅，SMH 單日 -10.6%；Fed 12 月升息 50bp 疑慮、SEC 調查與出口管制未解，單一產業無分散效果，現金是唯一緩衝。",
       "confidence": "強",
       "version": "v2"
+    },
+    {
+      "date": "2026-11-23",
+      "category": "high_risk",
+      "ticker": "AXTI",
+      "price_at_rec": 38.02,
+      "spy_at_rec": 722.29,
+      "thesis_summary": "基礎材料層 · 核心卡點：InP 磊晶基板雙寡頭。11/23 +24.37% 收 $38.02，反彈回補；無新公司消息，論點未變，核心卡點加分（新聞中性視同正向）。",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-23",
+      "category": "high_risk",
+      "ticker": "AEHR",
+      "price_at_rec": 48.51,
+      "spy_at_rec": 722.29,
+      "thesis_summary": "測試設備層 · 次級卡點：FY27 全年展望上修至 $150M，Sales QoQ +200.91%；+21.76% 反彈，無新催化，無反向訊號但正向不足。",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-23",
+      "category": "high_risk",
+      "ticker": "FORM",
+      "price_at_rec": 81.57,
+      "spy_at_rec": 722.29,
+      "thesis_summary": "測試/量測層 · 次級卡點：晶圓探針卡，Jefferies 11/11 買點標題仍在兩週內；+11.71%，11/25 後新聞可能轉中性。",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-23",
+      "category": "high_risk",
+      "ticker": "AAOI",
+      "price_at_rec": 38.7,
+      "spy_at_rec": 722.29,
+      "thesis_summary": "光收發模組層（Phase 2）· 次級卡點：$550M ATM 增資懸頂、Recom 1.56→1.62 轉弱；+17.52% 反彈無新消息，首要剔除觀察對象。",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-23",
+      "category": "high_risk",
+      "ticker": "INTC",
+      "price_at_rec": 59.66,
+      "spy_at_rec": 722.29,
+      "thesis_summary": "【固定追蹤】晶圓代工層 · 次級卡點（美國本土先進製程第二來源）：+16.34% 收 $59.66，Recom 2.39、淨利率 -20.09%，僅量化反向。",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-23",
+      "category": "high_risk",
+      "ticker": "POET",
+      "price_at_rec": 3.94,
+      "spy_at_rec": 722.29,
+      "thesis_summary": "CPO 光學整合層（Phase 3）· 次級卡點：財報後賣壓反彈 +15.20%；營收僅 $1.03M、僅 1 位分析師覆蓋，新聞反向。",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-23",
+      "category": "stable",
+      "ticker": "TSM",
+      "price_at_rec": 363.6,
+      "spy_at_rec": 722.29,
+      "thesis_summary": "代工層 · 核心卡點：先進製程壟斷；出口管制多源標題仍在窗口內、新聞維持反向，+14.08% 反彈；基本面未下修。",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-23",
+      "category": "stable",
+      "ticker": "ASML",
+      "price_at_rec": 1383.78,
+      "spy_at_rec": 722.29,
+      "thesis_summary": "設備層 · 核心卡點：EUV 微影獨供；+9.28%，目標價上調至 $2,436.94，無專屬新消息。",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-23",
+      "category": "stable",
+      "ticker": "LRCX",
+      "price_at_rec": 209.76,
+      "spy_at_rec": 722.29,
+      "thesis_summary": "設備層 · 次級卡點：蝕刻/沉積寡佔；+14.45%，無專屬新消息，兩正兩中性。",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-23",
+      "category": "stable",
+      "ticker": "NVDA",
+      "price_at_rec": 165.05,
+      "spy_at_rec": 722.29,
+      "thesis_summary": "GPU 生態系層 · 已定價（非卡點）：Huang 復職 CEO 單日 +31.48%；Recom 1.70→1.60、目標價連八期下移，SEC 調查未澄清，新聞回中性，僅量化正向。",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-23",
+      "category": "stable",
+      "ticker": "MU",
+      "price_at_rec": 707.7,
+      "spy_at_rec": 722.29,
+      "thesis_summary": "記憶體層（Phase 1）· 次級卡點：HBM 三寡頭；+19.04% 反彈，P/E 9.54，記憶體週期高點疑慮仍在，FQ1 財報 12/17。",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-23",
+      "category": "stable",
+      "ticker": "AMD",
+      "price_at_rec": 453.46,
+      "spy_at_rec": 722.29,
+      "thesis_summary": "【固定追蹤】GPU/CPU 層 · 次級卡點（GPU 第二來源、x86 雙寡頭）：+6.85% 落後同業，空頭報告新聞反向未過期，P/E 約 99x。",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-23",
+      "category": "stable",
+      "ticker": "MSFT",
+      "price_at_rec": 492.5,
+      "spy_at_rec": 722.29,
+      "thesis_summary": "【固定追蹤】Hyperscaler（AI 需求驗證方）· 非卡點：+1.65% 防禦性表現，Recom 1.24，新聞中性，信心上限受限。",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-23",
+      "category": "etf",
+      "ticker": "SMH",
+      "price_at_rec": 460.18,
+      "spy_at_rec": 722.29,
+      "thesis_summary": "核心層：半導體大盤型 20%。11/23 +15.03%（流動性反轉），一週 -0.37%、一月 -12.71%，比例維持。",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-23",
+      "category": "etf",
+      "ticker": "BOTZ",
+      "price_at_rec": 29.41,
+      "spy_at_rec": 722.29,
+      "thesis_summary": "主題衛星：機器人主題 5%。+7.57%，一月 -10.93%，比例維持。",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-23",
+      "category": "etf",
+      "ticker": "EWY",
+      "price_at_rec": 135.72,
+      "spy_at_rec": 722.29,
+      "thesis_summary": "主題衛星：記憶體代理（Samsung/SK Hynix）5%。+10.11%，一月 -10.27%，比例維持。",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-23",
+      "category": "etf",
+      "ticker": "SGOV",
+      "price_at_rec": 100.64,
+      "spy_at_rec": 722.29,
+      "thesis_summary": "現金層 70% 維持：反彈日不追高下調；Nvidia SEC 調查、出口管制、Fed 12 月升息 50bp 疑慮、AAOI 增資皆未解，單一產業無分散效果。",
+      "confidence": "強",
+      "version": "v2"
     }
   ]
 }
