@@ -4451,6 +4451,176 @@
       "thesis_summary": "現金層 70% 維持：反彈日不追高下調；Nvidia SEC 調查、出口管制、Fed 12 月升息 50bp 疑慮、AAOI 增資皆未解，單一產業無分散效果。",
       "confidence": "強",
       "version": "v2"
+    },
+    {
+      "date": "2026-11-24",
+      "category": "high_risk",
+      "ticker": "AXTI",
+      "price_at_rec": 31.58,
+      "spy_at_rec": 718.78,
+      "thesis_summary": "基礎材料層 · 核心卡點：InP 磊晶基板雙寡頭。11/24 -16.94% 回吐昨日反彈；無新公司消息，論點未變，核心卡點加分（新聞中性視同正向）。",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-24",
+      "category": "high_risk",
+      "ticker": "AEHR",
+      "price_at_rec": 41.89,
+      "spy_at_rec": 718.78,
+      "thesis_summary": "測試設備層：財報創紀錄、全年展望 $150M；無反向訊號但催化缺席，-13.65% 隨板塊回吐，維持弱。",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-24",
+      "category": "high_risk",
+      "ticker": "FORM",
+      "price_at_rec": 73.3,
+      "spy_at_rec": 718.78,
+      "thesis_summary": "測試/量測層：Jefferies 11/11 正面新聞仍在窗口（11/25 到期），下期預期降弱。",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-24",
+      "category": "high_risk",
+      "ticker": "AAOI",
+      "price_at_rec": 38.4,
+      "spy_at_rec": 718.78,
+      "thesis_summary": "光收發模組層：$550M ATM 增資仍懸；新增資料中心合約標題使新聞轉中性，逆勢僅 -0.78%；仍為剔除觀察對象。",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-24",
+      "category": "high_risk",
+      "ticker": "INTC",
+      "price_at_rec": 54.8,
+      "spy_at_rec": 718.78,
+      "thesis_summary": "固定追蹤：一月 -39.4%，無公司專屬新消息；僅量化一項反向，維持弱。",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-24",
+      "category": "high_risk",
+      "ticker": "POET",
+      "price_at_rec": 3.58,
+      "spy_at_rec": 718.78,
+      "thesis_summary": "CPO 光學整合層：11/16 財報後賣壓新聞反向仍在窗口，營收極小，僅極小倉位。",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-24",
+      "category": "stable",
+      "ticker": "TSM",
+      "price_at_rec": 349.2,
+      "spy_at_rec": 718.78,
+      "thesis_summary": "代工層 · 核心卡點：出口管制標題仍在兩週窗口，新聞反向維持弱；基本面未下修。",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-24",
+      "category": "stable",
+      "ticker": "ASML",
+      "price_at_rec": 1336.06,
+      "spy_at_rec": 718.78,
+      "thesis_summary": "設備層 · 核心卡點：EUV 獨供；新增荷蘭議員抵制美國 MATCH 法案標題，列風險旗標未算反向，維持強。",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-24",
+      "category": "stable",
+      "ticker": "LRCX",
+      "price_at_rec": 196.16,
+      "spy_at_rec": 718.78,
+      "thesis_summary": "設備層：無公司專屬負面消息，兩正兩中性維持中。",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-24",
+      "category": "stable",
+      "ticker": "NVDA",
+      "price_at_rec": 155.38,
+      "spy_at_rec": 718.78,
+      "thesis_summary": "Huang 復職 +31% 反彈一日回吐 -5.86%；SEC／國會調查疑慮、目標價連九期下移，新聞回反向，維持弱。",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-24",
+      "category": "stable",
+      "ticker": "MU",
+      "price_at_rec": 629.79,
+      "spy_at_rec": 718.78,
+      "thesis_summary": "記憶體層：BNP 降評與供給過剩警告使新聞轉反向，由中降弱；分析師端為剔除觀察重點。",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-24",
+      "category": "stable",
+      "ticker": "AMD",
+      "price_at_rec": 413.27,
+      "spy_at_rec": 718.78,
+      "thesis_summary": "固定追蹤：空頭報告新聞反向仍在窗口，一週 -17.9%，P/E 約 90x，維持弱。",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-24",
+      "category": "stable",
+      "ticker": "MSFT",
+      "price_at_rec": 496.13,
+      "spy_at_rec": 718.78,
+      "thesis_summary": "固定追蹤 hyperscaler：Code Red 大規模中斷事件標題使新聞轉反向，由中降弱；股價逆勢 +0.74%。",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-24",
+      "category": "etf",
+      "ticker": "SMH",
+      "price_at_rec": 426.75,
+      "spy_at_rec": 718.78,
+      "thesis_summary": "核心層 20%：單日 -7.26% 回吐反彈，比例維持。",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-24",
+      "category": "etf",
+      "ticker": "BOTZ",
+      "price_at_rec": 29.47,
+      "spy_at_rec": 718.78,
+      "thesis_summary": "機器人主題衛星 5%，維持。",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-24",
+      "category": "etf",
+      "ticker": "EWY",
+      "price_at_rec": 130.7,
+      "spy_at_rec": 718.78,
+      "thesis_summary": "記憶體代理衛星 5%；MU 供給過剩標題為逆風，維持。",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-24",
+      "category": "etf",
+      "ticker": "SGOV",
+      "price_at_rec": 100.66,
+      "spy_at_rec": 718.78,
+      "thesis_summary": "現金層 70% 維持：反彈已回吐，SEC 調查、出口管制、MATCH 法案、Fed 升息疑慮、AAOI 增資皆未解，單一產業無分散效果。",
+      "confidence": "強",
+      "version": "v2"
     }
   ]
 }
