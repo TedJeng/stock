@@ -4791,6 +4791,176 @@
       "thesis_summary": "現金層 70% 維持：日內劇烈震盪、SEC 調查/出口管制/關稅/Fed 升息疑慮未解，單一產業無分散效果。",
       "confidence": "強",
       "version": "v2"
+    },
+    {
+      "date": "2026-11-27",
+      "category": "high_risk",
+      "ticker": "AXTI",
+      "price_at_rec": 36.37,
+      "spy_at_rec": 728.32,
+      "thesis_summary": "基礎材料層核心卡點（InP 雙寡頭）；單日 +13.7% 超賣回補，無新消息",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-27",
+      "category": "high_risk",
+      "ticker": "AEHR",
+      "price_at_rec": 43.6,
+      "spy_at_rec": 728.32,
+      "thesis_summary": "測試設備層次級卡點；展望上修但催化缺席",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-27",
+      "category": "high_risk",
+      "ticker": "FORM",
+      "price_at_rec": 74.39,
+      "spy_at_rec": 728.32,
+      "thesis_summary": "測試/量測層次級卡點；無反向訊號",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-27",
+      "category": "high_risk",
+      "ticker": "AAOI",
+      "price_at_rec": 40.9,
+      "spy_at_rec": 728.32,
+      "thesis_summary": "光模組層（Phase 2）次級卡點；$550M ATM 增資懸頂，剔除觀察",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-27",
+      "category": "high_risk",
+      "ticker": "INTC",
+      "price_at_rec": 57.4,
+      "spy_at_rec": 728.32,
+      "thesis_summary": "固定追蹤；代工層次級卡點；虧損量化反向，Azure 合作與集體訴訟相抵",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-27",
+      "category": "high_risk",
+      "ticker": "POET",
+      "price_at_rec": 3.88,
+      "spy_at_rec": 728.32,
+      "thesis_summary": "CPO 光學整合層（Phase 3）次級卡點；新聞反向窗口 11/30 到期",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-27",
+      "category": "stable",
+      "ticker": "TSM",
+      "price_at_rec": 353.34,
+      "spy_at_rec": 728.32,
+      "thesis_summary": "代工層核心卡點；出口管制新聞反向維持弱",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-27",
+      "category": "stable",
+      "ticker": "ASML",
+      "price_at_rec": 1325.82,
+      "spy_at_rec": 728.32,
+      "thesis_summary": "設備層核心卡點（EUV 獨供）；MATCH 法案列風險旗標",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-27",
+      "category": "stable",
+      "ticker": "LRCX",
+      "price_at_rec": 192.69,
+      "spy_at_rec": 728.32,
+      "thesis_summary": "設備層次級卡點；兩正兩中性",
+      "confidence": "中",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-27",
+      "category": "stable",
+      "ticker": "NVDA",
+      "price_at_rec": 150.49,
+      "spy_at_rec": 728.32,
+      "thesis_summary": "非卡點（已定價）；東南亞出貨暫停標題與調查風險，新聞反向",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-27",
+      "category": "stable",
+      "ticker": "MU",
+      "price_at_rec": 646.95,
+      "spy_at_rec": 728.32,
+      "thesis_summary": "記憶體層（Phase 1）次級卡點；降評與供給過剩新聞反向，首要剔除觀察",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-27",
+      "category": "stable",
+      "ticker": "AMD",
+      "price_at_rec": 424.54,
+      "spy_at_rec": 728.32,
+      "thesis_summary": "固定追蹤；GPU/CPU 次級卡點；空頭報告新聞反向，Erste 降 Hold",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-27",
+      "category": "stable",
+      "ticker": "MSFT",
+      "price_at_rec": 492.85,
+      "spy_at_rec": 728.32,
+      "thesis_summary": "固定追蹤；非卡點 hyperscaler；Code Red 事件新聞反向",
+      "confidence": "弱",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-27",
+      "category": "etf",
+      "ticker": "SMH",
+      "price_at_rec": 440.06,
+      "spy_at_rec": 728.32,
+      "thesis_summary": "核心 20%；半導體大盤，薄量提前收盤日反彈",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-27",
+      "category": "etf",
+      "ticker": "BOTZ",
+      "price_at_rec": 30.26,
+      "spy_at_rec": 728.32,
+      "thesis_summary": "主題衛星 5%；機器人主題",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-27",
+      "category": "etf",
+      "ticker": "EWY",
+      "price_at_rec": 135.86,
+      "spy_at_rec": 728.32,
+      "thesis_summary": "主題衛星 5%；記憶體代理",
+      "confidence": "強",
+      "version": "v2"
+    },
+    {
+      "date": "2026-11-27",
+      "category": "etf",
+      "ticker": "SGOV",
+      "price_at_rec": 100.71,
+      "spy_at_rec": 728.32,
+      "thesis_summary": "現金層 70% 維持：反彈發生於薄量日，調查/出口管制/關稅/升息疑慮未解",
+      "confidence": "強",
+      "version": "v2"
     }
   ]
 }
